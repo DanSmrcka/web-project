@@ -1,15 +1,31 @@
 	<!-- Langugage Picker -->
-
+<head>
+<link rel="stylesheet" href="/css/flag-icon.css">
+</head>
 <!-- Posts -->
 {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
 {% for post in posts %}
 <!-- Show Language Button of lang that is not displayed -->
-<a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
-{% endfor %}
+
+{% if  page.lang == "cz" %}
+<a href="{{ post.url }}" class="{{ post.lang }}"><span class="flag-icon flag-icon-cz"></span></a>
+{% elsif page.lang == "en" %}
+<a href="{{ post.url }}" class="{{ post.lang }}"><span class="flag-icon flag-icon-gb"></span></a>
+{% else %} 
+<a href="{{ post.url }}" class="{{ post.lang }}"><span class="flag-icon flag-icon-de"></span></a>
+{% endif %}{% endfor %}
 
 <!-- Pages -->
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+
 {% for page in pages %}
 <!-- Show Language Button of lang that is not displayed -->
-<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+{% if  page.lang == "cz" %}
+<a href="{{ page.url }}" class="{{ page.lang }}"><span class="flag-icon flag-icon-cz"></span></a>
+{% elsif page.lang == "en" %}
+<a href="{{ page.url }}" class="{{ page.lang }}"><span class="flag-icon flag-icon-gb"></span></a>
+{% else %} 
+<a href="{{ page.url }}" class="{{ page.lang }}"><span class="flag-icon flag-icon-de"></span></a>
+{% endif %}
+
 {% endfor %}

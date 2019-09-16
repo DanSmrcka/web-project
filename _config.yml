@@ -7,13 +7,13 @@
 
 # Site settings
 title:
-  en: Computer science @KIT
-  de: Informatik @KIT
-  cz: Informatik CZ @KIT
-email: info@cs-k.it
+  en: Computer science 
+  de: Informatik 
+  cz: Informatika 
+email: dansmrcka@live.com 
 index:
-  en: index-en.html
-  de: index.html
+  en: index.html
+  de: index-de.html
   cz: index-cz.html
 feed:
   en: /feed-en.xml
@@ -30,8 +30,8 @@ words_per_minute: 100
 
 # github on site
 github:
-  username: cs-kit
-  url: https://github.com/cs-kit
+  username: DanSmrcka 
+  url: https://github.com/dansmrcka
 
 # Build settings
 markdown: kramdown
@@ -55,15 +55,15 @@ description:
 more:
   en: Read more
   de: Mehr lesen
-  cz: CZ Mehr lesen
+  cz: Ctete dale
 overview:
   en: All posts
   de: Alle Artikel
-  cz: cz Alle Artikel
+  cz: Vsechny prispevky
 contact:
   en: Contact us!
   de: Schreib uns!
-  cz: cz Schreib uns!
+  cz: Napiste nam!
 
 t:
   en:

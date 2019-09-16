@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Forwards
-permalink: /forwards/
+title: Rozcestnik
+permalink: /rozcestnik/
 ref: forwards
 excerpt: ukazka
 lang: cz 

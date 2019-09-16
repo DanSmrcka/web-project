@@ -9,18 +9,21 @@
 title:
   en: Computer science @KIT
   de: Informatik @KIT
+  cz: Informatik CZ @KIT
 email: info@cs-k.it
 index:
   en: index-en.html
   de: index.html
+  cz: index-cz.html
 feed:
   en: /feed-en.xml
   de: /feed-de.xml
+  cz: /feed-cz.xml
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cs-k.it" # the base hostname & protocol for your site
+url: "https://hucko-sro.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
-github_username:  cs-kit
+github_username: DanSmrcka 
 
 # slow reading speed for article reading time
 words_per_minute: 100
@@ -48,15 +51,19 @@ collections:
 description:
   en: An information source about studying computer science at Karlsruher Institute of Technology
   de: Eine Informationsquelle über das Informatikstudium am Karlsruher Institut für Technologie
+  cz: CZ Eine Informationsquelle über das Informatikstudium am Karlsruher Institut für Technologie
 more:
   en: Read more
   de: Mehr lesen
+  cz: CZ Mehr lesen
 overview:
   en: All posts
   de: Alle Artikel
+  cz: cz Alle Artikel
 contact:
   en: Contact us!
   de: Schreib uns!
+  cz: cz Schreib uns!
 
 t:
   en:
@@ -88,6 +95,34 @@ t:
     privacy_url: "/privacy"
 
   de:
+      latest-posts:  "Neuste Artikel"
+      read-more:  "Weiterlesen →"
+      show-more:  "Mehr →"
+      loading:  "Lädt..."
+      on-word: "on"
+      contact: "Kontakt"
+      contact-page: "contact.md"
+      read-time: "min"
+      comments: "comments"
+      go-to-home-page: "Zurück zur Startseite"
+      months:
+        january: "Jan"
+        february: "Feb"
+        march: "Mär"
+        april: "Apr"
+        may: "Mai"
+        june: "Jun"
+        july: "Jul"
+        august: "Aug"
+        september: "Sep"
+        october: "Okt"
+        november: "Nov"
+        december : "Dez"
+      all-posts-category: "Alle Artikel der Kategorie"
+      privacy: "Datenschutz"
+      privacy_url: "/datenschutz"
+
+  cz:
       latest-posts:  "Neuste Artikel"
       read-more:  "Weiterlesen →"
       show-more:  "Mehr →"

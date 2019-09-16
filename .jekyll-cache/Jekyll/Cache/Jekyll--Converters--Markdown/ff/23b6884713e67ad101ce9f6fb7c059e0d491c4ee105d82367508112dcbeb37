@@ -1,0 +1,1225 @@
+I"�:<div style="background-color: #EAEFF4; border: 1px solid #b5aeb1; border-radius: 3px;  padding: 10px; margin-right: 10px">
+    <strong>Vorlesung:</strong> <a href="https://campus.studium.kit.edu/ev/_qIONru0So6lB_y2FMgGxg">Maschinelles Lernen 1 - Grundverfahren</a>, Vorlesung, 3 ECTS <br />
+    <strong>Dozent:</strong>Prof. Dr.-Ing. Rüdiger Dillmann<br />
+   <strong>ILIAS:</strong> <a href="https://ilias.studium.kit.edu/goto.php?target=crs_884298&amp;client_id=produktiv">https://ilias.studium.kit.edu/goto.php?target=crs_884298&amp;client_id=produktiv</a><br />   
+   <strong>Videos:</strong> <a href="">TODO</a>, technische Probleme: ersten beiden VL fehlen<br />   
+   <strong>DIVA Videos:</strong> <a href="https://mediaservice.bibliothek.kit.edu/#/details/DIVA-2017-548">WS 17/18</a> nur im KIT-Netz<br />  
+   <strong>Klausur:</strong> schriftlich, 11./12./13.2.2018, wird noch bekanntgegeben <br />
+   <strong>Einordnung:</strong> Vertiefungsfach "Anthropomatik und Kognitive Systeme", Profil "Datenintensives Rechnen", Robotik, KI... <br />
+</div>
+
+<h2 id="organisatorisches">Organisatorisches</h2>
+
+<h3 id="vorlesungen">Vorlesungen</h3>
+<ul>
+  <li><strong>17.10.2018</strong>: Organisatorisches und Foliensatz 1-1 bis 1-59</li>
+  <li><strong>24.10.2018</strong>: Wiederholung von Kapitel 1, Foliensatz 2</li>
+  <li><strong>30.10.2018</strong>: Wiederholung von Kapitel 2, Foliensatz 3</li>
+  <li><strong>06.11.2018</strong>: Foliensatz 4 <a href="#vl4">Neuronale Netze</a></li>
+  <li><strong>13.11.2018</strong>: Foliensatz 5</li>
+</ul>
+
+<h3 id="material">Material</h3>
+<p>VL wird aufgezeichnet. Das Material wird auf ILIAS zur Verfügung gestellt. Die Suche der Verantstaltung
+funktioniert nicht. Daher muss man manuell suchen. Dafür geht man bei “Organisationseinheiten” zu den
+Wirtschaftswissenschaften und sucht dort die Vorlesung. Das Passwort wurde in der Vorlesung mitgeteilt.</p>
+
+<h3 id="übung">Übung</h3>
+<p>Übung findet montags alle zwei Wochen von 14:00 bis 15:30 statt (Sport R007). Beginn des Übungsbetriebes
+ am 29.10. Ist für Wirtschaftswissenschafler Pflicht,
+für Informatiker freiwillig. Vor erster Übung sollte Python am eigenen Laptop installiert werden.
+Dazu wird auf <a href="https://git.scc.kit.edu/snippets/236">diese Anleitung</a> verwiesen.</p>
+
+<p>Aufbau der Übungseinheiten:</p>
+<ul>
+  <li><strong>29.10.2018</strong>: Übung 01 Einführung: Python, Jupyter Notebook, Numpy, Pandas, Matplotlib, etc.</li>
+  <li><strong>19.11.2018</strong>: Übung 02 Neuronale Netze</li>
+  <li><strong>26.11.2018</strong>: Übung 03 Klassifikation und Regression</li>
+  <li><strong>10.12.2018</strong>: Übung 04 Reinforcement Learning</li>
+  <li><strong>14.01.2019</strong>: Übung 05 HMM und Bayes</li>
+  <li><strong>28.01.2019</strong>: Übung 06 Unüberwachte Lernverfahren</li>
+</ul>
+
+<h3 id="klausur">Klausur</h3>
+<p>Die Klausur findet schriftlich statt. Termin noch unklar, 11./12./13.2.2018, wird noch bekanntgegeben.</p>
+
+<h2 id="vorlesungsinhalt">Vorlesungsinhalt</h2>
+<h3 id="einführung-und-überblick">Einführung und Überblick</h3>
+<p><strong>Intelligenz</strong>: viele widersprüchliche Definitionen, bereits 1021 von Psychologen, Kontext (im technischen
+Sinne) oft eingeschränkt; mögliche Komponenten: Denken und Problemlösen, Lernen und Erinnern, Sprache,
+Wissen abspeichern und übertragen, Kreativität und Bewusstsein, Überleben in komplexen Welten, rezeptive und
+motorische Fähigkeiten (Robotik)</p>
+
+<p><strong>Lernen</strong>: Lernen von Entscheidungen, Aktionsfolgen, Beschreibungen, Modellen; Entwicklung motorischer und
+kognitiver Fähigkeiten durch Anweisung oder Training; Neuorganisation/Umorganisation/Transformation von Wissen</p>
+
+<p><strong>Lernendes System</strong>: in der Lage unbekannte Eigenschaften eines Prozesses/seiner Umgebung durch schritweises,
+wiederholtes Handeln und Beobachten zu erfassen; mit gewonnener Erfahrung Vorhersagen treffen, klassifizieren,
+Entscheidungen treffen mit Ziel optimales Systemverhalten zu erzielen oder Leistung zu steigern.<br />
+Komponenten eines Lernenden Systems (vgl. Abb 1-30):</p>
+<ul>
+  <li><em>Informationsquelle</em></li>
+  <li><em>Lernendes Element</em>: Was und wie wird gelernt? Wie wird das genutzt? Inferenz?</li>
+  <li><em>Wissensbasis</em>: Wie kann Wissen/Hypothesen repräsentiert werden?</li>
+  <li><em>Ausführendes Element</em>: Was und wie wird gelernt? Wie wird das genutzt? Inferenz?</li>
+</ul>
+
+<p><strong>Maschinelles Lernen</strong>: System lernt aus Erfahrung E im Hinblick auf Klasse von Aufgaben T und Performanzmaß P, wenn
+Leistungen bei Aufgabe aus T mit P durch Erfarhgung E steigt; generiert ein/mehrere Lösungshypothesen H;</p>
+
+<p><strong>Inferenz</strong>: bezeichnet den Vorgang eines Algorithmus aus Fakten und Vermutung (korrekte) Schlüsse zu ziehen.</p>
+
+<p><em>Ziel:</em> Hypothesen finden, Interferenz ermöglichen; Hypothesen beschreiben ein Modell, z.B. Diskriminatives Modell (Klassifikation),
+Generatives Modell (Beschreibung/Erzeugung von Daten), Probabilistisches Modell (Schließen auf Zufallsvariablen), Markovsches Entscheidungsmodell
+(Bestimmen von Aktionsketten)</p>
+
+<p><strong>Deduktiver Schluss</strong>: Aus A folgt B, es gibt Folge von Regeln um B abzuleiten ⇔  $ A → B $ <br />
+Beispiel: “Alle Menschen sind sterblich.”, “Sokrates ist ein Mensch.” → “Sokrates ist sterblich.”</p>
+
+<p><strong>Abduktion</strong>: H folgt aus Hintergrundwissen B und Beobachtungen D abduktiv ⇔ $ B ∪ H ↦ D $
+Beispiel: “Alle Menschen sind sterblich.”, “Sokrates ist sterblich.” → “Sokrates ist ein Mensch.”</p>
+
+<p><strong>Induktiver Schluss</strong>: Hypothese H folgt induktiv aus Menge D von Grundbeispielen und Hintergrundwissen D ⇔
+$ B ∪ H ↦ D, B ↛ D,  B ∪ D ↛ ¬H $, <strong>Vorsicht</strong>: Aus Hypothesen sind einzelne Beispiele ableitbar, aber nicht umgekehrt!
+Mit ausreichenden Beispielen: “Sokrates ist ein Mensch.”, “Sokrates ist sterblich.” → “Alle Menschen sind sterblich.”</p>
+
+<p><strong>Wissensrepräsentationen</strong>: verschiedene Möglichkeiten Wissen zu repräsentieren:</p>
+<ul>
+  <li><em>Assoziierte Paare</em></li>
+  <li><em>Parameter in algebraischen Ausdrücken</em></li>
+  <li><em>Entscheidungsbäume</em></li>
+  <li><em>Formale Grammatiken</em></li>
+  <li><em>Produktionsregeln</em></li>
+  <li><em>Formale logikbasierte Ausdrücke</em></li>
+  <li><em>Graphen und Netzwerke</em></li>
+  <li><em>Probabilistische Graphische Modelle</em></li>
+  <li><em>Frames, Schemata, Semantische Netze</em></li>
+  <li><em>Prozedurale Kodierung</em></li>
+  <li><em>Taxonomien</em></li>
+  <li><em>Markov-Ketten</em></li>
+</ul>
+
+<p><strong>Historie</strong>:</p>
+<ul>
+  <li><em>Beginn und Enthusiasmus (1955-1968):</em> Lernen ohne Wissenstrukturen, Auswendiglernen und Lernen als Suche,…</li>
+  <li><em>Depression (1969-1976):</em> Symbolisches begrifforientiertes Lernen,…</li>
+  <li><em>Renaissance (1976-1986):</em> erste erfolgreiche Anwendung, Neuronale Netze, Statistisches Lernen,…</li>
+  <li><em>Maturität - Reife (1986-…):</em> Reinforcement Learning, Deep Learning, Kombination induktiver und deduktiver Verfahren,…</li>
+  <li><em>Heute:</em> Betrachtung komplexerer realer Anwendungen, Verbesserung/Erweiterung der Grundverfahren</li>
+</ul>
+
+<p><strong>Lernen als Prozess</strong>: (vgl. Abb 1-48)</p>
+<ol>
+  <li>Identifikation der Lernaufgabe</li>
+  <li>Initiale Wissenakquisation</li>
+  <li>Vorverarbeitung/Segmentierung/Generierung von Trainingsdaten</li>
+  <li>Konfigurierung des Lernverfahrens</li>
+  <li>Initialer (offline) Lernprozess</li>
+  <li>Bewertung des erlernten Wissens</li>
+  <li>Wissensanapassung/-verfeinerung/-erweiterung</li>
+</ol>
+
+<p><strong>Einordnungskriterien von Lernverfahren</strong>:</p>
+<ul>
+  <li><em>Typ der Inferenz:</em> induktiv ⇔ deduktiv</li>
+  <li><em>Ebenen des Lernens:</em> symbolisch ⇔ subsymbolisch (z.B. Matrixmultiplikation)</li>
+  <li><em>Lernvorgang:</em> überwacht ⇔ unüberwacht</li>
+  <li><em>Beispielumgebung:</em> inkrementell (mit neuen Daten Stück für Stück weiterlernen) ⇔ nicht inkrementell</li>
+  <li><em>Umfang der Beispiele:</em> umfangreich ⇔ gering</li>
+  <li><em>Hintergrundwissen:</em> empirisch ⇔ axiomatisch</li>
+</ul>
+
+<h3 id="induktives-lernen">Induktives Lernen</h3>
+<p><strong>Induktion</strong>: Prozess des <em>plausiblen</em> Schließens vom Speziellen zum Allgemeinen; wahrheitserweiternd, Generierung neuter Hypothesen;</p>
+
+<p><strong>Deduktion</strong>: Prozess des <em>korrekten</em> Schließens vom Allgmeinen zum Speziellen; wahrheitserhaltend, Ableiten neuer Reglen/Fakten</p>
+
+<p><strong>Induktive Lernverfahren</strong>: beispiel Konzeptlernen  (min Anpassungen)
+Gegeben:</p>
+<ul>
+  <li><em>Instanzraum/Merkmalsraum</em> $X$:</li>
+  <li><em>Trainingsmenge</em> $D$:</li>
+  <li><em>Zielkonzept/Sollausgabe</em> $c(…)$: Untermenge von Objekten/Ereignissen, Boolsche Funktion</li>
+  <li><em>Hypothesenraum</em> $H$:</li>
+</ul>
+
+<p>Gesucht:</p>
+<ul>
+  <li><em>Hypothese</em> $h$: jede Hypothese, die Zielfunktion über genügend große Menge von Trainingsbeispielen gut approximiert, wirds Zielfunktion auch
+bei unbekannten Beispielen gut approximieren.</li>
+</ul>
+
+<p><em>Konzeptlernen:</em> induktives Lernverfahren, schließen auf Boolean-wertige Funktion asu Trainingsbeipielen ihres Inputs und Outputs</p>
+
+<p><strong>Definitionen im Hypothesenraum</strong>:</p>
+<ul>
+  <li><em>Konsistenz:</em> keine negativen Beispiele werden positiv klassifiziert</li>
+  <li><em>Vollständigkeit:</em> alle positiven Beispiele werden positiv klassifiziert<br />
+→ Vozugskriterium: konstistent + vollständig</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/C1cI7wUUg6M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p><strong>Versionsrau (Version Space)</strong>: Versionsraum ist Untermenge von Hypothesen in H, die mit Trainingsbeispielen <em>konsistent</em> und <em>vollständig</em> sind<br />
+parallele Anwendung von <em>Suche vom Allgemeinen zum Speziellen</em> (Ausgangspunkt allgemeinste Hypothese, neg. Beispiele: Spezialisierung,
+ pos. Beispiele: nicht betrachtet) und <em>Suche vom Speziellen zum Allgemeinen</em>  (Ausgangspunkt spziellste Hypothese, pos. Beispiele: Verallgemeinerung,
+ neg. Beispiele: nicht betrachtet)<br />
+ Spezifischste Hypothese = Allgemeinste Hypothese, wenn alle Beispiele konsistent, korrekte Hypothese im Hypothesenraum enhalten, <em>Probleme:</em> bei
+ fehlerhaften Trainingsdaten (Rauschen), Zielkonzept nicht von Hypothesenrepräsentation abgedeckt, disjunktive Begriffe, konsistente Beispiele nötig</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TlkMkC64XpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p><strong>Induktiver Bias</strong>: Induktives Lernen erfordert Vorannahmen = <strong>Inductive Bias</strong>, je strenger Vorannahmen, desto mehr unbekannte Beispiele können
+klassifiziert werden, z.B. Version Space: Zielkonzept in H repräsentierbar, Specific-to-General: alle Instanzen negativ, soland nicht Gegenteil
+bekannt.
+Beispiel: Ockham’s razor</p>
+
+<p><strong>Bias (Vorzugskriterium)</strong>: Vorschrift nach der Hypothesen gebildet werden</p>
+<ul>
+  <li><em>Hypothesenraumbias</em>: h in beschränktem Hypothesenraum</li>
+  <li><em>Präferenzbias</em>: h mit höchste Präferenz in geordnetem Hypothesenraum</li>
+</ul>
+
+<p>→ Problem: es existiert keine Funktion h, die konsistent mir Trainingsbeispiele ist, z.B. bei verrauschten Trainingsdaten<br />
+→ Lösung: Anpassen des Hypothesenraumbias (gute Klassifikation aber Overfitting), Anpassen des Präferenzbias (wähle h, dass möglichst viel
+richtig klassifiziert, mögliche Missklassifikation)</p>
+
+<h3 id="lerntheorie">Lerntheorie</h3>
+<p><strong>Lernmaschine</strong>: lernende Maschine mit <em>Hypothesenraum</em> ${h_\alpha: \alpha ∈ A}$ und  Lernverfahren (Methode $\alpha_{opt}$ mit Hilfe von
+Lernbeispielen zu finden) → Entscheidungsmodell $M_{opt}$</p>
+
+<p><strong>Probleme beim Lernen</strong>:</p>
+<ul>
+  <li><em>Statistisches Problem:</em> “zu großer” Hypothesenraum, für Trainingsdaten mehrere gleich gute Hypothesen (bis vor fünf Jahren wäre noch die
+pauschale Antwort gewesen, dass man gemäß Occam’s Razor die einfachere der beiden Hypthosen wählt)</li>
+  <li><em>Komplexitätsproblem:</em> nicht garantierte optimale Lösung im Hypothesenraum, Gefahr einer suboptimalen Lösung</li>
+  <li><em>Repräsentationsproblem:</em> Zielfunktion nicht genügend gut approximiert</li>
+</ul>
+
+<p><strong>Fehler</strong>: reale Fehler nicht berechenbar ($ \int $) → empirischer Fehler schätzbar ($ \sum $);
+mögliche Fehler: Lerndaten → Lernfehler, Verifikationsdaten → Verifikationsfehler, Testdaten → Generalisierungsfehler</p>
+
+<p><strong>Fehlerminimierung</strong>: definiere $h_a$, finde beste $\alpha_{opt}$ durch iterative Minimierung des empirischen Lernfehlers $E_D(h_{\alpha}), z.B. durch Gradientenabstieg (Gradient
+muss berechenbar oder abschätzbar sein)</p>
+
+<p><strong>Overfitting</strong>: zu starke Spezialisierung der Maschine auf Lernbeispiele (“auswendig Lernen”); Lernfehler fällt, Testfehler steigt → Generalisierung fällt; Erklärung: Lerndatenmenge und
+Testdatenmenge unterschiedlich; Lösung: Lernprozess durch Verifikationsfehler steuern, Lernprozess im “richtigen Moment” stoppen, richtige Wahl und Suche der optimale Hypothesen</p>
+
+<p><strong>Modellgüte bestimmen</strong>: je nach Aufgabenstellung unterschiedliche Methoden:</p>
+<ul>
+  <li><em>Klassifikation:</em> Anzahl richtiger/falscher Klassifizierungen</li>
+  <li><em>Regression:</em> Entfernung zu Schätzungsziel</li>
+  <li><em>Unüberwachtes Lernen:</em> wie gut werden Daten abgebildet → schwierig</li>
+  <li><em>Reinforcement learning:</em> wie gut passt Aktionsfolge  → keine allgemeinen Metriken</li>
+</ul>
+
+<p><strong>Klassifikation</strong>: Unterscheidung von vier Ergebnisklassen:</p>
+<ul>
+  <li><em>True Positive (TP):</em> korrekte Klassifikation positiver Instanzen</li>
+  <li><em>True Negative (TN):</em> korrekte Klassifikation negativer Instanzen</li>
+  <li><em>False Positive (FP):</em> falsche Klassifikation positiver Instanzen (typische Verwendung)</li>
+  <li><em>False Negative (FN):</em> falsche Klassifikation negativer Instanzen</li>
+</ul>
+
+<p><em>Konfusionsmatrix:</em> Wunschergebnis hohe Werte auf Diagonale, wenige FP und FN; horizontal = Vorhersage, vertikal = tatsächliche Klasse</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Ja</th>
+      <th>Nein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ja</strong></td>
+      <td>TP</td>
+      <td>FN</td>
+    </tr>
+    <tr>
+      <td><strong>Nein</strong></td>
+      <td>FP</td>
+      <td>TN</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Metriken:</em></p>
+<ul>
+  <li>Klassifikationsfehler: möglichst klein $\frac{errors}{total} = \frac{FP+FN}{TP+FN+FP+TN}$</li>
+  <li>Güte: = 1-Fehler $\frac{correct}{total} = \frac{TP+TN}{TP+FN+FP+TN}$</li>
+  <li>False Positve Rate (FPR) / False Alarm Rate (FA): möglichst klein $FPR = \frac{FP}{FP+TN}$</li>
+  <li>False Negative Rate (FNR) / Miss Rate (MR): möglichst klein $FNR = \frac{FN}{TP+FN} = 1 - TPR$</li>
+  <li>Genauigkeit (Precision): möglichst hoch $P = \frac{TP}{TP+FP}$</li>
+  <li>True Positve Rate (TPR) / Recall / Positive Rückmeldung: möglichst hoch $TPR = R =\frac{TP}{TP+FN} = 1 - FNR $</li>
+  <li>F1-Maß: Harmonisches Mittel zwischen Precision und Recall. Möglichst hoch $F_1  =\frac{2}{\frac{1}{R}+\frac{1}{P}}$</li>
+</ul>
+
+<p>Durch Kombination von Metriken Auswahl der besten Hypothese möglich,
+z.B.</p>
+
+<ul>
+  <li>TPR/FPR-Graph auch <strong>ROC</strong> [Receiver operating characteristic(https://en.wikipedia.org/wiki/Receiver_operating_characteristic) genannt</li>
+  <li>Precision-Recall-Graph</li>
+</ul>
+
+<p><strong>Cross-Validierung:</strong> Modell statistisch auswerten, mit Teil der Daten evaluieren → Modell gut oder schlecht?;
+Vorgehen: Teile Daten wiederholt in Lern- und Validierungsdaten auf, bestimme gute Hypothese, berechne Metriken
+ → wiederhole n mal “n-fold-cross-validation”</p>
+
+<p>Resultat: Die Varianz der Daten variiert über die Aufteilungen, dadurch würde
+ eine instabile Lernmaschine identifiziert werden. Solche Maschinen sind nicht
+ wünschenswert.</p>
+
+<p><strong>Bootstrap:</strong> Wie mit einfachen Verfahren mehr erreichen?
+Zufälliges Ziehen der Beispiele mit Zurücklegen, Modellbestimmung &amp; Parameter, Wiederholen…
+bestimme Mittelwert, Varianz des Modells;</p>
+
+<blockquote>
+  <p>“Das Bootstrapping-Verfahren, oder Bootstrap-Verfahren (selten Münchhausenmethode), ist in der Statistik eine Methode des Resampling. Dabei werden wiederholt Statistiken auf der Grundlage lediglich einer Stichprobe berechnet. Verwendung finden Bootstrap-Methoden, wenn die theoretische Verteilung der interessierenden Statistik nicht bekannt ist.”</p>
+</blockquote>
+
+<p>https://de.wikipedia.org/wiki/Bootstrapping-Verfahren</p>
+
+<p><strong>Bagging</strong> (Bootstrap aggregation)
+Variante Bagging: verwende mehrere Lernmaschinen → Kombination der Lernmaschinen
+und dann Mehrheitsentscheid der einzelnen Maschinen</p>
+
+<p><strong>Boosting für Klassifikation</strong>: Kombination “schwacher” Modelle, um gutes Modell zu erhalten</p>
+
+<p><strong>Adaptive Boosting / AdaBoost</strong>: Iteratives Erstellen eines komplexen Klassifikators in k Stufen,
+Ziehen von Lernbeispielen enstprechend definierter Gewichte; mit neuer Lernmenge
+wird mit Hilfe eines Lernverfahrens nächster Klassifikatior bestimmt.</p>
+
+<p>Adaptive Boosting (1996): Man versucht iterativ besser zu werden. Also wählt man
+als Trainingsdaten für den nächsten anzutrainierenden Klassifikator die
+Daten, die von den bisherigen Modellen falsch klassifiziert wurden.
+Dann kann man ein <strong>Ensemble</strong> aus den Modellen erstellen, wobei es auch
+eine “Sicherheitsmetrik” gibt.</p>
+
+<p>Gutes Beispiel: Kaskadierung von <strong>Viola &amp; Jones (2001)</strong>:
+Sie haben Gesichterkennung mit Haar-like Filtern gemacht.</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uEJ71VlUmMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Das Cascading ist interessant, weil folgendes passiert:
+Erster Klassifikator hat precision 0.99 und recall 0.3. Wenn man zehn
+solcher Klassifikatoren hintereinanderreiht, dann bekommt man precision = 0.99^10 ~= 0.9
+ und recall = 0.3^10 ~= 0.00.</p>
+
+<p><strong>General Adversarial Networks (GAN)</strong> (auch Turing-Lernen) profitiert vom
+Boosting.</p>
+
+<p><strong>Probably Approximate Correct</strong>:</p>
+
+<blockquote>
+  <p>“Kann man mit einfacher Lernmaschine ein gegebenes Konzept lernen?” Den Fehler
+approximiert man auf ein epsilon. PAC Stichprobenkomplexität: Wie viele Lerndaten
+brauche ich, um das Problem zu lösen?</p>
+</blockquote>
+
+<p>Aus Menge X von Instanzen mit Länge n, Konzept C, Hypothesenraum H und Lerndatenmenge D kann keine korrekte Hypothese gefunden werden, aber eine ε-genaue:
+$E_D(h) ≤ ε, 0 &lt; ε &lt; \frac{1}{2}  $ (Approximate Correct); Wert kann mit Wahrscheinlichkeit δ $1 - δ, 0 &lt; δ &lt; \frac{1}{2}$ gefunden werden; Anzahl benötigter Lerndaten:
+$ m ≥ \frac{1}{ε}(lm\frac{1}{δ} + ln|H|)$ <br />
+→ je größer gewünschte Sicherheit, je kleiner zulässige Fehler, je größer Hypothesenraum → umso größer Anzahl benötigter Daten</p>
+
+<p>Eigentlich ist das eine schöne Sache, aber es geht leider nur bei einfachen
+Lernmaschinen.</p>
+
+<p><strong>Vapnik-Chervonenkis (VC) Dimension</strong>: ist maximale Anzahl von Datenpunkten die von der Hypothese beliebig separiert werden können; eine Hypothese h separiert die Daten D wenn zwei
+Untermengen definiert werden können: ${x|h(x) = 0 } $ und ${x|h(x) = 1 } $; Beispiel: Hypothesenraum durch Geraden separiert, maximal 3 Werte durch Geraden spariert (nur wenn Aufteilung egal);
+Allgemein: Hyperebenen in $R^n ⇒ n+1 $ separierte Werte</p>
+
+<p>“bessere PAC-Strichprobenkomplexität”</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/puDzy2XmR5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>“Korrektes Lernen”:</strong> Vapnik</p>
+
+<ul>
+  <li>Kapazität so gering wie möglich</li>
+  <li>Optimierung so gut wie möglich</li>
+  <li>Trainingsdaten so repräsentativ und viele wie möglich</li>
+</ul>
+
+<p><strong>Abschätzung des Testfehlers</strong>: Lernerfolg abhängig von Kapazität der lernenden Maschine (so gering wie möglich), Optimierungsmethode (so gut wie möglich), Lernbeispiele (so viele wie möglich,
+repräsentativ)</p>
+
+<p><strong>Prof: Man bekommt die obere Schranke des Fehlers nicht nur durch
+Reduktion des empirischen Fehlers des Modells hin, sondern auch durch:</strong></p>
+
+<p><strong>Structural Risk Minimization</strong>: finde Maschine $VC(h_a)$, Beispiele $N$ und Minimum des empirischen Fehlers $\alpha$: $ min_{H_n} (E_{emp} (h_a)+ \sqrt (… \frac{VC(h_{\alpha})}{N} …)) $ <br />
+Strukturiere Hypothesenraum, Iteriere über Teile des Hypothesenraum, Suche Minimum für $E(h_{\alpha}), stoppe wenn Summe minimal; Berechnung VC Dimension schwer, rechenintensiv</p>
+
+<blockquote>
+  <p>“SRM ist Meta-Algorithmus: Wie bekommt man strukturell aufsteigende Kapazität
+über Hypothesenraum? Zum Beispiel AdaBoost implementiert SRM:
+Kapazität steigt mit jedem neuen Klassifikator. Auch SVM macht das implizit.”</p>
+</blockquote>
+
+<p><strong>Das schien dem Professor sehr wichtig zu sein!</strong></p>
+
+<p>GAN generieren neue Lernbeispiele, dadurch wird N in der VC-Ungleichung größer
+und die obere Schranke geht nach unten.</p>
+
+<p>Der Professor verweist auf Tom Mitchells Buch “Machine Learning” und
+auf das erste Kapitel von Vapniks “Statistical Learning Theory”</p>
+
+<p>Für die Klausur sollte man wissen:</p>
+
+<ul>
+  <li>Strukturelles Risiko</li>
+  <li>Vapnik-Chervonenkis grobe Entwicklung</li>
+  <li>PAC grundsätzliche Aussage</li>
+</ul>
+
+<h3 id="neuronale-netze">Neuronale Netze</h3>
+<p><strong>Künstliche Neuronale Netze (KNN)</strong>: externe Eingabe → Gewichtsbelegung → Propagierungsfunktion → Aktivierungsfunktion → Ausgabe<br />
+Einsatzfelder:</p>
+<ul>
+  <li><em>Klassifikation und Mustererkennung:</em> Diagnose, Spracherkennung, Schrifterkennung, Bilderkennung</li>
+  <li><em>Funktionsapprocimierung/Regression:</em> Kontinuierliche Abbildung, Steuerung, Vorhersage</li>
+  <li><em>Musterervervollständigung:</em> Bilderzeugung, generative Modelle, Kodierung, Komprimierung</li>
+</ul>
+
+<p><strong>Perzeptron</strong>: Anlehnung an natürliche Wahrnehmung,
+Perceptron realisiert Trennhyperebene (in $R²$ eine Gerade), Gewichte definieren (stellen Normale dar),
+Gegeben Positive und Negative“ Daten $(P,N)$ erfolgt eine Entscheidung durch gewichtete Summe → Skalarprodukt mit dem Nomalenvektor, <em>Lernen = Anpassen der Gewichte →
+Gesucht wird die beste Trennhyperebene</em></p>
+
+<p><a title="By Mayranna [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Perceptron_moj.png"><img width="512" alt="Perceptron moj" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Perceptron_moj.png/512px-Perceptron_moj.png" /></a></p>
+
+<p><em>Lernalgorithmus:</em></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">Gegeben</span> <span class="n">Lerndatenmenge</span> <span class="n">P</span> <span class="err">∪</span> <span class="n">N</span>    
+<span class="n">Erzeuge</span> <span class="n">der</span> <span class="n">Gewichtsvektor</span> <span class="n">w</span> <span class="n">zuf</span><span class="err">ä</span><span class="n">llig</span>  
+<span class="n">While</span> <span class="n">Z</span><span class="err">ä</span><span class="n">hler</span> <span class="o">&lt;</span> <span class="n">Schwellenwert</span><span class="p">:</span>  
+    <span class="n">W</span><span class="err">ä</span><span class="n">hle</span> <span class="n">ein</span> <span class="n">Trainingsbeispiel</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">P</span> <span class="err">∈</span> <span class="n">N</span> <span class="n">zuf</span><span class="err">ä</span><span class="n">llig</span>  
+    <span class="n">If</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">P</span><span class="p">:</span>  
+        <span class="n">If</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">(</span><span class="n">korrekt</span> <span class="n">klassifiziert</span><span class="p">):</span>  
+            <span class="n">dann</span> <span class="n">tue</span> <span class="n">nichts</span>  
+        <span class="n">Else</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="err">≤</span> <span class="mi">0</span><span class="p">:</span>  
+            <span class="n">Setze</span> <span class="n">w</span> <span class="err">←</span> <span class="n">w</span> <span class="o">+</span> <span class="n">x</span>  
+    <span class="n">Else</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">N</span><span class="p">:</span>  
+        <span class="n">If</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">(</span><span class="n">korrekt</span> <span class="n">klassifiziert</span><span class="p">):</span>  
+            <span class="n">dann</span> <span class="n">tue</span> <span class="n">nichts</span>  
+        <span class="n">Else</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">N</span> <span class="n">und</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="err">≥</span> <span class="mi">0</span><span class="p">:</span>  
+            <span class="n">Setze</span> <span class="n">w</span> <span class="err">←</span> <span class="n">w</span> <span class="err">–</span> <span class="n">x</span>  
+    <span class="n">If</span> <span class="n">alle</span> <span class="n">x</span> <span class="n">richtig</span> <span class="n">klassifiziert</span><span class="p">:</span>  
+        <span class="n">Break</span><span class="p">,</span>  
+    <span class="n">Update</span> <span class="n">Z</span><span class="err">ä</span><span class="n">hler</span>  </code></pre></figure>
+
+<p><em>Grenzen des Perzeptron Lernalgorithmus:</em> $|w| » |x|$: sehr langsame Anpassung, Normierung nötig, Worst Case antiparallele Vektoren → Gradientenabstieg → differenzierbare Aktivierungsfunktion</p>
+
+<p>Ein Perzeptron hat niedrige Kapazität → Zusammenschalten von Neuronen (“Perzeptronen”) kann man Kapazität erhöhen</p>
+
+<p><strong>Kernel Methode</strong>: lineare Trennung durch Kernel Methode realisierbar, Lineare Trennung im transformierten Raum führt zu komplexer Trennung im Ursprungsraum</p>
+
+<p><strong>Multi Layer Neural Network</strong>: mehrere versteckte (innere) Schichten, Lernverfahren mit Backpropagation-Algorithmus, nichtlineare Aktivierungsfunktionen in Neuronen</p>
+
+<p><strong>Nichtlineare Aktivierungsfunktionen</strong>:</p>
+<ul>
+  <li><em>Sigmoid:</em> $f(x) = \frac{1}{1+e^{-x}}, \frac{\partial f}{\partial x} = f(x)(1-f(x))$</li>
+  <li><em>Tangens Hyperbolicus:</em> $f(x) = tanh(x), \frac{\partial f}{\partial x} = (1+f(x))(1-f(x))$</li>
+  <li><em>ReLU:</em> $f(x) = max(0,x), \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ 0 &amp; \text{sonst} \end{cases}$</li>
+  <li><em>LeakyReLU:</em> $f(x) = \begin{cases} x &amp; x &gt; 0 \\ \alpha x &amp; x \leq 0 \end{cases}, \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ \alpha &amp; \text{sonst} \end{cases}$</li>
+</ul>
+
+<p><strong>Backpropagation Algorithmus</strong>: Aus Menge T von Trainingsbeispielen als Eingangs/Ausgabevektor, Lernrate $\mu$, Netztopologie finde Gewichtsbelegung W die T korrekt wiedergibt, Vorgehen
+mittels Gradientenabstieg</p>
+
+<p><strong>Anpassen der Gewichte</strong>:</p>
+<ul>
+  <li>Lernen aus Einzeldaten (Pattern learning): Anpassung nach jedem Lernbeispiel, schnelles Lernen (kein “echter” Gradientenabstieg, aber gute Approximation)</li>
+  <li>Lernen aus Teilmengen (mini batch learning): kleine Lernmenge mit Zurücklegen, gutes Lernen (kein “echter” Gradientenabstieg, aber gute Approximation)</li>
+  <li>Epochenlernen(epoch learning): Mittelung der Gewichtsänderung über alle Beispiele, Anpassung nachdem Beispiele propagiert wurden, echter Gradientenabstieg, nicht Ausreißeranfällig</li>
+</ul>
+
+<p><strong>Optimierungen des Gradientenabstiegs</strong>:</p>
+<ul>
+  <li><em>Resilient Propagation (RPROP):</em> Implementiert normierte Schrittweite und Lernratenanpassung, Beschleunigung auf flachem Plateau, langsames Anpassen im Minimum → schnelle Konvergenz (In den 90ern am KIT entstanden)</li>
+  <li><em>Adaptive Moment Estimation (Adam):</em> Angepasste Lernraten für jeden Parameter,
+pro Parameter werden gleitende Schätzer für Mittelwert und Varianz mitgeführt, Implizites Momentum und
+Anpassung an die Varianz der Gradienten.
+<strong>Vorteil ggü. RPROP:</strong> Abstiegskurve wird geglättet, was bei realen Daten wichtig ist</li>
+  <li><em>Xavier – Initialisierung:</em> Verringerung des Vanishing- und Exploding-Gradients durch optimierte Initialisierung</li>
+</ul>
+
+<p><strong>Topologieauswahl</strong>: Anzahl Neuronen pro Schicht zur Anzahl von Lerndaten wichtig,
+Schichten stark abhängig von Zielfunktion, ABER: zu viele Neuronen, zu wenig Lerndaten → Overfitting;
+Gleichzeitiges Trainieren des NN und finden der optimalen Topologie:</p>
+<ul>
+  <li>großes Netzwerk verkleinern und am auswendig lernen hindern
+→ Weight Decay, Weight Elimination = Bestrafen von großen W durch Verwendung erweiterter Fehlerfunktion
+ “optimal brain damage”</li>
+  <li>kleines Netzwerk vergrößern und erweitern bis es Daten lernt
+    <ul>
+      <li>Meiosis Netzwerke: Aufspaltung von Neuronen</li>
+      <li>Cascade Correlation: dort neues Neuron einführen, wo der Fehler am größten ist</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Cascade Correlation</strong>: Initialisiere 2 schichtiges Netz, Festlegen der Abbruchkriterien, Trainieren, solange E(w) kleiner als Fehlerschranke: Neuron einfügen,
+Neuron trainieren, Netz trainieren <br />
+<em>Vorteile:</em> nur eine Ebene zum selben Zeitpunkt trainiert, schnell, inkrementelles Training, iterative Anpassung des Netzes
+<em>Nachteile:</em> spezielle Architektur → schwer Güte zu bestimmen, nicht anwendbar bei komplexen Architekturen</p>
+
+<p><strong>Dropout</strong>: Umsetzung von Bagging (bootstrap aggregation): k Modelle trainiern auf Daten (mit Zurücklegen), Mittelung der Ergebnisse der Modelle, Ziel: Erwartungswert des Fehlers reduzieren;
+bei sehr großen Netzen → viele Netze lernen → overhead; Daher: approximative, implizite Umsetzung → Maskierung/Inaktivierung von Neuronen beim Lernen → auf allen Subnetzen gleichzeitg lernen,
+Lernen mit jeweils aktiven Neuronen
+<strong>Wichtig:</strong> Nach dem Trainieren muss man die Gewichte skalieren. Zum Beispiel
+bei einem Dropout von 50% müssen die Gewichte halbiert werden, da sie sonst
+wenn alle Neuronen aktiv sin ein doppelt so großes Ergebnis liefern im Vergleich zu Trainingphase.
+<strong>Bemerkung:</strong> Das funktioniert, weil jedes Model im Ensemble seine eigene
+Fehleroberfläche hat und das Mittel könnte besser sein als nur eine einzelne.</p>
+
+<p><strong>Exploding/Vanishing-Gradient Problem</strong>: je weiter Schicht von Ausgabeschicht entfernt,
+desto kleiner werden Gradienten, falls Gewichtsmatrizen klein sind, ergeben sich viele kleine Werte,
+die miteinander multipliziert werden, Update im Gradientenabstiegsverfahren lässt Gewichte der unteren Schichten praktisch unverändert und Training konvergiert nicht zu guter Lösung; falls
+Gewichtsmatrizen groß sind, ergeben sich viele große Werte, die miteinander
+multipliziert werden, explodierende Gradienten können Lernen instabil machen, NN kann nciht aus Trainingsdaten
+lernen.</p>
+
+<ul>
+  <li><strong>Gradient Clipping</strong>: Gradienten während Backpropagation einschränken, dass sie Schwellwert nicht überschreiten</li>
+  <li><strong>Gradient Norm</strong>:</li>
+  <li><strong>Residual Learning</strong>: Optimierung durch zusätzliche Verbindungen über Schichten hinweg, stärkere Rückpropagierung des Fehlers in untere Schichten</li>
+</ul>
+
+<p><strong>Early Stopping</strong>: Bei Gefahr des Overfittings Training abbrechen; in Intervallen von n Trainingszyklenn wird geprüft ob der Testfehler p mal aufeinanderfolgend größer wird</p>
+
+<p><strong>Label smoothing</strong>: Miteinberechnen, dass die Labels der Daten nur zu $1 - \epsilon$
+richtig sind.</p>
+
+<p><strong>Auswahl repräsentativer Trainingsbeispiele</strong>:</p>
+<ul>
+  <li><em>Lerndaten</em> → Anpassung der Gewichte</li>
+  <li><em>Testdaten</em> → Testen des Fehlers und Overfitting</li>
+  <li><em>Verifikationsdaten</em> → Feststellen der Generalisierung<br />
+→ Gute Verteilung nötig, aber unbekannt</li>
+</ul>
+
+<p><strong>Einsatz von MLNN</strong>:</p>
+<ol>
+  <li><em>Entwurf:</em> subsymbolische Repräsentation der Ein-/Ausgabe, Trainingsdatenauswahl, Verfahrensauswahl, Topologieauswahl, Parametereinstellung</li>
+  <li><em>Auswahl des Lernverfahrens:</em> Optimierungsmethode, Initliasisierung, Lernansatz</li>
+  <li><em>Lernfortschritt (Gewichtsanpassung):</em> Overfitting testen</li>
+  <li><em>Training &amp; Verifikation (Test)</em></li>
+</ol>
+
+<h3 id="convolutional-neuronale-netze">Convolutional Neuronale Netze</h3>
+<p><strong>Erste künstliche Ansätze</strong>: Architektur von Verarbeitungsschritten, pro Schritt zwei Komponenten, erste reagiert auf Bereich zuvor (Lernen),
+zweite komprimiert den Bereich (Informationskomprimierung)</p>
+
+<p><strong>Faltung</strong>: = Convolution, hier diskrete Faltung, bekannt aus Bildverarbeitung: Kantenfilter, Bildglättung, Bildschärfung;
+Beispiel in Vorlesung: $m×m$ Eingabebild + $n×n$ Filter → $m_{neu}×m_{neu}$ mit $m_{neu} = m - n + 1$</p>
+
+<p><strong>Warum CNNs</strong>: Bild mit m<em>m Pixel: pro Neuron m</em>m Gewichte → ungünstiges Verhältnis Parameter : Lernaufgabe → nicht sinnvoll lern/berechenbar;
+Beispiel Gesichtserkennung: ähnliche Features werden mehrfach gelernt, da jedes Feature für jedes receptive fiesld unabhängig gelernt wird</p>
+
+<p><strong>Unterschied NN / CNN</strong>: Im NN sind die Gewichte von einem Layer zum anderen, im CNN nur eine Kante zwischen Layer</p>
+
+<p><strong>Feature Maps</strong>: Form, in der Daten von Layer zu Layer übertragen werden; jedes Layer enthält als Eingabe r Feature Maps (m×m),
+im Input Layer ist Feature Map ≡ Eingabebild; Featgures Maps zwischen zwei Layern = <em>Tensor</em></p>
+
+<p><strong>Pooling Layer</strong>: Zusammenfassung kleiner Bildbereiche, Größe nach Zweck und Größe des Eingabebildes gewählt, verschiedene
+Strategien:</p>
+<ul>
+  <li>Max Pooling: Maximum wird gewählt</li>
+  <li>Mean Pooling: Mean wird gewählt</li>
+  <li>Stochastic Pooling: stochastische Auswahl abhängig von Aktivierung</li>
+</ul>
+
+<p>→ lokale Translationsinvarianz, Invarianz gegen leichte Veränderung, Verzerrung, Datenreduktion</p>
+
+<p><strong>Convolution Layer</strong>: Anwendung von Faltungsoperationen auf Eingabe, Eingabe: Feature Maps von vorherigen Layer ($m×m$),
+ Ausgabe: Feature Maps des Layers (entstanden durch Faltung der Eingabe $m×m$ mit k Filtern $n×n×q$)
+→ Eingabe: $m×m$ → k Filter $n×n×q$ → Ausgabe $m_{neu}×m_{neu}×k$ mit $m_{neu} = \frac{(m-n)}{s}+1$ mit s = Stride/Schrittgröße
+Stride muss zur Größe der Eingabe passen, bei Pooling Layern meist 1; ConvLayer mit Stride erreicht Reduktion durch ASulassen,
+Max Pooling betrachtet alle Werte bei Reduktion, bei ConvLayer größer 1×1 → Randbetrachtung notwendig: Informationsverlust bei Faltung,
+Beheben:</p>
+<ul>
+  <li><em>don’t care:</em> Berechnung des inneren Bereichs, Reduktion der Ergebnisgröße</li>
+  <li><em>Padding:</em> stabilisiert Größenverlauf der Layer, auffüllen der verlorenen Zeilen/Spalten, Varianten: Zero Padding (
+Auffüllen mit 0), Nearest Padding (Duplizieren der Randpixel), Reflect Padding (Matrix nach außen spiegeln); ohne Padding
+gehen Informationen am Bildrand sukzessive verloren, in jedem ConvLayer ohne Padding, große Filter beschleunigen Problem,
+Pooling mit großen p auch; mit Padding Gefahr, dass Strukturinformationene entstehen die im Eingabebild nicht waren</li>
+</ul>
+
+<p><strong>Activation Layer</strong>: nichtlineare Aktivierung, in CNNs: ReLU, normalerweise nach ConvLayer
+Aktivierungsfunktionen:</p>
+<ul>
+  <li><em>ReLU</em>: $f(x) = max(0,x), \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ 0 &amp; \text{sonst} \end{cases}$</li>
+  <li><em>Leaky ReLU (LReLU)</em>: $f(x) = \begin{cases} x &amp; x &gt; 0 \\ 0.01 x &amp; x \leq 0 \end{cases}, \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ \alpha &amp; \text{sonst} \end{cases}$</li>
+  <li><em>PReLU (Generalisierung von LReLU)</em>: $f(x) = \begin{cases} x &amp; x &gt; 0 \\ \alpha x &amp; x \leq 0 \end{cases}, \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ \alpha &amp; \text{sonst} \end{cases}$</li>
+  <li><em>ELU (Exponential Linear Unit)</em>: $f(x) = \begin{cases} x &amp; x &gt; 0 \\ \alpha(e^x-1) x &amp; x \leq 0 \end{cases}, \frac{\partial f}{\partial x} = \begin{cases} 1 &amp; x &gt; 0 \\ \alpha &amp; \text{sonst} \end{cases}$</li>
+</ul>
+
+<p><strong>Features</strong>: CNN lernt Features für bestimmte Domäne, Feature Detektoren in Filtern der Convolutional Layer, Gewichte werden durch Gradienten
+abstieg gelernt, Features eines Layers basieren auf Ausgaben der Features des vorherigen Layers,</p>
+
+<p><strong>Gewichte</strong>: Gewichte in CNNs werden nur in Filtern gelernt,
+Methoden zur Initialisierung:</p>
+<ul>
+  <li><em>Random Initialization:</em> zufällig</li>
+  <li><em>Fixed Feature Extractor:</em> Übernahme der Gewichte aus trainiertem Netz, fixieren in Feature Extraction Schicht</li>
+  <li><em>Fine-Tuning:</em> Übernahme der Gewichte aus trainiertem Netz, geringe Lernrate für ausgewählte Schihten</li>
+  <li><em>Pretrained Initialization:</em> Übernahme der Gewichte aus trainiertem Netz nut zur Initialisierung, normale Lernrate für ausgewählte Schichten</li>
+</ul>
+
+<blockquote>
+  <p>CNNs werden besser, da Rechenkapazität ständig wächst, immer größere Datensätze verfügbar, bessere CNN Architekturen</p>
+</blockquote>
+
+<p><strong>Fully Connected Layer</strong>: v.a. bei Klassifikation, Anzahl der Neuronen im letzten Layer korrespondiert zu der Anzahl an
+Klassen, die Netz unterscheiden soll</p>
+
+<p><strong>Fully Convolutional Networks (FCN)</strong>: größere Eingabebilder möglich als bei Fully Connected CNNs, Fully Connected Schichten
+in Convolutional Schichten konvertiert</p>
+
+<p><strong>Ausgaben der FCN</strong>:</p>
+<ul>
+  <li>Fully Connected CNN (Klassifikationsnetz): Wahrhscheinlichkeitswert pro Klasse</li>
+  <li>Fully Convolutional Network: Wahrhscheinlichkeitskart pro Klasse (gibt p an und Bereich in dem Bild zur Klasse gehört)</li>
+</ul>
+
+<h3 id="support-vector-machine-svm">Support Vector Machine (SVM)</h3>
+<p><strong>Support Vektor Methode</strong>: Hypertrennebene finden, sodass Mengen A und B geteilt werden (Klassifikation). Ziel ist es die beste
+Trenngerade zu finden, sodass der Rand (Abstand Gerade zu den Elementen der Ebene) maximal wird (Generalisierung)</p>
+
+<p><strong>Trennhyperebene</strong>: Normalenvektor $\vec{w}$ beschreibt Gerade durch Ursprung, senkrecht zu $\vec{w}$ verlaufen Trennhyperebenen, welche die
+Gerade $\vec{w}$ an einer Stelle schneiden, der Abstand der Schnittstelle zu Urpsung ist $b$: $\vec{w}\vec{x} + b = 0$<br />
+<em>Rand</em>: ist Abstand zwischen den nächsten Datenpunkten jeder Klasse $\frac{\vec{w}(x_⁻x_2)}{|\vec{w}|}$<br />
+<em>Normierung:</em> $\vec{w}\vec{x}+b = +1 $ bzw $\vec{w}\vec{x}+b = -1 $ → maximaler Rand (Abstand zwischen zwei Klassen): $\frac{2}{|\vec{w}|}$<br />
+<em>Optimale Hyperebene:</em> Abstand $\frac{1}{|\vec{w}|}$ zum nächsten Punkt und Abstand $\frac{2}{|\vec{w}|}$ zwischen zwei Klassen<br />
+<em>Optimierungsproblem:</em> = Minimierungsproblem von $|\vec{w}|²$ um $\frac{2}{|\vec{w}|}$ zu maximieren unter der Randbedingung, dass die
+Daten auch korrekt klassifiziert werden; Vapnik: Lernmaschine mit kleinsten möglichen VC-Dimension (= gültiger Hypothesenraum), falls
+Klassen linear trennbar<br />
+<em>Primäres Optimierungsproblem:</em> Lagrange Methode, Finde den (eindeutigen) Sattelpunkt $L_p$ der Funktion mit den positiven Lagrange-Multiplikatoren
+$\vec{\alpha}=(\alpha_1, …, \alpha_n)$ mit $\alpha_1, …, \alpha_n \geq 0$, Minimum von L bezüglich $\vec{w}b$, Maximum von L bezüglich
+$\alpha_1, …, \alpha_n$<br />
+<em>Duales Optimierungsproblem:</em> Duale Lagrange Gleichung $W(\alpha)$, duales Optimierungsproblem unter der Randbedingung dass Summe der
+$y_i\alpha_i = 0 $ und $\alpha_i \geq 0$ → Vorteile nurnoch von $\alpha_i$ abhängig und damit einfacher zu lösen</p>
+
+<p><strong>Support Vektoren</strong>: Vektoren, die am nächsten zur Trennhyperebene liegen (wichtige Vektoren für Lernmaschine); die meisten (Sattelpunkt)
+Bedingungen sind erfüllt → $\alpha_i = 0$; $\vec{w}$ ist Linearkombination weniger Support Vektoren</p>
+
+<p><strong>Soft Margin</strong>: “Aufweichen der Ebene” um einen “weichen Rand”, erlaube geringer Zahl von Missklassifikationen, höhere Generalisierung,
+indem Randbedingung um den Wert der Schlupfvariable $\xi \geq 0$ erweitert wird → d.h. Datenpunkt kann auch leicht neben Gerade auf
+“falscher Seite” liegen <br />
+<em>Regulierungsparameter $C$ (Größe des Randes)</em>:</p>
+<ul>
+  <li><em>$C$ groß:</em> wenig Missklassifikationen</li>
+  <li><em>$C$ klein:</em> maximaler Rand<br />
+Folge für Support Vektoren $\vec{x_i}$ mit $\alpha_i &gt; 0$:</li>
+  <li>$\alpha_i &lt; C$: Support Vektor liegt am Rand, Abstand zur Trennhyperebene ist $\frac{1}{|\vec{w}|}$</li>
+  <li>$\alpha_i = C$:
+    <ul>
+      <li>Fehlklassifikation wenn $\xi_i &gt; 1$</li>
+      <li>richtig, wenig Abstand (margin error): $0 &lt; \xi_i \leq 1$</li>
+      <li>Rand Vektor (margin vetctor): $\xi_i = 0$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Nichtlineare Kernel-Methoden</strong>: Transformiere Daten in anderen Raum und löse dort linear (Klassifikation: lineare Trennung); meist
+Transformation in höher dimensionalen Raum, Problem: Transformation oft rechenintensiv:<br />
+<em>Kernel-Trick:</em> wenn Daten als Skalarprodukt, Transformation nicht nötig, implizites Rechnen im höher dimensionalen Raum → Lösung
+im Ursprungsraum; Kernel-Funktion: $K(\vec{x}, \vec{y}) = \phi(\vec{x})\phi(\vec{y})$<br />
+<em>Kernel-Funktionen:</em> Skalarprodukt, Polinomial, Radiale Basis-Funktionen (RBF), Sigmoid</p>
+
+<p><strong>Version Space für SVM</strong>: Randbedingung für korrekte Klassifikation/gültige Trenngeraden; jeder Datenpunkt definiert Hyperebene
+im Hypothesenraum, gültige $\vec{w}$ jeweils in reduziertem Hypothesenraum → Suche nach $\vec{w}$ mit maximalen Abstand zu allen
+Hyperebenen der Datenpunkte → Mittelpunkt der Hyperkugel; bei Suche über Trennhyperebene wird implizit Structural Risk Minimization
+durchgeführt → korrektes Lernen ist Mittelpunkt der verbleibenden Hyperkugel</p>
+
+<p><strong>SVM Architektur</strong>: Ähnlichkeit zu NNs? → lernen Gewichte, Kernel, hidden-Layer; ABER: sonst nichts: Optimierung, mathematischer
+Hintergrund</p>
+
+<p><strong>SVM Erweiterungen</strong>:</p>
+<ul>
+  <li>Einer-gegen-Alle: $k$ SVMs (pro Anzahl k an Klassen), Abstimmungsverfahren</li>
+  <li>Einer-gegen-Einen: $\frac{k(k-1)}{2}$ SVMs, Abstimmungsverfahren</li>
+  <li>Mehrfachzugehörigkeit: $k$ SVMs (pro Anzahl k an Klassen), Abstimmungsverfahren</li>
+  <li>k-class SVM (Watkins): gemeinsames Optimierungsverfahren, kein Abstimmungsverfahren (→ schlecht, schlechte Performance)</li>
+</ul>
+
+<p><strong>Probabilistische Sicht auf SVMs</strong>: Interpretation des Abstandes der Trennhyperebene als Klassifikationswahrscheinlichkeit, Alternative:
+Maximierung der Klassifikationswahrscheinlichkeit des Randes</p>
+
+<p><strong>Dichte-Träger-Schätzung</strong>: Funktion f, die für “kleine Region” (enthält die meisten Lernbeispiele), Wert &gt; 0, sonst Wert $\leq$ 0
+(Ähnlichj zum Clustering im unüberwachten Lernen), Abstand $\vec{w}$ zum Ursprung soll maximal sein, Trennung der Lernbeispiele vom
+Ursprung im transformierten Merkmalsraum</p>
+
+<p><strong>Kernel Perceptron</strong>: einfacher Algorithmus, als Kernel Methode realisierbar, lineare Trennung im transformierten Raum für zu
+komplexer Trennung im Ursprungsraum</p>
+
+<p><strong>Pro SVM</strong>:</p>
+<ul>
+  <li>Optimale Hyperebene → gute Lernergebnisse</li>
+  <li>optimale VC-Dimension → korrektes Lernen</li>
+  <li>hochdimensionale Daten → schnelle Auswertung</li>
+  <li>Entscheidung anhand Randregion getroffen</li>
+</ul>
+
+<p><strong>Kontra SVM</strong>:</p>
+<ul>
+  <li>Vorverarbeitung extern nötig (kein “tiefes” Lernen)</li>
+  <li>speicher- und rechenaufwändig</li>
+  <li>Anzahl Support Vektoren abhängig von Problem und Parameter</li>
+</ul>
+
+<h3 id="reinforcement-learning">Reinforcement Learning</h3>
+<p><strong>Gesetz der Auswirkung</strong>: verschiedene Reaktionen, stärker mit Situation verknüpft → befriedigter Zustand oder
+unangenehmer Zustand → gegebene Situation geschwächt</p>
+
+<p><strong>Reinforcement Learning (RL)</strong>: Lernziel: finde Aktionssequenz $a_1,…,a_n$ sodass maximale Bewertung erreicht wird</p>
+
+<p><strong>Markov decision process (MDP)</strong>: <a href="https://de.wikipedia.org/wiki/Markow-Entscheidungsproblem">Wikipedia</a>: “Nutzen eines Agenten
+von einer Folge von Entscheidungen abhängig, bei Zustandsübergängen gilt: Wahrscheinlichkeit einen Zustand s’ von Zustand
+ s aus zu erreichen, ist nur von s abhängig und nicht von Vorgängern von s.”, Markov Bedingung: Keine Abhängigkeit von Vergangenheit</p>
+<ul>
+  <li><em>Autonomer Agent &amp; Umwelt:</em> zustandsgetriebener Prozess, Sensorik $s_t \in S$ (Erfassung von Zuständen), Atorik $a_t \in A$
+ (Einwirkung auf Umwelt durch Aktionen), Zustandsänderung: $\delta: (SxA) → S, \delta (s_t, a_t) = s_{t+1}$</li>
+  <li><em>Bewertung von Aktionen</em>: direkt oder indirekt bekannt/messbar: $r:(SxA) → R, r(s_t, a_t) = r_t</li>
+</ul>
+
+<p><strong>Strategielernen (Policy learning)</strong>: finde (optimale) Zielfunktion, so dass akkumulierte Bewertung (zum Ziel) maximiert wird</p>
+<ul>
+  <li><em>Zielfunktion:</em> $\pi: S → A , \pi(s_t) = a$</li>
+  <li><em>State Value Funktion (akkumulierte Bewertung):</em> $V^{\pi} (s_t) = \sum_{i=0}^{\infty} \gamma^i r_{t+1} $</li>
+</ul>
+
+<p>Gewichtung der Bewertungen (Diskontierungsfaktor): $ 0 ≤ \gamma ≤ 1$</p>
+<ul>
+  <li>0: aktuelle Aktionsbewertung ist wichtig (1-step)
+-&gt;0: zukünftige (letzte) Bewertungen werden berücksichtigt (n-step)</li>
+  <li>&lt;1: notwendig um konvergente V-Funktion zu erhalten</li>
+</ul>
+
+<p><strong>Simple Temporal Difference Learning</strong>: <a href="https://de.wikipedia.org/wiki/Temporal_Difference_Learning">Wikipedia</a>: 
+“Anpassung nicht erst bei Erhalt der Belohnung, sondern nach jeder Aktion auf Basis einer geschätzten erwarteten Belohnung.”, <br />
+<em>Algorithmus</em>: Initialisiere geschätzte erwartete Belohnung zufällig, wiederhole (do forever): wähle Zustand $s_t$ ermittle beste Aktion und 
+Folgezustand und ersetze erwartete Belohnung; Problem: langsames Lernen (do forever) <br />
+<em>verbesserter Algorithmus:</em> Wiederhole bis Endzustand erreicht ist<br />
+<em>Problem:</em> Bewertungen und Zustandsänderung müssen bekannt sein → nicht realistisch für echte Anwendungen</p>
+
+<p><strong>Problemdimensionen bei RL</strong>:</p>
+<ul>
+  <li><em>Zielfunktion:</em> Vorhersage ⇔ Aktionswahl</li>
+  <li><em>Bewertung:</em> direkt ⇔ verzögert</li>
+  <li><em>Zustandsübergänge:</em> deterministisch ⇔ stochastisch</li>
+  <li><em>Modell des Systems:</em> vorhanden ⇔ nicht vorhanden</li>
+  <li><em>Zustands- und Aktionsraum:</em> eindimensional ⇔ hochdimensional, diskret, ⇔ kontinuierlich</li>
+</ul>
+
+<p><strong>Q-Funktion</strong>: deterministischer MDP, $Q(s,a)$ maximale Bewertung, die erreicht werden kann für Zustand $s$ und Aktion $a$: <br />
+$Q(s,a) = r(s,a) + \gamma V*(\delta(s,a))$ (<em>Bellmann</em>), $V<em>(s) = max_{a’} Q(s,a’) $; wähle beste Aktion anhand einer Strategie 
+→ in Anwendung wenig Wissen über Zustandsübergänge nötig <br />
+*Algorithmus:</em> Ziel finde Schätzung $\hat{Q}(s,a)$ der absoluten Funktion $Q(s,a)$; alle $\hat{Q}(s,a) = 0$, wähle Zustand s
+und führe AKtion a aus → Bewerte r, neuer Zustand s’, update $\hat{Q}$ mit s = s’; nach n Iterationen:$ 0 ≤ $\hat{Q}_n(s,a)$ ≤ $Q(s,a)$</p>
+
+<p><strong>Suchstrategien</strong>: Welche Aktion soll gewählt werden? → maximales $\hat{Q}(s,a)$? → “lokales” Lernen nur bestimmter Aktionen, 
+Aktionen, die nicht gewählt werden, könnten besser sein → Probabilistische Auswahl nach Faktor k:</p>
+<ul>
+  <li><em>k klein</em>: Exploration, globales Lernen, neue Aktionen untersuchen</li>
+  <li><em>k groß</em>: Exploitation, lokales Lernen, bekannte Aktionen untersuchen</li>
+</ul>
+
+<p>→ beste Lösung: Änderung von global zu lokal während des Lernprozesses</p>
+
+<p><em>Optimierungen</em>: in jeder Lernepisode $\hat{Q}$ vom Zustand s zum Ziel anpassen, Speichern von Bewertungen r für jedes $(s,a)$
+→ schnelle Konvergenz, Speicheraufwand steigt; Anwendung wenn Aktionen hohen zeitaufwand haben (z.B. Robotik)</p>
+
+<p><strong>Lernen von Aktionssequenzen</strong>: Bewertung erst nach Sequenz von Aktionen bekannt bzw. machmal auch erst am Ziel</p>
+<ul>
+  <li><em>Temporal Difference Learning:</em> Differenz folgender Schätzungen als Lernsignal</li>
+  <li><em>Vorwärts – Sicht (theoretisch):</em> gewichtete Anpassung an direkt nachfolgender Schätzunh (1-step) oder an n Schritte nachfolgender
+Schätzung (n-step)</li>
+  <li><em>Rückwärtige Sicht des TD-Lernen (praktisch):</em> Fehlersignale (temporal differences) in den Schätzungen nach hinten weitergegeben</li>
+  <li><em>Eligibility Traces (Verantwortlichkeitsspur):</em> Zustände fpr Zustandsbewertung → V-Lernen, Zustand/Aktion für Q-Wert Bewertung → 
+Q-Lernen</li>
+</ul>
+
+<h3 id="entscheidungsbäume">Entscheidungsbäume</h3>
+<p><strong>Ziel:</strong> Partitionierung des Raums so, dass Daten in einer Region die gleiche Klasse haben.</p>
+
+<p>(hier Abb. dt-ziel.png)</p>
+
+<p><strong>Repräsentation</strong>:</p>
+<ul>
+  <li><em>Knoten:</em> Attributtest</li>
+  <li><em>Zweig:</em> Attributwert</li>
+  <li><em>Blatt:</em> Aussage (Klassifikation)</li>
+</ul>
+
+<p><strong>Anwendung</strong>: Instanzen lassen sich Attribut-Wert-Paar beschreiben, Zielfunktion besitzen diskrete Ausgabewerte, 
+Disjunkte Hypothesen erforderlich, Beispieldaten möglicherweise vertauscht, Beispieldaten enhalten fehlende Attribute</p>
+
+<p><strong>Verfahren</strong>:</p>
+<ul>
+  <li><em>ID3:</em> nicht-inkrementelles Verfahren</li>
+  <li><em>C4.5:</em> Verbesserung von ID3 durch generalisierte Regeln (Pruning), kommerzielles System</li>
+  <li><em>ID5R:</em> inkrementelles Verfahren</li>
+</ul>
+
+<p><strong>Entropie</strong>: ist ein Maß der Homogenität der Trainingsdaten. Die Entropie gibt an, wie “überraschend” ein Ergebnis ist.
+Mit der Menge der Trainingsbeipiele S, Anteil der positiven
+Beispiele $p_+$ in S und Anteil der negativen Beispiele $p_-$ in S: $Entropie(S) = -p_+ log_2 p_+ - p_- log_2 p_-$</p>
+
+<p>(Abb entropie.png)</p>
+
+<p><em>Ziel</em>: ist es, die Daten durch einen Attributwert v möglichst die Klassen + und - zuzuteilen und dabei schrittweise die Entropie
+maximal zu reduzieren.</p>
+
+<p><strong>Gewinn</strong>: ist die erwartete Reduzierung der Entropie durch Einsortierung über dem Attribut A mit der Menge aller
+möglichen Attributwerte V(A) von A und der Untermenge $S_v$ von S, für die A den Wert v annimmt.
+$Gewinn(S,A) = Entropie(S) - \sum_{v n V(A)} \frac{|S_v|}{|S|} Entropie(S_v)$</p>
+
+<p><em>Ziel</em> der maximierung des Gewinns ist es, einen Entscheidungsbaum mit niedriger Tiefe zu erreichen.</p>
+
+<p><strong>ID3</strong>: ID3 (Iterative Dichotomiser 3) ist ein Algorithmus, der zur Entscheidungsfindung dient. Er wird bei Entscheidungsbäumen eingesetzt. 
+<em>Algorithmus:</em> (abb id3-aufbau.png)
+<em>Auswahl des besten Entscheidungsattribute (Schritt 1)</em>: Durch Vergleich der Teilbäume. Dazu schreibt man unter den Knoten 
+ein Label mit dem Anzahl der Positiven Beispiele (+) und Anzahl der negativen Beispiele (-).</p>
+
+<p><em>Beispiel “Tennis Spielen”:</em> (abb bsp-tennis1.png und bsp-tennis2.png)</p>
+
+<p><em>Suche im Hypothesenraum</em>: Typischerweise gibt es viele Entscheidungsbäume für die Trainingsbeispiele. Bei Entscheidungsbäumen
+ist der Hypothesenraum <em>vollständig</em>, d.h. dass die Zielfunktion im Entscheidungsbaum enthalten sein muss. Diese Hypothese wird
+ “Simple-to-Complex” (Schrittweises erstellen ausgehend vom leeren Baum, “Hill-Climbing” gennannt) erstellt. Dabei sind allerdings
+ lokale Minima möglich.</p>
+
+<p><em>Induktiver Bias</em>: Die Präferenz bei Entscheidungsbäumen liegt in kleinen Bäumen und Bäume, deren Attribute nahe an der Wurzel einen
+hohen Informationsgewinn besitzen. der ID3-Bias ist eine Präferenz für bestimmte Hypothesen (Präferenzbias) aber keine Eintschränkung
+des Hypothesenraums (Restriktionsbias) → nach Occam’s Razor wird die einfachste Hypothese gewählt, die mit den Trainingsdaten 
+übereinstimmt. Einfache (in diesem Fall “kurze”, da kleine Bäume) Hypothesen gibt es seltener als lange. Da ein kleiner Baum (=
+kurze Hypothese), der die Daten korrekt beschreibt mit großer Wahrscheinlichkeit auch richtig ist. Eine lange Hypothese könnte hingegen
+reiner Zufall sein. Außerdem sind kurze Bäume effiziente (in Repäsentation und Auswertung).</p>
+
+<p><em>Overfitting</em>: Beim ID3-Verfahren wächst jeder Zweig so lange, bis die Trainingsbeispiele perfekt klassifiziert werden (basierend
+auf statistisch-approximierten Informationsgewinn: Entropie, Gewinn). Dabei kann es zu Problemen kommen, wenn die Daten verrauscht
+sind oder die Beispiele nicht repräsentativ sind (z.B. zu wenig Trainingsdaten). Die daraus entstehenden Hypothese enthält dann
+einen <em>Fehler</em>. Ein Fehler auf den Trainingsdaten heißt $Fehler_T(h)$, ein Fehler auf den gesamten Daten heißt $Fehler_D(h)$. <br />
+Eine Hypothese h <em>overfittet</em> die Daten d, wenn es eine alternative Hypothese h’ gibt, so dass <br />
+1) $Fehler_T(h) &lt; Fehler_T(h’)   <br />
+2) $Fehler_D(h) &gt; Fehler_D(h’)   <br />
+→ Das Modell lernt als auswendig.</p>
+
+<p>(Abbildung id3-overfitting.png)</p>
+
+<p>Um Overfitting zu vermeiden, kann man das Baumwachstum frühzeitig stoppen oder den Baum nachträglich <em>Prunen</em> (besser in Praxis). Um die 
+optimale Baumgröße zu bestimmen kann man auf separaten Testdaten, die Richtigkeit des Baumen überprüfen oder statistische Test (wie
+z.b. $\chi²$) auf den Trainingsdaten ausführen.</p>
+
+<p><em>Reduced Error Pruning:</em> Eine Möglichkeit zur Vermeidung von Overfitting ist das “Zuschneiden” eines Entscheidungsbaums. 
+Dadurch bekommt man die kleinste Variante des akkuratesten Unterbaumes. Allerdings erhöht bei wenigen Daten, das Aufteilen der Daten
+die Fehleranfälligkeit.
+Vorgehen: (img. rep1.png)
+(img rep2.png)</p>
+
+<p><em>GewinnAnteil:</em> Attribute mit vielen Werten werden durch Gewinn gegenüber solchen mit wenigen Werten bevorzugt (
+z.B. Datum). Aus diesem Grund werden nun Attributen “bestraft”, wenn sie viele Werte besitzen. Danei ist die Menge aller möglichen Attributwerte
+V(A) von A und die Untermenge $S_v$ von S, für die A den Wert v annimmt:
+$GewinnAnteil(S,A) = \frac{Gewinn(S,A)}{SplittInformation(S,A)}$ mit $Splitinformation (S,A) = -\sum_{v \in V(A)} \frac{|S_v|}{|S|} log_2
+\frac{|S_v|}{|S|}$</p>
+
+<p><em>Kontinuierliche Attributwerte</em>: Besitzt ein Attribut A kontinuierliche Werte, definieren wir dynamisch ein neues diskre-wertiges
+Attribut $A_c$, dass “wahr” ist, wenn A &gt; c. Der Schwellwert c wird über den Informationsgewinn definiert. Nach Sortierung
+der Beispiele nach ihren Werten, liegt der optimale Schwellwert in der Mitte zwischen zwei benachbarten Beispielen mit unterschiedlicher
+Klassenzugehörigkeit. 
+(img id3-bsp-kont.png)</p>
+
+<p><em>Unbekannte Attributwerte</em>: Fehlen Attributwerte, so werden die Beispiele wie gewohnt in den Entscheidungsbaum einsortiert und fehlende
+Attribute bekommen entweder den häufigsten Attributwert der Beispiele oder der Beispiele. Bei der Klassifikation wird genauso verfahren.</p>
+
+<p><em>Attribute mit Kosten:</em> Die Bestimmung der Attributwerde ist mit unterschiedlichen Kosten verbunden. Deshalb ist es das Ziel, einen 
+Entscheidungsbaum zu finden, der niedrige erwartete Kosten hat:
+$\frac{Gewinn(S,A)²}{Kosten(A)}</p>
+
+<p><em>Window</em>: ist eine Lernmethode für große Datenmengen. Dabei wird eine zufällige Untermenge der Trainingsdaten ausgewählt (=Window) und 
+daraus der Entscheidungsbaum gebildet. Alle übrigen Beispiele werden mit dem erstellten Entscheidungsbaum klassifiziert. Falls
+nicht alle Daten korrekt klassifiziert werden, wird ein Teil der falsch klassifizierten Daten (zufällige Auswahl) dem Window hinzugefügt 
+und ein neuer Entscheidungsbaum erstellt.</p>
+
+<p><em>Einordnung</em>: (img einordnung-id3.png)</p>
+
+<p><strong>C4.5</strong>: ist eine Weiterentwicklung des ursprünglichen ID3-Algorithmus. Es unterstützt kontinuierliche Attribut-Werte und kann mit
+fehlenden Attributwerten umgehen. Zudem verwendet es <em>Rule Post-Pruning</em>.</p>
+
+<p><em>Rule-Post-Pruning:</em> (rpp-verfahren.png und rpp-beispiel.png)</p>
+
+<p><em>Einordnung</em>: (img einordnung-c45.png)</p>
+
+<p><strong>ID5R</strong>: ist ein inkrementelles Verfahren, d.h können neue Beispiele schrittweise eingebracht werden. Das Ergebnis ist
+äquivalent zu einem durch ID3 erstellten Entscheidungsbaum.</p>
+
+<p><em>Repräsentation:</em> Zur Berechnung des Informationsgewinns auf jeder Ebene ohne die bisherigen Beispiele erneut zu betrachten, 
+werden die Knoten aufgeteilt:</p>
+<ul>
+  <li>Antwortknoten(Blätter): sind Klassenbezeichner und Beschreibungen der Instanzen, die zu der Klasse gehören</li>
+  <li>Entscheidungsknoten: sind Attributtest mit Zweigen für jeden Attributwert. Pro Attributwert gibt es einen
+Zähle für positive und negative Beispiel. Ein zusätzlicher Zähler zählt zudem die noch ausstehenden Attributtests.
+(img id5r-rep-bsp.png)</li>
+</ul>
+
+<p><em>Update des Baumes beim Hinzufügen von Beispielen</em>: Da ID5R ein inkrementeller Verfahren ist, können zur Laufzeit neue
+Beispiele hinzugefügt werden. Um damit umuzgehen muss der Baum updatebar sein. 
+(img update-id5r-1.png und update-id5r-2.png)</p>
+
+<p><em>Restrukturierung:</em> Wenn nach einem Update, das Attribut an der Wurzel nichtmehr den größten Informationsgewinn hat, muss umstrukturiert
+werden, damit das Attribut mit dem größten Informationsgewinn an der Wurzel steht.
+(img restruk-id5r.png)</p>
+
+<p><em>Einordnung:</em> (img einordnung-id5r.png)</p>
+
+<p><strong>Random Forests</strong>: ist ein Klassifikationsverfahren, das aus mehreren unkorrelierten Entscheidungsbäumen besteht. 
+Alle Entscheidungsbäume sind unter einer bestimmten Art von Randomisierung während des Lernprozesses gewachsen. 
+Für eine Klassifikation darf jeder Baum in diesem Wald eine Entscheidung treffen und die Klasse mit den meisten 
+Stimmen entscheidet die endgültige Klassifikation. <a href="https://de.wikipedia.org/wiki/Random_Forest">Wikipedia</a>
+Random Forests lässt sich <em>schnell trainieren</em>, da die einzelnen Entscheidungsbäume kleiner sind und
+die Trainingszeit linear mit der Anzahl der Bäume steigt. Außerdem ist es <em>parallelisierbar</em> und <em>effizient</em>
+für große Datenmengen.</p>
+
+<p><em>Vergleich zu Standard Entscheidungsbäumen</em>: Das Pruning der Bäume ist nicht notwendig. Overfitting ist erlaubt. Die
+Attributwahl findet auf einer zufälligen Untermenge aller Attribute statt (daher die Randomisierung).</p>
+
+<p><em>Eigenschaften der Bäume</em>: Jeder Baum sollte ein <em>guter Klassifikator</em> sein und die Bäume untereinander möglichst <em>unkorreliert</em>.</p>
+
+<p><em>Randomisierungsmöglichkeiten</em>: sind entweder <em>Bootstraping</em> (Aus N Trainingsdaten werden N Trainingsbeispiele mit zurücklegen
+gezogen. Baum hat so ca ~63% der Größe verglichen mit allen Trainingsdaten.) oder die Auswahl des Attributtests aus einer Teilmenge der
+vorhandenen Attributtests.</p>
+
+<h3 id="hidden-markov-modelle">Hidden Markov Modelle</h3>
+<p>Die <em>Prozesse</em> der realen Welt sind oft nichtdeterministisch aber stochastisch beschreibbar (z.B. durch Markovsche Entscheidungsprozesse).
+Die <em>Signale</em> der realen Welt sind meist verrauscht und besitzen nichtdeterministische Eigenschaften. Mit stochastischen Prozess-
+und Signalmodellen kann man diese Signale erkennen und theoretisch durch signalverarbeitende Systeme beschreiben oder simulieren. In der 
+Praxis sind die Ergebnisse außerordentlich gut.</p>
+
+<p><strong>Diskreter Markov Prozess</strong>: Markow Prozesse eignen sich sehr gut, um zufällige Zustandsänderungen eines Systems zu modellieren, 
+falls man Grund zu der Annahme hat, dass die Zustandsänderungen nur über einen begrenzten Zeitraum hinweg Einfluss aufeinander 
+haben oder sogar gedächtnislos sind. N diskrete Zustände $S = {S_1,S_2,..,S_N}$, die Zeitpunkte der Zustandsübergänge t = 1,2,…,T
+und der aktuelle Zustand $q_t$ zur Zeit t bilden einen <em>diskreten Markov Prozess</em>. <br />
+Als Parameter sind die <em>Anfangszustandswahrescheinlichkeiten</em> $\pi_i = P(q_1 = S_i)$ und die <em>Übergangswahrscheinlichkeiten</em>
+$a_{ij} = P(q_t = s_j | q_{t-1} = S_i) = P(S_j | S_i)$ gegeben. <br />
+<em>Markov-Bedingung:</em> Die Übergangswahrscheinlicheiten geben an, wie sich ein Zustand in <em>einem</em> Zeitschritt entwickelt</p>
+<ul>
+  <li>Beschränkter Horizont: Die Wahrscheinlichkeit einen Zustand zu erreichen ist nur von seinem <em>direkten</em> Vorgängerzustand abhängig
+$P(q_{t+1} = S_j | q_t = S_i)$</li>
+  <li>Zeitinvarianz: Die Wahrscheinlichkeit eines Zustandsübergangs ist unabhängig von der Zeit.</li>
+</ul>
+
+<p>(img diskr-mark-pr.png)</p>
+
+<p><em>Beispiel: Wetter</em>: Jeden Mittag wird das Wetter beobachtet. Möchliche Wetterlagen sind  S1 = Regen (Schnee), S2 = bewölkt und S3 = sonnig.
+Daraus ergeben sich die möglichen Zustände $S = {S_1,S_2,S_3}$ als Übergangswahrscheinlichkeiten sind ist die Übergangsmatrix A 
+gegeben, woraus sich dieser Graph entwickeln lässt. (img matrix-a.png und graph-wetter.png) <br />
+Wie wahrscheinlich ist es also, dass das Wetter in den nächsten 7 Tagen genau {sonnig, sonnig, Regen, Regen, sonnig, bewölkt, sonnig} ist?</p>
+
+<p>(img wetter-beobachtung.png)</p>
+
+<p><strong>Hidden Markov Modelle (HMM)</strong>: Bisher waren die Ereignisse (Zustände) direkt beobachtbar, das ist bei Hidden Markov
+Modellen nichtmehr der Fall. Die Zustände können nur indirekt beobachtet werden, durch eine stochastische Funktion des Zustands
+(z.B. Mitbewohner der bei Regen oft einen Regenschirm mitnimmt). Hidden Markov Modelle beschreiben einen <em>doppelt
+stochastische Prozess</em>. Das heißt, dass der zugrunde liegende stochastische Prozessnur indirekt durch eine andere
+Menge an stochastischen Prozessen beobachtet werden kann und diese eine Beobachtungssequenz produziert. <br />
+HMM ist ein Fünf-Tupel $ \lambda = {S,V,A,V,\Pi}$ bestehend aus:</p>
+<ul>
+  <li>S: Menge der Zustände $ S= {S_1,S_2,…,S_N}</li>
+  <li>V: Menge der Ausgaben/Beobachtungen $V={V_1,V_2,…,V_M}</li>
+  <li>A: Matrix der Übergangswahrscheinlichkeiten $A = (a_{ij}), A \in [0,1]^{NxN}$</li>
+  <li>B: Matrix der Emissions/Beobachtungswahrscheinlichkeiten $B = (b_{ik}), B \in [0,1]^{NxM}$</li>
+  <li>$\Pi$: Verteilung des Anfangszustands $\Pi = {\pi_i | \pi_i = P(q_1| S_i)}$ mit $q_1$ als Startzustand</li>
+</ul>
+
+<p>Dabei ist die Wahrscheinlichkeit für einen Zustand $p(q_{t+1} = S_j) = \sum_{S_i \in S} a_{ij} \cdot p(q_t = S_i)$ und die
+Wahrscheinlichkeit für eine Beobachtung $p(o_{t+1} = V_j) = \sum_{S_i \in S} b_{ik} \cdot p(q_t = S_i)$. Dabei bezeichnet
+$q_t$ den Zustand und $o_t$ die Ausgabe zum Zeitpunkt t.</p>
+
+<p><em>Beispiel: Regenschirm</em>: Anstatt das Wetter direkt zu beobachten, wird nun der Mitbewohner beobachtet, 
+der einen Regenschirm mitnimmt. Regnet es draußen? <br />
+Dafür ist die Zustandsmenge $S = { S_1 = Regen, S_2 = Sonne } $, die Ausgabemenge $V= { V_1 = Regenschirm, V_2 = kein Regenschirm } $</p>
+
+<p>(img Matritzen-regenschirm-bsp.png und graph-regenschirm-bsp.png)</p>
+
+<p><em>Beispiel: Münzwurf</em>: Jemand wirft eine Münze, dabei ist die Anzahl der gezinkten Münzen unbekannt. Bekannt ist nur
+das Ergebnis des Wurfs H = Kopf bzw. T = Zahl.</p>
+
+<p>(img muenzwurf-bsp.png)</p>
+
+<p><em>Beispiel: Urnen ziehen</em>: Es gibt N unterschiedliche Urnen mit unterschiedlicher Anzahl an Bällen in M Farben. 
+Beim stochastischen ziehen aus einer Urne mit zurücklegen, wird die Sequenz der Farbe der gezogenen Bällen beobachtet.</p>
+
+<p>(img urnen-bsp.png)</p>
+
+<p><strong>Probleme im Zusammenhang mit HMMs</strong></p>
+
+<p><strong>Problem 1: Evaluationsproblem:</strong> (img hmm-prob-1.png)</p>
+
+<p>Das Evaluationsproblem beschreibt wie gut ein gegebenes Modell $ \lambda = {S,V,A,V,\Pi}$
+eine Beobachtungssequenz erklärt. Gesucht wird die Wahrscheinlichkeit P(0| \lambda) für die Ausgabe $O = o_1 o_2 … o_t$. 
+Da nicht bekannt sit, was die verdeckte Zustandsfolge ist, müssen alle möglichen Zustandsfolgen betrachtet werden. 
+<em>Algorithmus</em>: Der Vorwärts- bzw. Rückwärtsalgorithmus berechnet die Teilresultate (in Tabellen) und errechnet daraus eine
+Lösung, ohne nochmals alle Berechnungen zu starten und ist damit schneller, als der Naive Ansatz.</p>
+
+<p><em>Vorwärtsalgorithmus:</em> (img vorwaerts-alg.png)</p>
+
+<p><em>Beispiel:</em> Wie hoch ist die Wahrscheinlichkeit, dass ein Mitbewohner in den letzten drei Tagen
+den Regenschirm mitgenommen hat? Die Zustände  $S = {S_1 = Regen, S_2 = Sonne}$, die Beobachtungen $V={V_1 = Regenschirm, V_2 = kein Regenschirm}
+sowie das Modell sind gegeben:</p>
+
+<p>(img vorwaerts-modell.png)</p>
+
+<p><em>Rückwärtsalgorithmus:</em> (img rückwärts-alg.png)</p>
+
+<p><strong>Problem 2: Dekodierungsproblem:</strong> (img hmm-prob-2.png)</p>
+
+<p>Beim Dekodierungsproblem ist die Ausgabesequez O und das Modell $ \lambda = {S,V,A,V,\Pi}$
+gegeben und die wahrscheinlichste Zustandsfolge Q (optimale Zustandsfolge) wird gesucht, die O erklärt. Dabei
+werden die Zustände $q_t$ unter Verwendung des Vorwärts- und Rückwärtsalgorithmus so gewählt, dass die Zustände 
+unabhängig voneinander am Wahrscheinlichsten sind.<br />
+<em>Optimalitätskriterium:</em> Bei nicht völlständig vernetzen HMMs ergibt die Maximierung der wahrscheinlichen Zustände unter Umständen
+keinen gültigen Pfad (z.B. wenn der beste Zustand $S_1$ ist, aber der anschließend folgende Zustandsübergang 0 ist). Daher
+ist es besser die <em>insgesamt beste Zustandsfolge</em> zu finden.</p>
+
+<p><em>Viterbi-Algorithmus</em>: Der Viterbi-Algorithmus findet diesen Pfad, mit der insgesamt besten Zustandsfolge, durch rekursive
+Maximierung entlang möglicher Zustandsfolgen (Pfade).</p>
+
+<p>(img viterbi-alg1.png und viterbi-alg2.png)</p>
+
+<p><strong>Problem 3: Lern- und Optimierungsproblem:</strong>  (img hmm-prob-3.png)
+Das Lern- und Optimierungsproblem ist das schwierigste der drei Probleme und es ist kein analytischer Lösungsweg bekannt.
+Gegeben einer Ausgabesequenz O und ein Suchraum (Hypothesenraum) für Modelle, 
+ist die Anpassung der Parameter des Modells $ \lambda = {S,V,A,V,\Pi}$ gesucht, sodass O besser erklärt wird. Es gibt
+ keinen optimalen Weg, um die Modellparameter zu schätzen. Das Modell $\lambda$ soll also weiter optimiert/trainiert werden. 
+ Als Beispiel soll nun vorausgesagt werden können, wie die Wetterlage ist, abhängig von der Beobachtung “Regenschirm” bzw. 
+ “kein Regenschirm” (sehr vereinfachtes Beispiel!).</p>
+
+<p><em>Baum-Welch-Algorithmus:</em> ist Spezialfall des Expectation-Maximization-Algorithmus (EM) und ein iterativer Ansatz zur 
+ lokalen Maximierung von P(O|$\lambda$). Für eine Trainingssequen $O_{training}$ und einen Hypothesenraum für Modelle 
+ $ \lambda = {S,V,A,V,\Pi}$ wird ein Modell gesucht, das die Daten am besten erklärt. Dabei wird der Hypothesenraum
+ so gewählt, dass die Anzahl der Zustände vorgegeben wird und lediglich die stochastischen Modellparameter angepasst werden.</p>
+
+<p>(img baum-welch.png)</p>
+
+<p>Es gilt P(O|$\lambda$) ≥ P(O|={$\lambda$}). Damit vebessert sich das Modell auf der Menge der Trainingsdaten und
+ realisiert den EM Ansatz. Das Training wird abgebrochen, wenn nur noch eine minimale Verbesserung eintritt, dennoch
+ kann kein globales Maximum garantiert werden.</p>
+
+<p><strong>Arten von Hidden Markov Modellen</strong>:</p>
+<ul>
+  <li><em>Ergodisches Modell:</em> Jeder Zustand kann von jedem anderen Zustand aus in einer endlichen Anzahl von Schritten erreicht werden.</li>
+</ul>
+
+<p>(img ergod-modell.png)</p>
+
+<ul>
+  <li><em>Links-nach-rechs-Modell (Bakis-Modell:</em> Der Zustandsindex wird mit der zeit größer oder bleibt gleich. Dieses Modell ist auch
+ mit parallelen Pfaden möglich.</li>
+</ul>
+
+<p>(img bakis.png)</p>
+
+<p><strong>Einordnung</strong>: (img einordnung-hmm.png)</p>
+
+<p><strong>Anwendungen</strong>: HMMs finden Anwendung in der Spracherkennung, der Gestenerkennung (z.B Robotik), im Autonomen Fahren (Ampelzustandsschätzung)
+ und in der Bioinformatik (Genomanalyse). Kurz gesagt, überall dort wo man zugrunde liegende stochastische Prozesse
+ nur indirekt beobachten kann.</p>
+
+<h3 id="lernen-nach-bayes">Lernen nach Bayes</h3>
+<p><strong>Lernen nach Bayes</strong> ist ein <em>statistisches Lernverfahren</em> welches <em>vorhandenes Wissen</em>
+(a priori Wahrscheinlichkeiten) mit <em>beobachteten Daten</em> kombiniert. Hypothesen können mit
+einer Wahrscheinlichkeit angegeben werden. Jedes Beispiel kann die Glaubwürdigkeit einer 
+bestehenden Hypothese erhöhren oder verringern, allerding können Hypothesen dadruch nicht
+ausgeschlossen werden. Um genauere Ergebnisse zu erzielen, können mehrere Hypothesen
+gleichzeitig ausgewertet werden.</p>
+
+<p>Für dieses Verfahren ist allerding initiales Wissen über viele Wahrscheinlichkeiten/Verteilungen
+notwendig, dessen Schätzung oft auf Hintergrundwissen oder vorhandenen Daten basiert. 
+Zudem ist ein enormer Rechenaufwand notwendig.</p>
+
+<p><strong>Wahrscheinlichkeitstheorie</strong> für Berechnungen:</p>
+<ul>
+  <li><em>Produktregel:</em> Konjunktion zweiter Ereignisse A und B: P(A ⋀ B) = P(A|B) P(B) = P(B|A) P(A)</li>
+  <li><em>Summenregel:</em> Disjunktion zweier Ereignisse A und B: P(A ⋁ B) = P(A) + P(B) - P(A ⋀ B)</li>
+  <li><em>Theorem der totalen Wahrscheinlichkeit:</em> Für sich gegenseitig ausschließende Ereignisse
+deren Gesamtwahrscheinlichkeit 1 ist gilt: $P(B) = \sum_{i=1}^{n} P(B|A_i) P(A_i)$</li>
+  <li><em>Satz von Bayes:</em> $P(B|A) = \frac{P(A|B) P(B)}{P(A)}$</li>
+</ul>
+
+<p><strong>Theorem von Bayes</strong>:</p>
+<ul>
+  <li><em>P(h)</em> ist die Wahrscheinlichkeit, dass die Hypothese h aus dem Hypothesenraum H gültig ist 
+(a priori, d.h. vor der Beobachtung von D)</li>
+  <li><em>P(D)</em> ist die Wahrscheinlichkeit, dass D als Ereignisdatensatz auftritt ohne zu Wissen, ob
+die Hypothese gültig ist.</li>
+  <li><em>P(D|h)</em> ist die Wahrscheinlichkeit des Auftretens von D in einem Raum, in dem die 
+Hypothese h gilt.</li>
+  <li><em>P(h|D)</em> ist die Wahrscheinlichkeit, dass h gilt gegeben die beobachteten Daten D (a
+posteriori)</li>
+</ul>
+
+<p>(img bayes-theorem.png)</p>
+
+<p><strong>MAP-/ML-Hypothesen</strong> <br />
+Bei der <strong>Auswahl von Hypothesen</strong> ist es das Ziel, die Hypothese h aus dem Hypothesenraum H
+zu finden, die die größte Wahrscheinlichkeit gegeben der beobachteten Daten D liefert.
+Diese Hypothese heißt <em>Maximum a posteriori (MAP) Hypothese</em>:</p>
+
+<p>(img map.png)</p>
+
+<p>Unter der Annahme P(hi) = P(hj) lässt sich die MAP Hypothese zur <em>Maximum Likelihood (ML)
+Hypothese</em> vereinfachen:</p>
+
+<p>(img ml.png)</p>
+
+<p>Um die beste MAP-Hypothese zu finden, kann man <em>Brute Force</em> ausführen. Also für jede
+Hypothese im Hypothesenraum H die a posteriori Wahrscheinlichkeit berechnen und die
+Hypothese ausgeben, die die größte Wahrscheinlichekeit besitzt.</p>
+
+<p><em>Beispiel: Medizinische Diagnose:</em> Angenommen 0.8% der Bevölkerung leiden an Krebs. Hat man
+Krebs, so ist der Test in 98% der Fälle positiv. Hat man keinen Krebs, fällt der Test mit 3%
+trotzdem positiv aus. Wie hoch ist die Wahrscheinlichkeit, dass eine Person mit einem positiven
+Testeregebnis auch wirklich Krebs hat? (h = Krebs, h’ = kein Krebs)</p>
+
+<p>(img krebs1.png krebs2.png)</p>
+
+<p>Beim <strong>Konzeptlernen</strong> ist ein endlicher Hypothesenraum H über dem Raum der Instanzen X
+gegeben. Die Aufgabe ist das Lernen eines Zielkonzepts c: X → {0,1} mit der Sequenz von 
+Instanzen {x1,…,xm} und Sequenz von Zielwerten D = {d1,…,dm}. Dabei wird angenommen, 
+dass die Trainingsdaten D nicht vertauscht sind, also zugehörig der Instanzen vorliegen 
+(di = c(xi)). Außerdem ist keine Hypothese wahrscheinlicher als eine andere.</p>
+
+<p>(img konzeptlernen.png)</p>
+
+<p><strong>Konsistenter Lerner</strong>: Ein Lernverfahren ist ein <em>konsistenter Lernen</em>, wenn es eine 
+Hypothese liefert, die <em>keine Fehler auf den Trainingsdaten macht</em>. Unter den Voraussetzungen
+des Konzeptlernens, liefert jeder konsistente Lerner eine <em>MAP-Hypothese</em>. Dies ist eine 
+Methode um den induktiven Bias auszudrücken. Die Entwicklung der a posteriori 
+Wahrscheinlichkeiten mit wachsender Anzahl von Trainingsdaten sieht wie unten aus. Für
+inkonsistente Hypothesen gilt P(h) = 0.</p>
+
+<p>(img konsis.png)</p>
+
+<p><strong>Bayes-Klassifikator</strong></p>
+
+<p>Bisher wurde nach der Hypothese mit der größten Wahrscheinlichkeite gegeben der Daten D
+gesucht. Nun wollen wir die <em>wahrscheinlichste Klassifikation vj</em> einer Instanz x wissen.</p>
+
+<p>(img klass-bayes-ex.png)</p>
+
+<p><strong>Optimaler Bayes-Klassifikator</strong>: ist ein aus dem Satz von Bayes hergeleiteter Klassifikator.
+ Er ordnet jedes Objekt der Klasse zu, zu der es mit der größten Wahrscheinlichkeit gehört.
+ Um den Bayes-Klassifikator zu definieren, wird ein Kostenmaß benötigt, das jeder möglichen
+ Klassifizierung Kosten zuweist. Der Bayes-Klassifikator ist genau derjenige Klassifikator,
+ der die durch alle Klassifizierungen entstehenden Kosten minimiert.</p>
+
+<p>(img bayes-klass.png bayes-klass-bsp.png)</p>
+
+<p>Am obigen Beispiel bei der Klassifikation der positiv und negativ zugeordneten 
+ Datenobjekten wird deutlich, dass die wahrscheinlichste Klasse mit a posteriori + wäre, mit
+ Bayes hingegen -. Kein anderes Klassifikationsverfahren schneidet durchschnittlich besser
+ ab als Bayes. Allerdings ist es bei großer Hyopthesenzahl sehr kostenintensiv.</p>
+
+<p><strong>Gibbs Algorithmus</strong>: Der Gibbs Algorithmus ist ein Bayes-Klassifikator. Er wäht h aus H
+ zufällig gemäß P(h|D) und nutzt h(x) als Klassifikation von x). Es gilt die Eigenschaft, dass
+ der Fehler von Gibbs maximal so groß ist die 2 * der Fehler von dem optimalen Bayes 
+ Klassifikator.</p>
+
+<p><strong>Naiver Bayes Klassifiktor</strong>: Die naive Grundannahme ist dabei, dass jedes Attribut nur 
+ vom Klassenattribut abhängt. Obwohl dies in der Realität selten zutrifft, erzielen naive 
+ Bayes-Klassifikatoren bei praktischen Anwendungen häufig gute Ergebnisse, solange die 
+ Attribute nicht zu stark korreliert sind.<br />
+ Gegeben einer Instanz x als Konjuktion von Attributen a1,a2,…,an, einer endlichen Menge
+ von Klassen V = {v1,…,vm} und einer Menge von klassifizierten Beispielen wird die 
+ wahescheinlichste Klasse für die Instanz gesucht.</p>
+
+<p>(img naiv-bay.png)</p>
+
+<p>P(vj) lässt sich leicht aus dem Auftreten der KLasse vj in der Trainingsmenge berechnen
+ (einfaches Zählen). P(a1,a2,…,an|vj) ist schwerer zu berechnen, da es nur durch Auszählen
+ aller Kombinationen der Attributwerte geht. Dazu benötigt man eine riesige Trainingsmenge.
+ Deshalb wird vereinfacht angenommen, dass ai bedingt unabhängig ist.</p>
+
+<p>(img naiv-bay-unab.png)</p>
+
+<p>Als naiver Bayes-Klassifikator ergibt sich daher: (img naiv-bay-klass.png)</p>
+
+<p>(img bayes-tennis1.png bayes-tennis2.png)</p>
+
+<p><strong>Laplace-Schätzer</strong>: Nimmt ein Klasse und ein Attribut nicht einen bestimmten Wert
+ in den Daten an, so kann der Wert geschätzt werden. 
+ Allgemein definiert man einen Laplace-Schätzer als denjenigen Wert, der den Erwartungswert 
+ einer Verlustfunktion unter der A-posteriori-Verteilung minimiert.</p>
+
+<p><em>Beispiel: Klassifikation von Texten</em>: Das Ziel ist es zu Lernen, welche Nachrichten
+ interessant sind: Dokument → {+,-}. Zudem wird die Annahme (bag of words) gemacht, dass
+ die Wahrscheinlichkeit des Auftretens eines bestimmten Wortes unabhängig von der Position
+ im Text ist.</p>
+
+<p>(img text-bay.png)</p>
+
+<p>Zum Schätzen benötigt man das Vokabular, also alle Wörter und Token aus den Beispielen.</p>
+
+<p>(img text-bay-schaetzen.png)</p>
+
+<p><strong>Bayessche Netze</strong></p>
+
+<p>Die naive Bayes-Annahme der bedingten Unabhängigkeit ist oft zu beschränkend. Allerdings
+ ist ohne solche vereinfachenden Annahmen das Lernen nach Bayes oft nicht möglich.</p>
+
+<p><strong>Bayessche Netze</strong>: beschreiben bedingte (Un-)Abhängigkeiten bzgl. Untermengen von 
+ Variablen und erlauben somit die Kombination von a priori Wissen über bedingte 
+ (Un-)Abhängigkeiten von Variablen mit den beobachteten Trainingsdaten.
+ Ein <em>Bayessches Netz</em> ist ein gerichteter azyklischer Graph (DAG), 
+ in dem die Knoten Zufallsvariablen und die Kanten bedingte Abhängigkeiten zwischen den 
+ Variablen beschreiben. Jedem Knoten des Netzes ist eine bedingte 
+ Wahrscheinlichkeitsverteilung der durch ihn repräsentierten Zufallsvariable gegeben, 
+ die Zufallsvariablen an den Elternknoten zuordnet. Sie werden durch 
+ Wahrscheinlichkeitstabellen beschrieben. Vorgänger(Yi) ist die Menge der direkten
+ Vorgänger von Yi. Y ist Nachfolger von X , wenn ein gerichteter Pfad von X nach Y
+ existiert. Die Kanten repräsentieren die Zusicherung, dass eine Variable von ihren Nicht-
+ Nachfolgern bedingt unabhängig ist, gegeben ihre direkten Vorgänger.</p>
+
+<p>(img bn-berechnung.png bn-graph.png bn-table.png)</p>
+
+<p><strong>EM-Algorithmus</strong></p>
+
+<p>Bei bekannter Struktur, aber nur einigen beobachtbaren Variablen, kommt der EM-Algorithmus
+  zum Einsatz.</p>
+
+<p><strong>Expectation-Maximization-Algorithmus (EM)</strong>: ist ein iterativer Ansatz zum Schätzen der 
+nicht beobachtbaren Werte (E-Schritt) und Anpassung der Parameter (M-Schritt). Er wird
+verwendet zum Training von Bayesschen Netzen oder zum Lernen von Hidden Markov Modellen.</p>
+
+<p>(img em.png)</p>
+
+<p><em>Ablauf</em> des EM-Algorithmus:</p>
+<ol>
+  <li>
+    <p>Zufällige <em>Initialisierung</em> der Hypothese h.</p>
+  </li>
+  <li>
+    <p><em>Expectation (E) Schritt</em>: Berechne den Erwartungswert E[zij] für jede versteckte Variable
+unter der Annahme, dass die aktuelle Hypothese h gültig ist.</p>
+  </li>
+  <li>
+    <p><em>Maximization (M) Schritt</em>: Berechne eine nee Maximum Likelihood Hypothese h’ unter der 
+Annahme, dass die Werte der versteckten Variabe zij die im E-Schritt berechneten 
+Erwartungswerte annehmen.</p>
+  </li>
+  <li>
+    <p>Ersetze h durch die neue Hypotehese h’ und iteriere.</p>
+  </li>
+</ol>
+
+<p>Der EM-Algorithmus konvergiert gegn eine lokale Maximum Likelihood Hypothese und liefert 
+Schätzungen für die versteckten Variablen Z. Er sucht die Maximum Likelihood Hypothese h’, 
+welche den Erwartungswert über die möglichen Werte der versteckten Variablen gegeben
+der vollständigen Daten berechnet.</p>
+
+<p><strong>Einordnung</strong>: (img einordnung-bayes.png)</p>
+
+:ET

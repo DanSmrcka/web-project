@@ -1,0 +1,1129 @@
+I"�!<div style="background-color: #EAEFF4; border: 1px solid #b5aeb1; border-radius: 3px;  padding: 10px; margin-right: 10px">
+    <strong>Vorlesung:</strong> <a href="https://campus.studium.kit.edu/ev/vACNcrMpRvCbVANs7qJ92Q">Analysetechniken für große Datenbestände</a>, Vorlesung, 5 ECTS <br />
+    <strong>Dozent:</strong> Klemens Böhm  <br />
+   <strong>ILIAS:</strong> <a href="https://ilias.studium.kit.edu/goto_produktiv_crs_883316.html">https://ilias.studium.kit.edu/goto_produktiv_crs_883316.html</a> <br />   
+   <strong>Vorlesungswebsite:</strong> <a href="http://dbis.ipd.kit.edu/2629.php">http://dbis.ipd.kit.edu/2629.php</a> <br />   
+   <strong>Videos:</strong> <a href="https://opencast.informatik.kit.edu/engage/ui/index.html?e=1&amp;p=1&amp;epFrom=a4ded4cb-24cf-4372-aa1f-7ae4c7f16091">https://opencast.informatik.kit.edu/engage/ui/index.html?e=1&amp;p=1&amp;epFrom=a4ded4cb-24cf-4372-aa1f-7ae4c7f16091</a> <br />   
+   <strong>Klausur:</strong> mündlich, daher nach Vereinbarung <br />
+   <strong>Einordnung:</strong> Vertiefungsfach "Informationssysteme", Profil "Datenintensives Rechnen" <br />
+</div>
+
+<h2 id="organisatorisches">Organisatorisches</h2>
+
+<h3 id="vorlesungen">Vorlesungen</h3>
+<ul>
+  <li><strong>16.10.2018</strong>: Organisatorisches und Foliensatz 1-1 bis 2-36</li>
+  <li><strong>23.10.2018</strong>: Foliensatz 2-36 bis 3-8</li>
+  <li><strong>30.10.2018</strong>: Foliensatz 3-9 bis 3-40, 4-1 bis 4-35, 5-1 bis 5-31</li>
+  <li><strong>06.11.2018</strong>: Foliensatz 5-31 bis Ende, Kapitel 6, 7-1 bis 7-37</li>
+  <li><strong>27.11.2018</strong>: Kapitel 8, 9-1 bis 9-20</li>
+</ul>
+
+<h3 id="material">Material</h3>
+<p>Das Material der Vorlesung besteht aus:</p>
+<ul>
+  <li><strong>Folien</strong>: Folien werden im ILIAS hochgeladen</li>
+  <li><strong>Übungsblättern</strong><br />
+Inhaltlich sind keine Veränderungen zum Vorjahr geplant, unter Umständen aber durchaus möglich</li>
+</ul>
+
+<h3 id="übungen">Übungen</h3>
+<p>Es gibt insgesamt 5 Übungen, hauptsächlich schreiben von Programmen in R, Übungsblätter gibt es zwei Wochen vor
+dem Übungstermin zum Download, Musterlösung wird in VL besprochen, Übungsaufgaben sind sehr wichtig</p>
+
+<h3 id="praktikum">Praktikum</h3>
+<p>Es gibt im Sommersemester das zugehörige Praktikum “Analysetechniken für große Datenbestände”, die VL wird
+vorausgesetzt, zwei Datensätze anhand eine eigene Analyse der Daten stattfinden soll, wenn man teilnehmen möchte
+muss man das letzte Übungsblatt bearbeiten und abgeben -&gt; sozusagen Anmeldung für Praktikum wenn das gut bearbeitet wurde</p>
+
+<h3 id="klausur">Klausur</h3>
+<p>Die Klausur soll mündlich stattfinden (wenn Kursgröße das zulässt), Prüfungstermin kann man im Sekretariat des Lehrstuhls 
+durch ausfüllen eines Formulars ausmachen, dabei gibt man den präferierten Monat der Prüfung an (z.B. April 2019).
+Inhaltliche Fragen: SQL, Frage oft “Nenne ein Beispiel, aber nicht aus der Vorlesung”</p>
+
+<h2 id="vorlesungsinhalt">Vorlesungsinhalt</h2>
+<h3 id="einleitung">Einleitung</h3>
+<p><strong>Worum geht es in der Vorlesung?</strong><br />
+Erkennen von Zusammenhängen in Datenbeständen, die:</p>
+<ul>
+  <li><strong>nichttrivial</strong>: nicht offensichtlich</li>
+  <li><strong>implizit</strong>: belegbar durch Daten, Daten sollen Zusammenhang implizieren</li>
+  <li><strong>potentiell nützlich</strong>: keine/kaum Überlappung von Ergebniselementen/zuvor nicht bekannt</li>
+</ul>
+
+<p>Absicht hinter dem Herausfinden der Datenbestände entweder <em>wissenschaftlicher
+(Publikationen)</em> oder <em>kommerzieller (Geld) Natur</em>. Herausforderung also <em>neue, nützliche</em> Zusammenhänge 
+herauszufinden. Dabei sind die Datenbestände oft <em>sehr groß</em> und mit <em>komplexer innerer Struktur</em>.</p>
+
+<p><strong>Wichtige Data-Mining Probleme</strong></p>
+<ul>
+  <li><strong>Association Rules</strong>: Suche nach starken Regeln, Assoziationsanalyse z.B. im Warenkorb von Kunden 
+(finden von <em>Frequent Item Sets</em>) mit dem Ziel eine Vorhersage zu treffen; Probleme: Performance, 
+zu viele (ähnliche) Association Rules -&gt; quantitative Angaben (wie oft wird ein Produkt 
+mit einem anderen Produkt zusammen gekauft), zeitlichen Verlauf (nur wenn Item unmittelbar nacheinander gekauft 
+wurde, nicht z.B. 3 Monate später) berücksichtigen, aber auch geeignete Sprache verwenden, um das ganze zu 
+Beschleunigen.</li>
+  <li><strong>Clustering, Outlier Detection</strong>: Identifizieren von Gruppen in Datenmengen, die ähnliche Eigenschaften
+besitzen, nah beieinanderliegen z.B. Kundengruppen; nicht zu einem Cluster gehörende Datenobjekte bezeichnet 
+man als Outlier, d.h. Datenobjekte, die sich graphisch dargestellt, weit von den “gehäuften” Datenpunkten 
+entfernt sind. Attribute unterscheiden sich z.B. Zahlen, Aufzählungstyp (Gruppen wie z.B. Haarfarbe) oder 
+Mengenwertigkeit. Cluster können in einem Datenbestand unterschiedliche Form, Dichte und Größe besitzen.<br />
+<em>Unsupervised:</em> vorab nicht bekannt welche Cluster es geben wird und wo ihre Grenzen verlaufen 
+-&gt; abhängig vom Datensatz<br />
+<em>Supervised:</em> Klassenzugehörigkeit des Trainingsdatenbestandes vorher bekannt</li>
+  <li><strong>Klassifikation</strong>:  Einteilung von Datenobjekten in Klassen mit dem Ziel anhand von n Attributen das
+n+1te Attribut vorherzusagen. Als Grundlage Trainingsmenge von welchen alle n+1ten Attribute bekannt sind. <br />
+Viele unterschiedliche Ansätze, unter anderem:<br />
+<em>Linearer Classifier:</em> Gegeben n Attribute x, Schwellenwert T (Score), n Gewichte w, Datensatz ist in Klasse, 
+gdw. <em>x * w &gt; T</em>, Gewichtung entscheidet über Klasse, große Gewicht = wichtige Attribute, 
+kleine Gewichte = unwichtige Attribue, hat ein Attribut keine Auswirkung auf die Klassifizierung kann es mit 
+negativen Gewichten versehen werden; sinnvoll für reelwertige, boolsche Attribute<br />
+<em>1-Rules:</em> sehr einfaches Vorhersageverfahren, betrachtet jedes Attribut für sich, anfangs auch jeden 
+Attributwert, häufigste Klasse ist diejenige, die vorhergesagt wird. Attribut mit kleinster Fehlerquote wird
+als Grundlage für Vorhersage gewählt. (Vgl. 1 - 29), einfaches, schlichtes Modell mit hoher Fehlerrate, reicht
+für manche Anwendungsfälle aus<br />
+<em>Overfitting</em>: zu kleinteiliges Modell, das zu sehr auf den Trainingsdatenbestand zugeschnitten ist und daher
+im Allgemeinen schlecht performt</li>
+</ul>
+
+<p><strong>Frage: Geben Sie Beispiele für Anwendungsgebiete, in denen Clustering anwendbar ist?</strong><br />
+Typen von Studierenden (z.B. fleißige, faule, gute Studenten, schlechte Studenten)</p>
+
+<p><strong>Frage: Skizzieren Sie ein Szenario aus den Naturwissenschaften, in dem Klassifikation 
+sinnvoll einsetzbar ist.</strong><br />
+Beispiel aus Vorlesung <em>Predictive Maintenance</em>, Vorhersage für Motoren bzw. alle komplexen technischen
+Systeme, wann/welcher Schadensfall eintritt, dabei false positives oder false negatives möglich. Zwei 
+Herangehensweisen: <br />
+<em>datenorientiert</em>: wenn aktueller Systemstand kristischem Zustand ähnelt, dann Alarm; Voraussetzung, dass 
+System sich in Zukunft so verhält, wie in Vergangenheit (d.h. nicht unter menschlichem Einfluss stehen), 
+ausreichend Trainingsdaten vorhanden sind, zusammenbringen von Messdaten und vorherzusagenden Daten, 
+Infrastruktur muss relevante Phänomene erfassen.<br />
+<em>modellorientiert</em>: Experte formuliert “Alarmzustände” per Hand
+Bei Betrachtung der Testdaten wird unterschieden:<br />
+<em>statisch:</em> jeder Zeitpunkt wird isoliert betrachtet <br />
+<em>dynamisch:</em> zeitliche Entwicklung wird berücksichtigt -&gt; <em>Change Detection</em> entweder univariat (Zeitreihe
+eindimensional) oder multivariat (von zwei Dimensionen abhängig, Vektor)</p>
+
+<p>Im Allgemeinen ist es nicht ausreichend Analyseverfahren zu verwenden, sondern zudem die Daten aufzubereiten
+und in die Umgebung einzubetten. Außerdem ist es nciht offensichtlich, welche Daten wie zu analysieren sind.</p>
+
+<p><em>Ende der 1. Vorlesung vom 16.10.2018</em></p>
+
+<p><strong>Prüfungsfrage: Was ist Overfitting?</strong>
+Zu feinteilige Betrachtung der Trainingsdaten -&gt; performen, funktionieren nicht in Realität</p>
+
+<p><strong>Prüfungsfrage: Was ist Change Detection? Wie unterschieden sich multivariate 
+von univariaten Datenströmen?</strong>
+Bei dynamischer Betrachtung von Daten, d.h. Zeitpunkte werden in relation zueinander betrachtet, ist Change
+Detection die Festellung, ob von Zeitpunkt t1 zu Zeitpunkt t2 eine Veränderung der Attributwerte 
+stattgefunden hat. Dabei ist univariate Change Detection eindimensional und multivariate Change Detection
+mehrdimensional (z.B. ein Vektor)</p>
+
+<h3 id="statistische-grundlagen">Statistische Grundlagen</h3>
+<h4 id="beschaffenheit-der-daten">Beschaffenheit der Daten</h4>
+<p><strong>Kategorisierung der Daten</strong><br />
+Kategorische Werte (Qualitative Konzepte)</p>
+<ul>
+  <li><em>Nominal:</em> Keine natürliche Anordnunge der Werte (z.B. Farben, Namen)</li>
+  <li><em>Ordinal:</em> Anordnung existiert (z.B. klein &lt; mittel &lt; groß)</li>
+</ul>
+
+<p>Numerische Werte (Zahlen)</p>
+<ul>
+  <li><em>Diskret:</em> endliche Anzahl möglicher Werte (z.B. ganze Zahlen aus [0,100])</li>
+  <li><em>Kontinuierlich:</em> unendlich viele mögliche Werte (z.B. reelle Zahlen aus [0,100])</li>
+</ul>
+
+<p><strong>Dimensionalität der Daten</strong></p>
+<ul>
+  <li><em>eindimensional (univariat)</em> z.B. Alter 10, 51, 38</li>
+  <li><em>multidimensional (multivariat)</em> z.B. x-y-Koordinaten (1;0), (4;8)</li>
+  <li><em>hochdimensional</em> z.B. Kundenrepräsentation in e-Commerce Firma</li>
+  <li><em>Daten ohne Dimension</em> z.B. Strings, Mengen</li>
+</ul>
+
+<p><strong>Metrische Daten</strong>: Daten ohne Dimension, deren Objektabstand sich aber berechnen lässt. Für diese 
+Daten gilt in metrischen Räumen gegeben mit Domäne M, Metrik d für alle Objekte p,q,r aus M:</p>
+<ul>
+  <li>Symmetrie: $d(p,q) = d(q,p)$</li>
+  <li>Definitheit: $d(p,q) = 0 ⇔ p = q$</li>
+  <li>Dreiecksungleichung: $d(p,r) ⇐ d(p,q) + d(q,r)$</li>
+</ul>
+
+<h4 id="einfache-deskriptive-statistiken">Einfache deskriptive Statistiken</h4>
+<p><strong>Aggregate</strong>: Kombinieren alle Werte eines Attributs zu einem skalaren Wert, z.B. count, sum, min, max, avg, 
+manche Aggregate sind parallelisierbar, andere nicht. Eine Aggregatsfunktion heißt <em>self-maintainable</em>, wenn
+nach einer Änderung der Daten, der neue Wert der Aggregatsfunktion aus dem Alten berechnet werden kann. 
+z.B. min; min war 3, jetzt ist kommt 2 -&gt; ist 2 &lt; 3 -&gt; dann ist 2 neues minimum. ABER: min ist nicht
+self-maintainable bezüglich des Löschens. Wenn 2 gelöscht wird, kann ich nichtmehr sagen, was das kleinste
+Element danach war. Besseres Beispiel daher: count(). 
+Klassifizierung von Aggregatsfunktionen:</p>
+<ul>
+  <li><em>distributiv:</em> Funktion F kann erst auf Teildaten angewandt werden und anschließend existiert eine 
+Funktion G mit der aus den Teilergebnissen, das Endergebnis berechnet werden kann. z.B. min, max, count 
+(Definition 2 - 9)</li>
+  <li><em>algebraisch:</em> Funktion G kann auf Teildaten angewandt werden, und liefert ein M-Tupel zurück, 
+das wiederum mit einer anderen Funktion H am Ende das gleiche liefert wie eine Funktion F direkt 
+auf die gesamten Daten angewandt. z.B. avg. <em>Beispiel:</em> Zum Berechnen des Durchschnitts einer
+Datenmenge, kann man auch aus Submengen ein Tupel mit der Anzahl der Elemente (count) und deren Summe
+(sum) zurückgeben. Aus diesem Tupel kann man nun den Durchschnitt berechnen. (Definition 2 - 9)</li>
+  <li><em>holistisch:</em> keine Parallelisierung möglich, keine Beschränkung des Speicherbedarfs für Sub-Aggregate,
+z.B. häufigsterWert(), median(); Beispiel: häufigsterWert() ist holistisch, da die einzelnen häufigsten
+Werte pro Submenge nicht aussagekräftig sind, sondern nur eine Liste Auskunft darüber gibt, welcher Wert
+<em>insgesamt</em> am häufigsten Auftritt, Länge der Liste abhängig von Anzahl der Daten.</li>
+</ul>
+
+<p><strong>Frage: Warum ist häufigster Wert holistisch?</strong><br />
+siehe oben</p>
+
+<p><strong>Frage: Welcher Aggregatsfunktion lässt sich Trucated Average (Richter, höchste und niedrigste Note wird
+getrichen und daraus der Durchschnitt berechnet)</strong><br />
+Algebraisch. Man berechnet mit Funktion G vier Werte: Anzahl Richter, Summe der Noten, höchste Note pro
+Scheibe, niedrigste Note pro Scheibe. Daher das Zwischenergebnis ist ein M-Tupel mit M=4. Aus diesem
+Zwischenergebnis kann die Endnote berechnet werden. Aus unterschiedlichen Schichten kann nun der gesamt 
+höchste/niedrigste Wert gestrichen werden und anschließend den Trucated Average berechnen.</p>
+
+<p><strong>Prüfungsfrage: Was ist der Zusammenhang zwischen Aggregatsfunktionen und self-maintainability?</strong>
+?</p>
+
+<p><strong>Prüfungsfrage: Warum ist Median holistisch?</strong>
+Weil der Median der Wert ist, der in der Mitte steht ist. Das heißt es müsste jeweils eine
+ sortierte Liste ausgegeben werden, und anschließend aus der Anzahl der Elemente der mittlere
+ Wert berechnet werden. Da die einzelnen Schichten aber nur intern sortiert sind kann man
+ keinen Schluss darauf ziehen, wie der Median des gesamten Datensatz aussieht.</p>
+
+<p><strong>(gewichtetes) arithmetisches Mittel</strong>: ugs. “Durchschnitt”, $Summe / Anzahl$, Klassifikation <em>algebraisch</em>, 
+nur für numerische Daten</p>
+
+<p><strong>Midrange</strong>: Mitte des tatsächlichen Wertebereichs, $(max - min) / 2$</p>
+
+<p><strong>Median</strong>: Mittlerer Wert, d.h bei sortierten Werten, der Wert der in der Mitte liegt. Bei ungerader Anzahl
+der Durchschnitt der beiden Werte in der Mitte, Klassifikation <em>holistisch</em>, auf numerische und ordinale Daten
+anwendbar (z.B. klein - mittel - groß).</p>
+
+<p><strong>Modalwert / Modus</strong>: Wert der im Datenbestand am häufigsten Vorkommt, für nominale, ordinale Daten,
+schwierig ei kontinuierlichen Daten. Wenn jeder Wert nur einmal vorkommt ist Modus nicht definiert.</p>
+
+<p><strong>Quartile</strong>: Q1 = oberste 25%, Q3 = oberste 75%, IQR (“Inter-Quartile Range”) = Q3 - Q1</p>
+
+<p><strong>Außreißer</strong>: Werte die mehr als 1,5 * IWR von Q1 nach unten bzw von Q3 nach oben abweichen.</p>
+
+<p><strong>Boxplots</strong>: Zur Darstellung von min, Q1, median, Q3 und max</p>
+
+<p><strong>Varianz</strong>: Maß für die Größe der Abweichung von einem Mittelwert (Definition 2 - 18)</p>
+
+<p><strong>Standardabweichung</strong>: Quadratwurzel der Varianz</p>
+
+<p><strong>Histogramme</strong>: Zeigt Häufigkeit mit der die einzelnen Werte auftreten, Kompression in “Buckets”,
+Probleme: ungeeigent für viele Dimensionen, keine Antwortverfeinerung (Antwortverfeinerung = 
+je länger Daten betrachtet werden, desto genauer ist deren Auswertung)</p>
+<ul>
+  <li><em>Equi-Width-Histogramm:</em> Breite aller Buckets gleich, Breite = Intervall der Attributwerte</li>
+  <li><em>Equi-Depth-Histogramm:</em> Tiefe aller Buckets gleich, Tiefe = Summe der Häufigkeiten</li>
+</ul>
+
+<p><strong>Entropie</strong>: gibt an, wie zufällig die Daten verteilt sind, Maß für Unordnung (Definition 2-24),
+negative Summe aus relativer Häufigkeit und statistischer Signifikanz, gibt an wie überraschend
+ ein Ergebnis ist, p=1 keine Überraschung (minimal), maximal wenn pi=pj; Entropie ist 
+ abhängig von der Anzahl der Werte d.h. nicht normalisiert
+ kleine Zahl = kleine Entropie = kleine Überraschung
+ große Zahl = große Entropie = große Überraschung
+ Joint-Entrpoie für mehr als eine Variable</p>
+
+<h4 id="wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</h4>
+<p><strong>Wahrscheinlichkeitsmaß</strong>: P erfüllt die folgenden Axiome:</p>
+<ul>
+  <li><em>Nichtnegativität:</em> $P(a)≥0$</li>
+  <li><em>Triviales Ereignis:</em> $P(Ω)=1$</li>
+  <li><em>Additivität:</em> Für alle $a,b ∈ F$ und $a ∩ b = ∅$ (disjunkt): $P(a ∪ b) = P(a) + P(b)$</li>
+</ul>
+
+<p><strong>Multivariate Verteilung</strong>: Wahrscheinlichkeitsverteilun bei mehrdimensionalen 
+Zufallsvariablen; $P(X = a, Y = b)$ = Wahrscheinlichkeit, P(X,Y) = multivariate 
+Wahrscheinlichkeitsverteilung, P(X) und P(Y) Randverteilungen</p>
+
+<p><strong>Unabhängigkeit</strong>: Verteilung einer Zufallsvariable ist nicht anders, wenn Wert einer
+anderen Zufallsvariable bekannt ist</p>
+
+<p><strong>Erwartungswert</strong>:  Zahl, die die Zufallsvariable im Mittel annimmt (Definition 2 - 36)</p>
+
+<p><strong>Varianz</strong>: mittlere quadratische Abweichung vom Erwartungswert, Streuungsmaß (Definition 2 - 36)</p>
+
+<p><em>Ende der 2. Vorlesung vom 16.10.2018</em></p>
+
+<p><strong>Kovarianz</strong>: Nicht normierter Wert um Zusammenhänge zwischen Variablen festzustellen $Cov(X, Y) := E[(X – E(X))·(Y – E(Y))]$, 
+Kovarianz ist Verallgemeinerung von Varianz
+Veranschaulichung:</p>
+<ul>
+  <li><em>X,Y abhängig:</em> Punkte auf Gerade, wenn X groß dann Y groß (oder mit negativem Vorzeichen: X groß, Y klein)</li>
+  <li><em>X,Y unabhängig:</em> Punkte auf horiziontaler Geraden, Y fix, unabhängig von X, zweiter Faktor stets 0</li>
+</ul>
+
+<h4 id="statistische-tests">Statistische Tests</h4>
+<p><strong>Chi-Quadrat Test</strong>: hier: Unabhängigkeitstest; erwartete Werte oben, tatsächlich eingetretene Werte unten; $ \chi ^{2}$
+groß wenn starke Korrelation, klein wenn keine Korrelation; Vorgehen: Prüfgrößen berechnen und Abweichungen der Einzelereignisse aggregieren; 
+Zurückweisung der Hypothese, dass Verteilung unabhängig wenn $ p(\chi ^{2}) ≤ \alpha $ (Schwellwert $\alpha$ hängt von “risikofreude” ab); bei kleinem
+Chi-Quadrat nich sicher, dass Hypothese zurückgewiesen werden kann → nur, dass einige Fälle existieren, in denen keine Aussage getroffen werden kann;
+Wenn z.B. Wahrscheinlichkeit von $ \chi ^{2} ≤ \alpha$ dann Zurückweisung der Hypothese → $X_1$ und $X_2$ abhängig</p>
+
+<p><strong>Kolmogororv-Smirnov-Text</strong>: Überprüfung ob zwei Wahrscheinlichkeiten übereinstimmen, d.h. gleiche Verteilung bestimmen oder ob Zufallsvariable
+zuvor angenommene Verteilung annimmt (muss keiner Normalverteilung folgen); (vgl. Abb 2-52); Höhe der Stufen 1/8 (da 8 Werte/Messungen) = 0,125, 
+bei Abweichung eintragen, Tabelle sagt welche Abweichung von Normalverteilung noch ok sind (anhand maximaler Distanz zw. kumulativen Häufigkeisverteilungen);
+Beispiel: Frauen verdienen gleich viel, Männer großer Spread, Verteilungen unterschiedlich, Verdienen Männer mehr als Frauen? Qualitativ: Stimmen Mittelwerte
+überein? Vorne nur Frauen, hinten nur Männer → Mediane stimmen nicht überein</p>
+
+<p><strong>Wilcoxon-Mann-Whitney Test</strong>: Ist Abweichung der Mediane <a href="https://de.wikipedia.org/wiki/Statistische_Signifikanz">statistisch signifikant</a>; 
+<em>Rangsummenstatistik</em> (Ränge aufsummieren, Kennzahlen berechnen, mit Tabelle vergleichen), Test liefert Wahrscheinlichkeit dass Hypothese zutreffend; bei 
+Zurückweisung keine Aussage möglich → z.B. bei kleiner Stichprobe nicht möglich zu sagen, dass Gegenteil der Hypothese eintrifft</p>
+
+<p><strong>Bernoulli-Experiment</strong>: N Datenobjekte, Erfolgswahrscheinlichkeit p eines Experiments (z.B. korrekte Klassifizierung), Anzahl erfolgreicher Experimente S,
+Beobactete Erfolgsquote $ f= \frac{S}{N}$ ist Zufallsvariable; $Varianz = \frac{p<em>(1-p)}{N} $ → je mehr Experimente desto kleiner die Varianz; <br />
+*log-likelihood Funktion:</em> logarithmisierte Funktion von Wahrscheinlichkeit für bestimmte Folge von Ausgängen eines Bernouilli-Experiment: 
+$ \prod _{i=1} ^{n} p^y_i·(1-p) ^1-y_i $ einfacher Logarithmen aufzuaddieren, als wiederholt zu multiplizieren: 
+$ \sum _{i=1} ^{n} (1-y_i)·log (1-p) + y_i·log p $</p>
+
+<p><em>Vorteile Statistischer Tests:</em> nur ein Werkzeug für Anwendungsetwickler, Performanz, gute Kombinationsmöglichkeit mit anderen DB-Features</p>
+
+<h4 id="datenreduktion">Datenreduktion</h4>
+<blockquote>
+  <p>Repräsentation des Datenbestands, weniger Platz benötigt, (fast) gleiche Analyseergebnisse</p>
+</blockquote>
+
+<p><strong>Numerosity Reduction</strong>: Reduzierung der Datenobjekte</p>
+<ul>
+  <li><em>parametrische Verfahren:</em> Annahme Datenverteilung folgt best. Modell; schätzen der Modellparameter und lediglich diese speichern, ggf. mit Ausreißern</li>
+  <li><em>nichtparametrische Verfahren:</em> Wichtige Ausprägungen speichern
+    <ul>
+      <li>Sampling: Arbeit mit repräsentativem Ausschnit des Datenbestands, kan Komplexität der Analysealgorithmen reduzieren</li>
+      <li>Feature Selection: Auswahl einer Teilmenge der Menge der Attribute; Vorhersagekraft der Attribute ermitteln, Schrittweise Auswahl von Attributen, 
+  Schrittweise Eliminierung von Attributen</li>
+      <li>Hauptachsentransformation: N k-dimensionale Datenobjekte → finde orthogonale Vektoren (“Hauptachsen”), die Datenbestand am besten repräsentieren</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Dimensionality Reduction</strong>: Reduzierung der Attributanzahl, Weglassen der kleinstedn Diagonalelemente und absteigende Sortierung der Reihenfolge der 
+Achsen</p>
+
+<p><strong>Diskretisierung</strong>: Reduktion der möglichen Werte pro Attribut, Vergöberung; Wo liegen Intervallgrenzen?</p>
+<ul>
+  <li><em>entropiebasierte Diskretisierung:</em> (erst nächste VL)</li>
+</ul>
+
+<p><strong>Prüfungsfrage: Kategorisierung von Daten?</strong>
+<strong>Prüfungsfrage: Gegeben Aggregatsfunktion X, ist sie distributiv/algebraisch/holistisch/self-maintainable?</strong>
+<strong>Prüfungsfrage: Allgmeiner Zusammenhang zwischen distributiv/algebraisch/holistisch und self-maintainable?</strong>
+<strong>Prüfungsfrage: Wie groß ist Entropie, wenn alle Klassen gleich häufig?</strong></p>
+
+<h3 id="räumliche-indexstrukturen">Räumliche Indexstrukturen</h3>
+<p><strong>Index</strong>: Seitenweise Anordnung der Daten, müssen im Hauptspeicher vorliegen um damit Rechnen zu können, Seiten = Einheiten des
+Zugriffs, <em>Problem der Zugriffslücke</em>: Zugriff/Laden der Seite viel Zeitaufwendiger als anschließendes Rechnen → Zugriffszeit linear mit 
+größe der Daten; Index für mehrere Attribute möglich, Reihenfolge wichtig, erstes Element bestimmt Sortierung, dann zweites;</p>
+
+<p><em>Ende der Vorlesung vom 23.10.2018</em></p>
+
+<p><strong>Normalisierung der Attribute</strong>: bei unterschiedlichen Einheiten pro Dimension → Normalisierung: $ a_i = \frac{v_i - min v_j}{max v_j - min v_j}$, min = 0, max = 1</p>
+
+<p><strong>Manhattan Distance</strong>: euklidischer Abstand (direkte Verbindung von Punkten) nicht immer gut → Manhattan Distance: Gerade pro Dimension (vgl. Skizze Vl-Mitschrift), sozusagen 
+“Straßen gehen” wie Manhattan; nicht normalisiert → je mehr Dimensionen, desto größer der Wert</p>
+
+<p><strong>kd-Baum</strong>: <a href="https://de.wikipedia.org/wiki/K-d-Baum">Wikipedia</a>: “ unbalancierter Suchbaum zur Speicherung von Punkten aus dem  $ \mathbb {R} ^{k}$. 
+Er bietet ähnlich dem Bereichsbaum die Möglichkeit, orthogonale Bereichsanfragen durchzuführen.”</p>
+
+<p><strong>Nearest Neighbor</strong>: Kreis um Anfragepunkt; Einsparung, da nur Rechtecke inspiziert werden müssen, die in Kreis liege</p>
+
+<p><strong>Bereichsanfrage für Objekte mit räumlicher Ausdehnung</strong>: Rechtecke (vierdimensionaler Punkt: links, rechts, unten, oben), Anfragepunkt (x,y):</p>
+<ul>
+  <li>Fall 1: $x &lt; x_1 $ nur links absteigen</li>
+  <li>Fall 2: $x ≥ x_1 $ in beide Teilbäume absteigen</li>
+</ul>
+
+<p><strong>Prüfungsfrage: Welche Rechtecke überlappen (Anfrage-)Rechteck?</strong> <br />
+<strong>Prüfungsfrage: Welche Rechtecke sind in (Anfrage-)Rechteck enthalten?</strong> <br />
+<strong>Prüfungsfrage: Welche Rechtecke enthalten (Anfrage-)Rechteck?</strong></p>
+
+<p><strong>kdB-Baum</strong>: <a href="https://en.wikipedia.org/wiki/K-D-B-tree">Wikipedia</a> Kombination von kd-Baum und B*-Baum, Änderungen:ohysischer Knoten enthält mehrere logische Regionen, physische Knoten nicht mehr pro Split-Dimension;
+Vorteile: Daten-Wurzel-Abstand immer gleich, genau eine Speicherseit pro physischem Knoten, effizienter Zugriff; Nachteil: komplexe Reorganisation</p>
+
+<p><strong>R-Baum</strong>: <a href="https://de.wikipedia.org/wiki/R-Baum">Wikipedia</a>; Blätter sammeln Datenobjekte in Rechtecken, Väter sammeln Rechtecke der Kinder wiederum in Reckecken</p>
+<ul>
+  <li><em>Einfügen:</em>
+    <ul>
+      <li>Datenpunkt in Zone eines Kind-Knotens → kein Problem</li>
+      <li>Datenpunkt fällt in Überlappung von Zonen → Knoten, dessen Fläche am wenigsten vergrößert werden muss</li>
+      <li>Datenpunkt fällt in keine Zone eines Kinde-Knotens</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Instanzbasiertes Lernen</strong>: zur Laufzeit Suchde des nächsten Nachbarn im Trainingsdatenbestand → Nachbarn bestimmen Klassifikation des gesuchten Datenpunktes; Unterstützung durch Suchbaum;
+bei nominalen Attributen: Distanz ist 0 wenn Attributwerte gleich, ansonsten 1; Noise verschlechtert Ergebnisse</p>
+
+<p><strong>Prüfungsfrage: Warum kann man für räumliche Anfragen nicht ohne weiteres auswerten, wenn man für jede Dimension separat einen B-Baum angelegt hat?</strong> <br />
+<strong>Prüfungsfrage: Wie ist der R-Baum aufgebaut?</strong> <br />
+<strong>Prüfungsfrage: Wie funktioniert die Suche nach dem nächsten Nachbarn mit dem R-Baum?</strong> <br />
+<strong>Prüfungsfrage: Was ändert sich, wenn die Objekte eine räumliche Ausdehnung haben?</strong> <br />
+<strong>Prüfungsfrage: Stören uns Überlappungen von Knoten des R-Baums? Wenn ja, warum?</strong> <br />
+<strong>Prüfungsfrage: Wie unterscheiden sich R-Baum, kD-Baum und kDB-Baum?</strong> <br />
+<strong>Prüfungsfrage: Wie funktioniert Einfügen in den R-Baum, inklusive Split?</strong> <br />
+<strong>Prüfungsfrage: Was für Anfragen unterstützen die diversen räumlichen Indexstrukturen?</strong> <br />
+<strong>Prüfungsfrage: Warum werden bei der NN-Suche nur genau die Knoten inspiziert, deren Zonen die NN-Sphere überlappen?</strong><br />
+<strong>Prüfungsfrage: Welche Classifier kennen Sie?</strong></p>
+
+<h3 id="klassifikation">Klassifikation</h3>
+<p>Ziel neue Tupel richtig klassifizieren → Annahme: Zukünftige Daten ähneln vergangenen</p>
+
+<p><strong>Feature</strong>: Funktion, die Attributwert auf einen (möglicherweise hilfreichen) Wert abbildet; Vorgehen: man überlegt sich alle Features, die nützlich sein könnten, Classifier “sucht aus”</p>
+
+<p><strong>Binäre Entscheidungsbäume</strong>: Anzahl möglicher Entscheidungsbäume riesig → wie vorgehen? → Split-Attribute so wählen, dass Datenpunkte in Knoten dasselbe Risiko tragen → Split finden,
+der Entropie minimiert (möglichst wenig Überraschung)</p>
+
+<p><strong>Pruning</strong>: Overfitting → wenn Entscheidungsbaum zu sehr auf Trainingsdatenbestand zugeschnitten</p>
+<ul>
+  <li><em>Prepruning:</em> beim Aufbauen des Baumes überprüfen, ob Split etwas bringt → Knoten als Blatt belassen, wenn nicht</li>
+  <li><em>Postpruning:</em> Entscheidungsbaum erst aufbauen und dann zurückschneiden → besser → Baum nur einmal aufbauen</li>
+</ul>
+
+<p><strong>Holdout-Daten</strong>: verfügbare Daten, die nicht explizit fürs Training verwendet werden, Standardvorgehensweise, aber kleinerer Trainingsdatenbestand</p>
+
+<p><strong>Prüfungsfrage: Wie baut man einen Entscheidungsbaum auf?</strong> <br />
+<strong>Prüfungsfrage: Wie kann man Overfitting beim Aufbau eines Entscheidungsbaums berücksichtigen?</strong> <br />
+<strong>Prüfungsfrage: Wie kann Aufbau des Entscheidungsbaums berücksichtigen, dass unterschiedliche Fehlerarten unterschiedlich schlimm sind?</strong></p>
+
+<h3 id="evaluation">Evaluation</h3>
+<p><strong>Crossvalidierung</strong>: repeated holout Methode, wiederholte Aufteilung in Trainings- und Testdaten → Klassifizierung → Wiederholung; 10-fold cross validation ist Standard</p>
+
+<p><strong>Stratification</strong>: Sicherstellung, dass bestimmte Eigenschaften in Partitionen gleich verteilt sind</p>
+
+<p><strong>Bias und Varianz</strong>: Gesamtfehler eines Lernverfahrens aus beiden Summanden (vgl. 5-13)</p>
+<ul>
+  <li>Bias hoch: Fehler beim lernen konsistent (auch unendlicher großer Trainingsdatenbestand würde Fehler nicht eliminieren)</li>
+  <li>Varianz des Lernverhaltens: Fehler verursacht durch Begrenztheit des Trainingsdatenbestand, hohe Varianz → hoher zufälliger Fehler</li>
+</ul>
+
+<p><strong>Konfusionsmatrix:</strong> Wunschergebnis hohe Werte auf Diagonale, Diagonale sind richtig vorhergesagte Instanzen, wenige FP und FN; horizontal = Vorhersage, vertikal = tatsächliche Klasse
+$Gesamt-Erfolgsquote := \frac{TP+TN}{TP+FN+FP+TN}$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Ja</th>
+      <th>Nein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ja</strong></td>
+      <td>TP</td>
+      <td>FN</td>
+    </tr>
+    <tr>
+      <td><strong>Nein</strong></td>
+      <td>FP</td>
+      <td>TN</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Kappa-Koeffizient</strong>: <a href="https://de.wikipedia.org/wiki/Cohens_Kappa">Cappa Kohens</a> Wie gut ist Vorhersage? Maß zur Einschätzung zwischen zwei Classifier</p>
+
+<p><strong>Loss-Function</strong>: Verlust durch falsche Vorhersagen</p>
+<ul>
+  <li>
+    <p><em>Quadratic Loss Function:</em> k mögliche Vorhersagen, Vorhersageverfahren mit Vektor $(p_1, … p_k)$ mit Summe 1, tatsächliche Klassenzugehörigkeit mit Vektor $(a_1, … a_k)$ ein $ a_i $ hat Wert 1
+Rest 0; $ Quadratic loss function = \sum_j(p_j-a_j)² $<br />
+Beispiel 1:  $ a = (1, 0, 0,.., 0), p = (0, 1, 0,…, 0)$ → Quadratic loss = $(1-0)²+(0-1)²+(0-0)²+…+(0-0)² = 1+1 = 2 $<br />
+Beispiel 2:  $ a = (1, 0, 0,.., 0), p = (0, 0,5, 0,5, …, 0)$ → Quadratic loss = $(1-0)²+(0-0,5)²+(0-0,5)²+…+(0-0)² = 1 + 0,25 + 0,25 = 1,5 $<br />
+ → Quadratic Loss ist nie größer als 2</p>
+  </li>
+  <li>
+    <p><em>Informational Loss Function:</em> $ -log_2 p_i $ mit tatsächlicher Klassenzugehörigkeit i</p>
+  </li>
+</ul>
+
+<p><strong>Lift</strong>: Faktor, um den sich Rücklaufquote erhöht, nach oben gewölbte Kurve (im vgl. zu Geraden x), am höchsten auf x, am niedrigsten auf y ist Ziel; andere Möglichkeit ist
+<em>Cost/Benefit Kurve</em> x-Wert ist Gewinn, y-Wert ist Rücklaufquote</p>
+
+<p><strong>Receiver-Operating-Characteristic-Kurve (ROC)</strong>: Sortieren der Datenbestände nach absteigender Wahrscheinlichkeiten, Bewegen auf x-Achse für TP, bewegen auf y-Achse für FP,
+je besser desto weiter links oben</p>
+<ul>
+  <li><em>FP-Rate:</em> $ 100 * \frac{FP}{FP+TN}$</li>
+  <li><em>TP-Rate (Recall):</em> $ 100 * \frac{TP}{TP+FN}$</li>
+  <li><em>Precision:</em> $ 100 * \frac{TP}{TP+FP}$
+Kennzahlen für Kurve:</li>
+  <li><em>Area under Cureve (AUC):</em> Fläche unter Kurve</li>
+  <li><em>f-Measure:</em>  $ \frac{2<em>TP}{2</em>TP+FP+FN}$</li>
+  <li><em>Erfolgsquote:</em>  $ \frac{TP + TN}{TP+FP+TN+FN}$</li>
+</ul>
+
+<p><strong>Qualitätsmaße für numerische Vorhersagen</strong>: $p_i $ Vorhersage für i-tes Objekt, $a_i$ tatsächlicher Wert, $ā$ Mittelwert des Trainingsdatenbestandes, $ā_{test}$ Mittelwert des Testdatenbestandes</p>
+<ul>
+  <li><em>Mean-squared error:</em> $\frac{(p_1 - a_1)²+…+(p_n - a_n)²}{n}$</li>
+  <li><em>Root mean-squared error:</em> $\sqrt{\frac{(p_1 - a_1)²+…+(p_n - a_n)²}{n}}$</li>
+  <li><em>Mean-absolute error:</em> $\frac{|p_1 - a_1|+…+|p_n - a_n|}{n}$</li>
+  <li><em>Relative-squared error:</em> $\frac{(p_1 - a_1)²+…+(p_n - a_n)²}{(a_1 - ā)²+…+(a_n - ā)²}$ Obwohl gleich weit von Mittelwert weg, kann Fehler “krass” sein</li>
+  <li><em>Root relative-squared error:</em> $\sqrt{\frac{(p_1 - a_1)²+…+(p_n - a_n)²}{(a_1 - ā)²+…+(a_n - ā)²}}$</li>
+  <li><em>Relative-absolute error:</em> $\frac{|p_1 - a_1|+…+|p_n - a_n|}{|a_1 - ā|+…+|a_n - ā|}$</li>
+  <li><em>Correlation coefficient:</em> $\frac{\sum_i{(p_i-p̃)(a_i-ā_{test})}}{n-1}$ Qualitätsmaß, groß wenn a und p ähnlich</li>
+</ul>
+
+<p><strong>Minimum Description Length (MDL)</strong>: Erfolg beim Finden von Regelmäßigkeiten = Kürze des Modells/Kürze der Beschreibung, z.B. Suche eines Codes in String-Kette, kürzester Code intuitiv 
+Bester  $ \forall_x: L_C_P (x) = \lceil -log P(x) \rceil$, Beispiel: Code “abacabacabac”: P(a) = 1⁄2, P(b) = P(c) = 1⁄4 → $a: \lceil -log \frac{1}{2} \rceil = 1$,
+ $b,c: \lceil -log \frac{1}{4} \rceil = 2$; kleine Wahrscheinlichkeiten entsprechen großen Code-Längen</p>
+<ul>
+  <li><em>nicht-uniformer Code:</em> unterschiedliche Codelängen</li>
+  <li><em>uniformer Code:</em> gleiche Codelängen durch gleiche Wahrscheinlichkeiten, Repräsentation als Binärbaum möglich</li>
+</ul>
+
+<p><strong>Theorem zum Codierungsaufwand</strong>: $ -log P(\frac{x}{M})$</p>
+
+<p><strong>Prüfungsfrage: Was ist die „10-fold cross validation“?</strong> <br />
+<strong>Prüfungsfrage: Wie haben wir die Erfolgsquote definiert?</strong> <br />
+<strong>Prüfungsfrage: Was ist ein Lift Chart? Wie unterscheidet es sich von der ROC Kurve?</strong> <br />
+<strong>Prüfungsfrage: Was für Fehlerarten gibt es bei Vorhersagen von Klassenzugehörigkeiten? Was für Kennzahlen kennen Sie, die diese Fehlerarten sämtlich berücksichtigen?</strong> <br />
+<strong>Prüfungsfrage: Was ist Unterschied zwischen Kovarianz und Correlation Coefficient?</strong> <br />
+<strong>Prüfungsfrage: Warum kommt bei der informational loss Funktion die Logarithmusfunktion zur Anwendung?</strong></p>
+
+<h3 id="association-rules">Association Rules</h3>
+<p><strong>Association Rules</strong>: wichtige Art von Mustern an der man bei Datenanalyse interessiert ist,
+Muster mit einfacher Struktur</p>
+
+<p><strong>Wichtige Begriffe</strong>:</p>
+<ul>
+  <li><em>Item:</em> einzelnes Element</li>
+  <li><em>Itemset:</em> Menge von Items</li>
+  <li><em>Transaktion:</em> Menge von Items, die im Datenbestand tatsächlich vorkommen</li>
+</ul>
+
+<p><strong>Support</strong>: Häufigkeit der Regel in Menge der Transaktionen, hoher Wert → Regel
+beschreibt Großteil des Datenbestands, $p(A u B)$,
+ $\sigma$ Schwellenwert für minimalen Support</p>
+
+<p><strong>Frquent Itemset</strong>: Itemset mit Support $≥ \sigma$; FIS identifizieren Mengen von Items, die
+positiv miteinander korreliert sind, wenn der Support-Schwellenwert groß ist.</p>
+<ul>
+  <li><em>maximal:</em> Frequent Itemset ist maximal, wegnn es nicht Teilmenge eines anderen Frequent
+Itemsets ist → es reicht maximale FIS explizit zu erzeugen, um die FIS zu kennen</li>
+</ul>
+
+<p><strong>Closedness von Itemsets</strong>: Itemset ist Closed, wenn es keine echte Obermenge, 
+mit genau dem gleichen Support gibt</p>
+
+<p><strong>Confidence</strong>: Anteil der Transaktionen in A, die auch in B enthalten sind, Schätzung
+der bedingten Wahrscheinlichkeit
+von A B $\frac{Support(A u B)}{Support(A)}$; minimum COnfidence = $\gamma$</p>
+
+<blockquote>
+  <p>Bevorzugte Regeln sollten $s \geq \sigma$ und $c \geq \gamma$</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Minimum Support</th>
+      <th>Minimum Confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hoch</strong></td>
+      <td>wenige FIS, wenige Regeln kommen oft vor</td>
+      <td>wenige Regeln, aber alle “logisch fast wahr”</td>
+    </tr>
+    <tr>
+      <td><strong>Niedrig</strong></td>
+      <td>viele gültige Regeln, kommen selten vor</td>
+      <td>viele Regeln, aber sehr viele “unsicher”</td>
+    </tr>
+    <tr>
+      <td><strong>Typische Werte</strong></td>
+      <td>$\sigma = 2 / 10%$</td>
+      <td>$\gamma = 70 / 90%$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Apriori</strong>: ALgorithmus zum Finden von FIS und Association Rules 
+<a href="https://de.wikipedia.org/wiki/Apriori-Algorithmus#Beispiel">Beispiel Wikipedia</a></p>
+
+<p><strong>Multi-Level Association Rules:</strong> Menge von Regeln auf unterschiedlichen Hierarchieebenen</p>
+
+<p><strong>Level-Crossing Association Rules:</strong> zur Erzeugung von Kandidatenmengen können Itemsets 
+unterschiedlicher Ebenen verknüpft werden</p>
+
+<p><strong>Prüfungsfrage: Was sind Association Rules?</strong> <br />
+<strong>Prüfungsfrage: Wie findet man sie?</strong> <br />
+<strong>Prüfungsfrage: Wie überprüft man rasch für viele Transaktionen, welche Kandidaten sie enthalten?</strong> <br />
+<strong>Prüfungsfrage: Geben Sie ein Beispiel für eine Association Rule mit hohem/niedrigem Support und hoher/niedriger Confidence.</strong> <br />
+<strong>Prüfungsfrage: Was sind multidimensionale Association Rules?</strong> <br />
+<strong>Prüfungsfrage: Was sind Multi-Level Association Rules, und wie findet man sie?</strong></p>
+
+<h4 id="schnelles-bestimmen-von-frequent-itemsets">Schnelles Bestimmen von Frequent Itemsets</h4>
+<p><strong>Hash-Filter</strong>: üblicherweise viele Kandidaten für kleine k, verglichen mit der Zahl der 
+k-Itesets → $C_2$ sehr groß: $|C_2| = \binom{|L_1|}{2}$ 
+ Beim Zählen des Supports der Elemente von $C_k$ werden (k+1)-elementige Teilmengen jeder
+ Transaktion betrachtet, Support Counting für alle Itemsets mit gleichem Hash-Wert, 
+ Übersteigen des minsups → Itemsets frequent</p>
+
+<p><strong>Sampling</strong>: Ziel: weniger Schritte über die Datenbank; Apriori erfordert hohe I/O-Kosten, 
+ da für jede Itemset-Größe ein Scan über die Datenbank passieren muss; Ziel möglichst 
+ viele Berechnungen auf einer Stichprobe durchzuführen, die in Hauptspeicher passt;
+ Berechnung der Negative Border mit Sample, Support kannsowohl etwas größer als auch 
+ etwas kleiner gewählt werden, Negative Border mit einem Scan über DB überprüft</p>
+
+<p><strong>Apriori-B</strong>: (weitestgehend) nur Betrachtgung von FIS, die nicht maximal sind, Idee:
+ FIS in größeren Schritten durchlaufen, v.a. bei großen Itemsets sinnvoll, Verfahren:</p>
+<ol>
+  <li>Sortieren der FIS innerhalb einer Transaktion nach Gesamthäufigkeit (1,5 Scans)</li>
+  <li>Überführung der sortierten Transactions-DB in kompakte, baumartige Darstellung
+  (FP-Tree, 0,5 Scans)</li>
+  <li>Exrahieren der FIS aus FP-Tree<br />
+→ wenn DB zu groß, passt FP-Tree nicht in Hauptspeicher → Partitionierung der 
+Transaktionsmenge</li>
+</ol>
+
+<p><strong>Projected Database</strong>: p-projected Database enthält nur Transaktionen die p enthalten, d.h.
+ist sie kleiner als Ausgangsdatenbestand; mittlere Zahl von Transaktionen → mittlere Zahl 
+von Kombinationsmöglichkeiten; ist projected Database immernoch zu groß, muss Partitionierung
+verfeinert werden</p>
+
+<p><strong>Prüfungsfrage: In welchen Situationen ist Apriori teuer, und warum?</strong>
+<strong>Prüfungsfrage: Was kann man gegen diese Schwächen tun?</strong>
+<strong>Prüfungsfrage: Was sind FP-Trees, und wie lassen sie sich für die Suche nach Frequent Itemsets verwenden?</strong>
+<strong>Prüfungsfrage: Was kann man tun, wenn FP-Trees für den Hauptspeicher zu groß sind?</strong></p>
+
+<h3 id="pattern-mining">Pattern Mining</h3>
+<blockquote>
+  <p>Finden häufiger Teilfolgen (mehr Informationen als in Mengen: Reihenfolge)</p>
+</blockquote>
+
+<p><strong>Pruning bei AR mit Contraints</strong>:</p>
+<ul>
+  <li><em>Support-basiertes Pruning:</em> Kandidat wird eliminiert, wenn er (oder eine seiner Teilmengen) nicht frequent ist</li>
+  <li><em>Contraint-basiertes Pruning:</em> Kandidat wird eliminiert, wenn er aus vorgegebenen Contraint abgeleitetes Contraint nicht
+erfüllt</li>
+</ul>
+
+<p><strong>Constraints</strong>: Einschränkungen</p>
+<ul>
+  <li><em>Data Contraints:</em>  konkrete Werte (Intervalle), Attribute des Raums</li>
+  <li><em>Rule Contraints:</em> spezifikation der Struktur oder von Eigenschaften der zu ermittelnden Regeln (z.B. nur FIS der Größe 3)</li>
+</ul>
+
+<p><strong>Meta-Rule Guided Mining</strong>: zugrundeliegende relationale DB mit Schema:</p>
+<blockquote>
+  <p>student(name, sno, status, major, gpa, birth_date,birth_place, address) <br />
+   course(cno, title, dept) <br />
+   grading(sno, cno, instructor, semester, grade)</p>
+</blockquote>
+
+<p><em>Data Mining Query/Constraint:</em> alleRegeln der Form:</p>
+<blockquote>
+  <p>major (s: student, x) ${\land}$ Q(s, y) ⇒ R(s, z) <br />
+   from student <br />
+   where birth_place = “Canada” <br />
+   in relevance to major, gpa, status, address</p>
+</blockquote>
+
+<p>Variable für Prädikate = Großbuchstabe, Variable für Attributwerte = Kleinbuchstabe, Constraint erlaubt viele<br />
+Strukturen und Ergebnisse; zweite Zeile “meta-rule”, Q,R Variable für Prädikate mit Attributen instanziierbar;
+enthält Data Constraints und Rule Constraints</p>
+
+<p><strong>1-var/2-var Contraints</strong>: zugrundeliegende Struktur: Menge von Items mit Attributen; i.d.R Aggregation von Werten/Belegungen 
+mehrerer/aller Items, z.B. sum(LHS) &lt; 100 (davon die Linke Seite)</p>
+<ul>
+  <li><em>1-var:</em> Constraint, das nur eine Seitde der Regel (L oder R) einschränkt: z.B. sum(LHS) &lt; 100
+    <ul>
+      <li>Class Constraints: S ⊂ A; S Mengenvariable, A Attribut, S ist Menge von Werten aus Definitionsbereich von A, z.B: $S_1 ⊂ Item$</li>
+      <li>Aggregate Constraints: min, max, sum, count, avg; {=, ≠, &lt;, ≤, &gt;, ≥}; z.B. min(S) &lt; 10</li>
+    </ul>
+  </li>
+  <li><em>2-var:</em> Contraint bezüglich beider Seiten: z.B. sum(LHS) &lt; min(RHS)</li>
+</ul>
+
+<p><strong>Mining von Association Rules</strong>:</p>
+<ul>
+  <li><em>Postprocessing:</em> Finde alle Frequent Item Sets mit Apriori und überprüfe dann, ob sie Constraints entsprechen</li>
+  <li><em>Optimierung:</em> umfassende Analyse der Eigenschaften der Constraints mit dem Ziel “tief in den Algorithmus hineinzudrücken”</li>
+</ul>
+
+<p><strong>Anti-Monotonizität</strong>: Ziel Constraint früh zu überrüfen und Pruning so früh wie möglich stattfinden zu lassen; single-variable
+Constraint ist antimonoton, gdw für alle Mengen S, S’ gilt: S ⊇ S’, S erfüllt C ⇒ S’ erfüllt C, d.h. jede Teilmenge erfüllt Constraint, 
+auch bei Löschen aus Menge ist Constraint noch erfüllt: <br />
+<em>Beispiel</em>: min(S) ≥ v ist anti monoton für $v = 5$ und $S = {10,15,20,27,19}$</p>
+<ul>
+  <li>max(S) ≥ v: Abhängig von v, aber nicht anti-monoton, da z.B. mit v = 25 und Löschen von 27 nichtmehr erfüllt</li>
+  <li>size(S) ≤ v: v = 5, anfangs erfüllt, egal wie viel raus gelöscht wird immer kleiner gleich 5 → anti-monoton</li>
+  <li>size(S) ≥ v: nein, wenn Menge kleiner wird, ist Gleichung nichtmehr erfüllt <br />
+Anti-Monotonizität ist interessant, weil Obermengen bei Apriori nichtmehr betrachtet werden müssen, wenn Teilmenge schon 
+Constraint nicht erfüllt</li>
+</ul>
+
+<p><strong>Succinctness</strong>: Ziel Kandidaten, die Constraint nicht erfüllen, gar nicht erst zu erzeugen, “Succinct” = kurz und bündig, 
+kurz und knapp; Eigenschaft von Constraints; Constraint ist succinct, wenn alle Itemsets, die das Constraint erfüllen
+in kurzer Art und Weise hinschreiben kann <br />
+<em>Beispiel:</em> nur drei Produkte mit Type = Nonfood, d.h. Itemsets der drei Produkte erzeugen und ein mal Support-Counting</p>
+
+<p><strong>Support-basiertes Pruning</strong>: Kandidat c der Länge k, c wird eliminiert, wenn (k-1)-elementige Teilfolge, die Constraint R erfüllt
+nicht frequent ist <br />
+<em>Beispiel:</em> Constraint (nicht anti-monoton): (ab)*, abab hat Teilfolge aab, aab ist möglicherweise frequent aber nie in $L_3$</p>
+
+<p><strong>Constraint-basiertes Pruning</strong>: Schritt k generiert $L_k$ (Menge der häufigen k-Folgen, die Constraint erfüllen); wenn R sehr
+selektiv (nicht anti-monoton), dann funktioniert Constraint-basiertes Pruning gut, Support-basiertes nicht (betrachtet alle Teilstrukturen
+der Größe k-1 in $L_{k-1}, gibt aber mglws wenige)</p>
+
+<blockquote>
+  <p>Schwächere Constraints erleichtern Support-basiertes Pruning</p>
+</blockquote>
+
+<p>Wenn Constraint nicht anti-monoton: naives postprocessing, succinctness, kombination contraint-basiertes pruning mit ursprünglichem
+Constraint, Pruning mit abgeschwächtem Constraint: sowohl anti-monoton, als auch nicht anti-monoton</p>
+
+<p><strong>Prüfungsfrage: Was ist Constraint-basiertes Mining? Was sind die Vorteile?</strong><br />
+<strong>Prüfungsfrage: Was für Arten von Constraints kennen sie? Beispiele hierfür.</strong><br />
+<strong>Prüfungsfrage: Was ist Anti-Monotonizität, Succinctness? &lt;Für ein bestimmtes Constraint sagen/begründen, ob anti-monoton/succinct.&gt;</strong><br />
+<strong>Prüfungsfrage: Wie lässt sich Apriori für das Mining von Teilfolgen verallgemeinern?</strong><br />
+<strong>Prüfungsfrage: Antagonismus von Support-basiertem und Constraint-basiertem Pruning erklären können.</strong><br />
+<strong>Prüfungsfrage: Alternativen für Constraint-basiertes Pruning (wenn Constraint nicht anti-monoton) erklären können.</strong></p>
+
+<h3 id="clustering-teil-1">Clustering (Teil 1)</h3>
+<blockquote>
+  <p>Ziel von Clustering: ähnliche Datenobjekte zu einem Cluster zusammenfassen</p>
+</blockquote>
+
+<p><strong>Clustering</strong>: Datenmenge mit N d-dimensionalen Datenobjekten; Finde natürliche Partitionierung der Daten in mehrere Cluster (k Cluster)
+und noise, Wahl der Cluster:</p>
+<ul>
+  <li><em>Intra-cluster Similarity maximal:</em> Items im gleichen Cluster sind ähnlich</li>
+  <li><em>Inter-cluster Similarity minimiert:</em> Items in unterschiedlichen Clustern sind verschieden</li>
+</ul>
+
+<p><strong>Criterion Function</strong>: Bewertung des Clusterverfahrens durch$E = \sum_{i=1}^k \sum_{\vec{x} \in C_i} d(\vec{x},\vec{m_i})$, 
+Ziel des Clustering <em>Criterion Function</em> zu optimieren,k gegeben, minimiere E, wenn Punkt im falschen Cluster, wird E größer; 
+Criterion Function nur sinnvoll bei gleichem k, bei unterschiedlichem k nicht fair und kann keinen Vergleich mehr bieten</p>
+
+<p><strong>Silhouette-Koeffizient</strong>: Wahl eines Datenpunktes in Cluster als <em>Repräsentant</em> des Clusters, Objekte sollen Repräsentaten des Clusters ähneln, 
+durchschnittlicher Abstand der Objekte zum Repräsentanten des Clusters; Objekte in unterschiedlichen Clustern sollten möglichst unähnlich sein</p>
+<ul>
+  <li><em>a(o):</em> Durchschnittliche Distanz zwischen Objekt o und Objekten in seinem Cluster $a(o) = \frac{1}{|C(o)|} \sum_{p \in C(o)} dist(o,p)$</li>
+  <li><em>b(o):</em> Durchschnittlidche Distanz zwischen o und Objekten im zweitnächsten Cluster $b(o) =  min_{C_i ≠ C(o)}(\frac{1}{|C(o)|}
+ \sum_{p \in C(o)} dist(o,p))$</li>
+  <li><em>s(o):</em> Silhouette von Objekt o $s(o) = \begin{cases} 0 &amp; a(o) = 0 (e.g. |C_i| = 1)
+ \\ \frac{b(o)-a(o)}{max{a(o), b(o)}} &amp; \text{else} \end{cases}$; Wertebereich [-1,1]</li>
+</ul>
+
+<p><em>Interpretation Silhouette von Objekt o</em>: Wie gut ist die Zuordnung von o zu seinem Cluster?</p>
+<ul>
+  <li>s(o) = -1: schlecht, o ist im Mittel näher bei Elementen von B</li>
+  <li>s(o) = 0: zwischen A und B</li>
+  <li>s(o) = 1: gut, o gehört zu Cluster A</li>
+</ul>
+
+<p><em>Silhouette-Koeffizient eines Clusterings</em>: $sil(C) = \frac{1}{C} \sum_{C_i \in C} \frac{a}{|C_i|} \sum_{o \in C_i} s(o)$; Wertebereich [-1,1]</p>
+
+<p><em>Interpretation Silhouette eines Clusterings</em>: Durchschnit der Silhouetten aller Objekte</p>
+<ul>
+  <li>$0,7 &lt; s_C ≤ 1,0$: gute Strukturierung</li>
+  <li>$0,5 &lt; s_C ≤ 0,7$: mittelmäßige Strukturierung</li>
+  <li>$0,25 &lt; s_C ≤ 0,5$: schwache Strukturierung (kommt fast nie vor, 0,3 ist z.B. sehr schlechtes Clustering)</li>
+  <li>$s_C ≤ 0,25$: keine Strukturierung</li>
+</ul>
+
+<p>Silhouette-Koeffizient ist weitgehend unabhängig von k. Ist k klein, ist der Abstand zum Cluster-Mittelpunkt groß, verglichen mit
+großem k. Allerdings sind dann auch die Abstände zu anderen Clustern größer, daher hebt es sich auf. Fall k = n kommt fast nie vor.</p>
+
+<blockquote>
+  <p>Effektive und effiziente Clustering Algorithmen für hochdimensionale Datenbestände mit hohem Noise-Anteil erfordern
+Skalierbarkeit hinsichtlich:</p>
+  <ul>
+    <li>Anzahl der Datenpunkte (N)</li>
+    <li>Anzahl der Dimensionen (d)</li>
+    <li>Noise Anteil</li>
+  </ul>
+</blockquote>
+
+<p><strong>Distanzfunktionen für Mengen von Objekten</strong>: $dist(p,q)$</p>
+<ul>
+  <li><em>Single Link:</em> $dist_{sl}(X,Y) = min_{x \in X, y \in Y} dist(x,y)$</li>
+  <li><em>Complete Link:</em> $dist_{cl}(X,Y) = max_{x \in X, y \in Y} dist(x,y)$</li>
+  <li><em>Average Link:</em> $dist_{al}(X,Y) =\frac{1}{|X|*|Y|} \sum_{x \in X, y \in Y} dist(x,y)$</li>
+</ul>
+
+<h4 id="partitionierende-verfahren">Partitionierende Verfahren</h4>
+<p><strong>k-Means</strong>: iterativer Algorithmus (Hill Climbing), der jeden Medoid in Richtung des Schwerpunkts der ihm zugeordneten 
+Menge von Punkten verschiebt</p>
+
+<p><em>Medoid:</em> ist ein Datenpunkt, der als Surrogat für den Schwerpunkt des Clusters dient. Ein Medoid ist schlecht und sollte
+im nächsten Schritt ersetzt werden, wenn dem Medoid des Clusters am wenigsten Punkte zugeordnet werden oder weniger als
+N/k * minDev (Konstante) Punkte zugeordnet werden. Diese Punkte sind vermutlich Outlier oder Teile eines anderen Clusters.</p>
+
+<p><em>Vorgehen:</em> (img k-means-alg.png)</p>
+
+<p>Ziel der <em>Initialisiserungsphase</em> ist es, möglichst gute Seeds zu finden. Dabei werden die Seeds einer nach dem anderen ausgewählt 
+(Greedy-Verfahren). Die Seeds sind Datenpunkte. Neue Seeds sollen so gewählt werden, dass der Abstand zu bisherigen Seeds groß genug ist.<br />
+Das <em>Distance Stop Kriterium</em> tritt ein und der Algorithmus terminiert, wenn eine bestimmte Anzahl von Schritten keine Verbesserung 
+mehr bringt oder diese Verbesserung nur noch sehr klein ist. Die Wahl des Schwellenwert, ab dem das Distance Stop Kriterium erreicht ist,
+hängt stark vom Anwendungsfall ab. Bei einem kleinen Wert ist das Ergebnis näher am Optimum, der Rechenaufwand aber deutlich höher.
+Ein großer Wert liefert ein weniger genaues Ergebnis, hat aber eine bessere Performance.<br />
+Bei besonders großen Datensätzen kann K-Means auch mit einer <em>Stichprobe</em> durchgeführt werden, um unnötig große Laufzeiten zu
+ersparen. Um das Ergebnis zu verbessern, können auch mehrere <em>Runs/Durchläufe</em> des Algorithmus ausgeführt werden.
+In Experimenten zeigen fünf Durchläufe mit unterschiedlichen Stichproben ein gutes Ergebnis.<br />
+Zur Verfeinerung kann außerdem der Medoid, dem kaum Datenpunkte zugeordnet werden, ersetzt werden.</p>
+
+<p><em>CLARANS</em> ist eine Variation von k-Means. k-Means ist zu stark von der Initialisierung abhängig ist und liefert keine Garantie 
+für die Richtigkeit der Cluster. CLARANS stellt das Problem als Graph dar, bei dem jeder Knoten einer Menge von Datenobjekten
+entspricht, die wiederum Medoide sind. Dabei entsteht ein sehr großer Graph, der nicht explizit erzeugt wird. Kanten
+zwischen zwei Knoten exisitieren genau dann, wenn ein Objekt in der Menge im Knoten unterschiedlich ist. Auch bei 
+CLARANS müssen die Seeds geschickt gewählt werden.</p>
+
+<p>(img clarans.png)</p>
+
+<p>Als Parameter benötigt CLARANS die Anzahl der betrachteten Nachbarn, die Azahl der Runs und ein Abbruchkriterium. Dadurch
+entsteht ein weniger “unkontrolliertes” Betrachten der Nachbarn als bisher, da mehrere Nachbarn in einem Schritt betrachtet werden. 
+Der Mittelpunkt wird zwischen den Nachbarn verschoben wenn der Mittelpunkt an der Stelle des Nachbarn besser ist. Dadruch ensteht eine 
+bessere Qualität, da die Suche breiter ist. Allerdings ist dadurch auch der Aufwand höher, da die potentiellen neuen Clustermittelpunkte
+in jedem Schritt berechnet werden müssen.</p>
+
+<p><strong>Balanced Iterative Reducing and Clustering using Hierarchies (BIRCH)</strong>: ist ein Clustering-Verfahren für große Datenmengen.
+BIRCH baut ein Modell (Baum) auf, der die Datenverteilung beschreibt, ist dabei systematischer als partitionsbasierte
+Verfahren und kommt mit weniger Speicherplatz aus. Die I/O-Kosten wachsen linear mit der Größe des Datenbestands, wenn der
+CF-Tree in den Hauptspeicher passt. Eine Iteration des Algorithmus liefert bereits ein Clustering, mehrfaches
+iterieren liefert ein besseres Clustering. Der Wert k ist die gewünschte Anzahl an Clustern und ist Parameter des Algorithmus.
+Zudem hat BIRCH eine gute Laufzeit, da das Daten aus der DB lesen Kosten produziert und die Daten dann aber direkt in den Baum eingefügt
+werden können, welche Kosten vernachlässigbar ist.</p>
+
+<p>Gegeben einer Menge von Punkten heißt der Mittelpunkt <em>Centroid</em>, der <em>Radius</em> des Clusters gibt an, wie nah die Punkte
+beieinander liegen und der <em>Durchmesser</em> wird groß, wenn die Datenobjekte weit auseinander liegen und klein, wenn die 
+Punkte nah beieinander liegen. $D_2$ ist die <em>Inter-Cluster-Distanz</em>.</p>
+
+<p>(img inter-cluster-distance.png)</p>
+
+<p><em>Clustering Feature (CF):</em> ist die aggregierte Information zu jeder Menge von Punkten die BIRCH mitführt und definiert als 
+$CF = (N, \vec{LS}, \vec{SS})$. Dabei ist N die Anzahl der Punkte, die Lineares Summe (LS, Linear sum) die
+Summe der Punkte in einem Cluster und die Quadrat Summe (SS, square sum) die quadrierte Summe der Punkte eines Clusters.
+Aus dem CF lassen sich Centroid und Radius berechnen (TODO!). Beim Zusammenführen von zwei Clustern lässt sich das Clustering
+Feature trivialerweise aus den Ausgangsclustern berechnen.</p>
+
+<p><em>CF Tree:</em> ist ein höhenbalancierte Baum, in dem jedem Knoten des Baums ein Cluster entspricht. Wenn ein Knoten zu einem Cluster A
+in einem Knoten zu Cluster B enthalten ist, heißt dass, dass das Cluster A in Cluster B enthalten sein muss. Ein <em>Blatt</em> 
+ist eine Menge von Clustering Features (Elementar-Cluster). Die Größe des Baums ist damit (relativ) unabhängign von der Anzahl
+der Datenobjekte. Die inneren Knoten enthalten Einträge der Form $[CF_i, child_i]$ ($child_i$ enthält einen
+Pointer auf den Kindknoten) dabei ist $CF_i$ ein Clustering Feature von $child_i$.</p>
+
+<p>Der CF Tree hat die <em>Parameter</em>:</p>
+<ul>
+  <li><em>B</em>: ist der Fan Out (Verzweigungsgrad) für innere Knoten. Die Kapazität für innere Knoten ist kleiner, da zudem
+noch die Pointer auf die Kindknoten gespeichert werden müssen.</li>
+  <li><em>B’</em>: ist die Kapazität eines Blattes.</li>
+  <li><em>T</em>: ist der Schwellenwert, der kleiner sein muss als der Radius (bzw. Durchmesser) des Elementarclusters. Ohne diese Bedingung
+würden alle Daten punkte in ein einziges Elementarcluster eingefügt werden. Ist T zu klein gewählt, entstehen zu viele 
+Elementarcluster, der Baum wird zu kleinteilig und passt nicht in den Hauptspeicher. Wählt man das T hingegen zu groß, 
+entstehen zu wenige Elementarcluster und die Repräsentation ist zu grob, um damit arbeiten zu können.</li>
+</ul>
+
+<p>(img birch-illustration.png)</p>
+
+<p>Beim <em>Einfügen</em> in den CF Tree wandert jeder Punkt in den Knoten, zu dessen Schwerpunkt er
+den kleinsten Abstand hat. Passt ein Punkt in kein Cluster auf dem Blatt, wird er
+als neues Cluster in ein neues Blatt eingeordnet. Die Knoten werden <em>gesplittet</em>, sobald der
+Cluster zu groß wird (zu viele Teil-Cluster existieren). <br />
+Beim <em>Node-Splitting</em> werden
+die am weitesten voneinander entfernten Punkte als Seeds gewählt. Die Nähe der
+anderen Punkte entscheidet über die Zuordnung zum jeweiligen neuen Cluster. Sobald der 
+Knoten, der einem Seed entspricht voll wird, wird einfach der andere Knoten aufgefüllt.
+Das Splitten der Knoten findet ledigtlich über das Clustering Feature statt, alle 
+Informationen über die Punkte sind im CF enthalten. BIRCH arbeitet ausschließlich mit CF, 
+damit möglichst viele Daten in den Hauptspeicher passen.</p>
+
+<p>(img birch-split1.png birch-split2.png birch-split3.png)</p>
+
+<p>Ein <em>Merge</em> der Knoten (Geschwisterknoten) passiert ggf. nach dem Splitting, um Platz zu sparen
+und eine bessere Qualität des Clusterings zu gewährleisten. Zwei Kinder des Knotens, der 
+ nach dem Splitting zwei neue Knoten enthält, mit minimalem Abstand zueinander werden zu einem
+ neuen Knoten zusammengefasst. Ein Merge kann ein <em>Resplitting</em> verursachen.</p>
+
+<h4 id="hierarchisches-clustering">Hierarchisches Clustering</h4>
+<p>Oft reichen partitionierende Clustering Verfahren nicht aus, um den Datenbestand angemessen
+zu repräsentieren. Deshalb ist ein <em>hierarchisches Clustering</em> sinnvoll, um den Datenbestand
+in eine Menge hierarchisch geschachtelter Cluster zu unterteilen.</p>
+
+<p>(img motivation-hierarchisches-c.png)</p>
+
+<p>Ein <em>Dendogramm</em> ist die übliche Darstellung des Ergebnisses eines hierarchisches Clusterings.
+Die Knoten des Dendogramms stehen für mögliche Cluster. Die Konstruktion kann entweder
+bottom-up (<em>agglomerativ</em>) oder top-down (<em>divisiv</em>) stattfinden. <br />
+Die Wurzel repräsentiert den gesamten Datenbestand, die Blätter die einzelnen Datenobjekte.
+Innere Knoten sind die Vereinigung der Datenobjekte mit seinem Teilbaum und die Höhe eines
+internen Knotens, ist der Abstand zwischen seinen zwei Kindknoten.
+Die Kanten, die sich beim horizontalen Schneiden durch den Baum ergeben, sind die Cluster. 
+Bei n Paaren (also Kanten), die nach dem Zusammenfassen noch möglich sind, ergibt sich
+ eine Laufzeit von O(n log n).</p>
+
+<p>(img dendogram.png dendogramm-interpret.png)</p>
+
+<p><strong>Agglomeratives hierarchisches Clustering</strong>: benötigt eine Distanzfunktion, um den Abstand
+zwischen den Clustern zu berechnen (z.B. Euklidischer Abstand, Manhattan Distanz).</p>
+<ol>
+  <li>Jedes Objekt ist einelementiger Cluster</li>
+  <li>Berechnung aller paarweisen Abstände zwischen Clustern</li>
+  <li>Die Paare mit dem kleinsten Abstand werden gemerged</li>
+  <li>besteht nur noch ein Cluster wird terminiert, andernfalls Schritt drei wiederholt</li>
+</ol>
+
+<p><strong>Divisives hierarchisches Cluserting</strong>: teilt ein großes Cluster, bestehend aus alles Objekten
+schrittweise in kleinere Cluster, bis alle Objekte einem eigenen Cluster entsprechen.
+<em>DIANA</em>: ist ein Algorithmus, der divisives hierarchisches Clustering umsetzt. 
+Starte mit einem Cluster, der alle Beobachtungen enthält.</p>
+<ol>
+  <li>Berechne den Durchmesser aller Cluster.</li>
+  <li>Der Durchmesser ist die maximale Distanz oder Unähnlichkeit aller Objekte 
+innerhalb des Clusters.</li>
+  <li>Der Cluster mit dem größten Durchmesser wird in zwei Cluster geteilt.</li>
+  <li>Dazu wird das Objekt in dem Cluster bestimmt, das die größte durchschnittliche 
+Distanz oder Unähnlichkeit zu allen anderen Objekten hat. Es bildet den Kern der 
+“Splittergruppe”.</li>
+  <li>Jedes Objekt, das näher an der Splittergruppe liegt als an den restlichen Objekten, 
+wird nun der Splittergruppe zugeordnet.</li>
+  <li>Die Schritte 2–5 werden solange wiederholt, bis alle Cluster nur noch ein Objekt enthalten.</li>
+</ol>
+
+<p>Der markierte Punkt hat einen eher kleinen Abstand zum Objekt o, im Vergleich zu den
+Abständern zu den anderen Datenpunkten (links). Und wird daher der <em>Splittergruppe</em> 
+zugeordnet. Nach dem Verfahren gehören alle Punkt des linken und mittleren Clusters zur 
+Splittergruppe.</p>
+
+<p>(img Splittergruppe.png)</p>
+
+<p><strong>Vergleich agglomerativ vs. divisiv</strong>: Beide Verfahren benötgen n-1 Schritte. Divisives
+Verfahren ist konzeptionell anspruchsvoller, weil das Vorgehen beim Split nicht direkt
+offensichtlich ist. Agglomeratives Clustering berücksichtigt lokale Muster, divisives
+hingegen die globale Datenverteilung und liefert dadurch ggf. bessere Resultate.</p>
+
+<h4 id="hochdimensionale-merkmalsräume">Hochdimensionale Merkmalsräume</h4>
+<p>In der Regel möchte man Cluster in allen Dimensionen herausfinden. Cluster die z.B im 
+zweidimensionalen richtig erscheinen, ergeben im höherdimensionalen Raum keinen Sinn.</p>
+
+<p><strong>Projected Clustering</strong>: liefert gegeben einer Anzahl von Clustern k und der 
+durchschnittlichen Anzahl der Dimensionen pro Cluster I, die Partitionierung der Daten in k+1
+Mengen (Warum k+1?) und die Teilmengen $D_i$.</p>
+
+<p>(img projected-clustering-alg.png)</p>
+
+<p><em>Ermitteln der Dimensionen</em> zu einem Medoid m. Für jeden Medoid, weden die Punkte in seiner
+Nähe betrachtet. Die <em>Locality</em> L ist definiert als die Menge der Punkte, deren Abstand
+von m kleiner ist als der Abstand von m zu einem Medoiden eines anderen Clusters.</p>
+
+<p>(img locality.png)</p>
+
+<p>Beim Vergleich der Distanzen ist zu beachten, dass die absoluten Werte irreführend sind, da 
+nicht normiert. Die Standardabweichung (Durchschnittliche Absweichung vom Mittelwert) der 
+Punkt zum Medoiden sollte betrachtet werden.</p>
+
+<p><em>Bestimmung der Cluster</em>: findet über die Manhattan Distance statt. Jeder Punkt wird
+zu seinem nächsten Medoiden zugeordnet.</p>
+
+<p>(img manh-distance-projected.png)</p>
+
+<p>(img dim-diff.png)</p>
+
+<h4 id="umgang-mit-kategorischen-attributen">Umgang mit kategorischen Attributen</h4>
+<p>Als <em>kategorische Attribute</em>, werden jene bezeichnet, welche eine endliche Menge von 
+Werten in ihrem Wertebereich haben (z.B. {braun, schwarz, weiß,…}) und deren Wertebereich
+nicht boolsch ist. Ziel ist es, Flags für eine bestimmte Menge von Attributen zu setzen, und
+so Datenobjekte mit gleichen Attributen zu finden. Algorithmen verwenden üblicherweise 
+die Euklidische Distanz zur Berechnung der Abstände. Dies funktoniert gut für numerische
+Attribute.</p>
+
+<p>Bei Datenbeständen mit kategorischen Attributen, kommt es zu <em>Problemen</em>, wenn ein Attribut
+mengenwertig ist, also die Anzahl der Items/Attribute sehr groß ist. Im Warenkorbszenario
+beispielsweise haben Kunden mit ähnlichem Kaufverhalten (gehören ins gleiche Cluster) nur
+wenige gleiche Produkte gekauft. Die Wahl des Schwellenwerts gestaltet sich dann sehr
+schwierig. <br />
+Zudem können die Abstandsmaße zu schlicht oder zu schwer zu
+definieren sein. Der <em>Overlap measure</em> ist ein Ähnlichkeitsmaß, das bei gleichen Objekten
+1 und bei unterschiedlichen Objekten 0 liefert. Dabei bleiben die Häufigkeiten allerdings
+unberücksichtigt. Der <em>Jaccard Koeffizient</em> bestimmt die Ähnlichkeit zwischen zwei
+Transaktionen T1 und T2 $\frac{|T1 \cap T2|}{|T1 \cup T2|}$ mit der maximalen Ähnlichkeit
+1 (alle Objekte gleich) und der minimalen Ähnlichkeit 0 (kein Objekt gleich). Der Jaccard
+Koeffizient berücksicht nur die zwei Punkte, die Nachbarschaft bleibt unberücksichtigt.</p>
+
+<h4 id="dichte-basierte-methodendarstellung-der-cluster-ergebnisse">Dichte-basierte Methoden/Darstellung der Cluster-Ergebnisse</h4>
+<p><em>Link-basierte</em> oder auch <em>Dichte-basierte</em> Methoden machen keine Annahme über die Form des
+Clusters und liefern bessere Ergebnisse als andere Verfahren.</p>
+
+<p><strong>Link-basierte Methode</strong>: verbindet alle Punkte, deren Distanz kleiner als d ist. Links
+ lösen die klassischen Probleme beim Umgang mit kategorischen Attributen. Zwei Punkte sind
+ Nachbarn, wenn die Ähnlichkeit zwischen ihnen größer als ein Schwellwert sind. Die Anzahl
+ von Links zwischen zwei Punkten entspricht der Anzahl gemeinsamer Nachbarn dieser Punkte.
+ Das Vorgehen ist ein wiederholter Merge von Clustern mit maximaler Link-Anzahl. (TODO: 
+ Zeigen Sie, dass dieser Ansatz mit agglomerativem Clustering
+ zu korrektem Clustering führt, wenn (Schwellenwert) =0.5
+ und Jaccard Koeffizient.)</p>
+
+<p>(img link-based.png)</p>
+
+<p><strong>Density-Based Spatial Clustering of Applications with Noise (DBSCAN)</strong>: (Wikipedia)[https://de.wikipedia.org/wiki/DBSCAN]:
+ ist ein Data-Mining-Algorithmus zur Clusteranalyse. Der Algorithmus arbeitet dichtebasiert und ist in der Lage, mehrere 
+ Cluster zu erkennen. Rauschpunkte werden dabei ignoriert und separat zurückgeliefert. <br />
+ Die Grundidee des Algorithmus ist der Begriff der Dichteverbundenheit. Zwei Objekte gelten als dichte-verbunden, wenn es
+  eine Kette von dichten Objekten (Kernobjekte, mit mehr als minPts Nachbarn) gibt, die diese Punkte 
+  miteinander verbinden. Die durch dieselben Kernobjekte miteinander verbundenen Objekte bilden einen Cluster. Objekte, die 
+  nicht Teil eines dichte-verbundenen Clusters sind, werden als Rauschen (engl. Noise) bezeichnet.</p>
+
+<p>In DBSCAN gibt es drei Arten von Punkten:</p>
+
+<ul>
+  <li><em>Kernobjekte</em>, welche selbst dicht sind. (rote Punkte)</li>
+  <li><em>Dichte-erreichbare Objekte</em>. Dies sind Objekte, die zwar von einem Kernobjekt des Clusters erreicht werden können, 
+  selbst aber nicht dicht sind. Anschaulich bilden diese den Rand eines Clusters. (gelbe Punkte)</li>
+  <li><em>Rauschpunkte</em>, die weder dicht, noch dichte-erreichbar sind. (blauer Punkt)</li>
+</ul>
+
+<p>(img Datei_DBSCAN_Illustration.svg)</p>
+
+<p>Der Algorithmus verfügt über zwei Parameter: ε und minPts. Dabei definiert ε die Nachbarschaftslänge eines Punktes:
+ Von einem Punkt erreichbar ist ein zweiter Punkt genau dann, wenn sein Abstand kleiner als ε ist. minPts definiert dagegen,
+ wann ein Objekt dicht (d. h. ein Kernobjekt) ist: wenn es mindestens minPts ε-erreichbare Nachbarn hat.</p>
+
+<p>Dichte-erreichbare Punkte können von mehr als einem Cluster dichte-erreichbar sein. Diese Punkte werden von dem 
+ Algorithmus nicht-deterministisch einem der möglichen Cluster zugeordnet. Dies impliziert auch, dass Dichteverbundenheit 
+ nicht transitiv ist; Dichte-Erreichbarkeit ist nicht symmetrisch.</p>
+
+<p>Wenn <em>ε kleiner</em> wird, kann es sein, dass Objekte, die vorher Teil des Clusters waren, nichtmehr im gleichen Cluster sind.
+ Wenn <em>minPts kleiner</em> wird, werden mehr Objekte keinem Cluster mehr zugeorndet (→ mehr Ausreißer).</p>
+
+<p><em>DBSCAN Erweiterung: Ordering Points To Identify the Clustering Structure (OPTICS)</em>: (Wikipedia)[https://de.wikipedia.org/wiki/OPTICS]:
+  Das Grundprinzip des Algorithmus entstammt DBSCAN,
+  jedoch löst der Algorithmus eine wichtige Schwäche des DBSCAN-Algorithmus: im Gegensatz zu diesem kann er Cluster 
+  unterschiedlicher Dichte erkennen. Gleichzeitig eliminiert er (weitgehend) den ε-Parameter (<em>Core-Distance</em>) des DBSCAN-Algorithmus. 
+  Hierzu ordnet OPTICS die Punkte des Datensatzes linear so, dass räumlich benachbarte Punkte in dieser Ordnung nahe 
+  aufeinander folgen. Gleichzeitig wird die sogenannte „Erreichbarkeitsdistanz“ notiert. Zeichnet man diese 
+  Erreichbarkeitsdistanzen in ein Diagramm, so bilden Cluster „Täler“ und können so identifiziert werden.</p>
+
+<p>(img optics-idea.png)</p>
+
+<p>Die <em>Core-Distance</em> $core-distance_{MinPts}(o)$ ist der kleinste Wert, den ε annehmen kann, 
+  sodass o immer noch ein dichtes Objekt ist.</p>
+
+<p>In der Prioritätsliste (die die Datenpunkte enthält) sollten Datenpunkte, die nahe 
+  beieinander liegen, aufeinander folgen (p1 ist nahe an dichtem Punkt o, p2 nicht: p1,o,p2).
+  Ist p näher an o als core-distnace, dann spielt die genaue Distanz für die Sortierung keine
+  Rolle. Ist ε (ε1) kleiner als die core-distance, dann ist o nicht dicht. Ist ε größer ist p (p1)
+  von o <em>dichteerreichbar</em>. Für den Fall, dass p von o weiter weg ist als die core-distance, 
+  so hängt es von ε (ε2) ab, ob p (p2) von o dichteereichbar ist. )</p>
+
+<p>(img core-dist.png)</p>
+
+<p>Die <em>Ereichbarkeitsdistanz</em> (reachibility distance) ist definiert als das Maximum des 
+  echten Abstandes und der Core-Distance des verweisenden Punktes.</p>
+
+<p>(img reach-dist.png)</p>
+
+<p>OPTICS verwendet eine Priority Queue (Control List (CL)) zum Speichern
+   der Datensätze. Eine Liste wäre zu aufwändig. OPTICS ordnet jetzt die Objekte in der 
+   Datenbank, indem es bei einem beliebigen unbearbeiteten Punkt anfängt, die Nachbarn 
+   in der ε-Umgebung ermittelt und sie sich nach 
+   ihrer bisher besten Erreichbarkeitsdistanz in einer Vorrangwarteschlange merkt. Es wird
+    jetzt immer derjenige Punkt als Nächstes in die Ordnung aufgenommen, der die kleinste 
+    Erreichbarkeitsdistanz hat. Durch das Verarbeiten eines neuen Punktes können sich die 
+    Erreichbarkeitsdistanzen der unverarbeiteten Punkte verbessern. Durch die Sortierung 
+    dieser Vorrangwarteschlange verarbeitet OPTICS einen detektierten Cluster vollständig, 
+    bevor er beim nächsten Cluster weitermacht.</p>
+
+<p>(img optics-vis.png)</p>
+
+<p><em>Beispiel - OPTICS:</em> Zunächst wird Objekt 1 angeschaut. Seine Core-Distance ist groß, da
+   es u keinem natürlichen Cluster gehört. Die Reachability distance ist undefined, da es das
+   erste Objekt, und somit noch kein Referenzobjekt in der Ergebnisliste steht. Die 
+   erreichbaren Nachbarn von Objekt 1 sind die Objekte 2 und 3. Diese werden in die CL 
+   geschrieben, 1 in die Ergebnisliste. Da Objekt 2 näher an Objekt 1, als Objekt 3 liegt, 
+   werden die Objekte in dieser Reihenfolge in die CL geschrieben (CL: 2,3; Output: 1).
+   Als nächstes wird Objekt 2 aus der CL genommen und abgearbeitet. Objekt 16 befindet
+   sich in der ε-Umgebung von Objekt 2, also wird es in die CL aufgenommen (CL: 3,16; 
+   Output: 2,3). Objekt 3 steht als nächstes in der Cl, wird also als nächstes abgearbeitet.
+   Es hat eine kleinere core-distance, da viele Objekte in seiner Umgebung liegen. Die 
+   Objekte die mit Objekt 3 im Cluster liegen ({4,…,15}) werden nun als nächstes in die CL
+   geschrieben. <br />
+   Ist die CL komplett abgearbeitet, wird das nächste Objekt zufällig aus dem Datensatz 
+   gewählt.</p>
+
+<p>(img optics-bsp.png optics-bsp2.png  optics-datastruc.png)</p>
+
+<p>Der bei OPTICS verwendete <em>Reachability Plot</em> repräsentiert die Cluster-Struktur 
+   dichtebasiert und ist leichter zu analysieren. Zudem ist er unabhängig von der
+   Dimensionaltät des Cluserbestands.</p>
+
+<p>OPTICS liefert ein gutes Ergebnis, solange die Parameterwerte groß genug sind. Für ein 
+   kleines ε bleiben größere Nachbarschaften außen vor, für größere ε ist das Ergebnis des
+   Clusters aber ungenauer. Für kleine minPts entstehen zu kleinteilige Cluster, da Objekte
+   mit eher wenigen Objekte in der Nachbarschaft als dicht gelten und ein Cluster bilden.</p>
+
+<h4 id="cluster-ensembles">Cluster-Ensembles</h4>
+<p>Zur Generierung <em>robuster</em> Clustering-Ergebnisse, werden bei <em>Cluster-Ensembles</em> die
+Resultate mehrere Clustering-Modelle kombiniert. Dazu generiert man k unterschiedliche
+Clusterings und leitet daraus die Resultate ab.</p>
+
+<p>Man unterscheidet zwischen:</p>
+<ul>
+  <li><em>Modell-basiert:</em> unterschiedliche Verfahren bilden ein Ensemble bzw. das selbe Verfahren
+mit unterschiedlichen Parametern/Initialisierungen ausgeführt.</li>
+  <li><em>Daten-basiert:</em> unterschiedliche Teilmengen der Daten generieren unterschiedliche Cluster.
+Dabei beschränkt man sich auf unterschiedliche Dimensionen.</li>
+</ul>
+
+<p>Zum <em>Vereinen</em> der Verfahren kann man unterschiedliche Algorithmen anwenden:</p>
+<ul>
+  <li><em>Hypergraph Partitioning Algorithmus:</em> jedes Objekt ist ein Knoten in einem Graphen. Cluster
+sind sogennante <em>Hyper-Kanten</em>. Jede Hyper-Kante kann mehr als zwei Knoten miteinander 
+verbinden.</li>
+  <li><em>Meta-Clustering Algorithmus:</em> Auch hier ist die Darstellung des Clusterings ein Graph. 
+Bei Überlappung der Objekt-Mengen im Cluster existieren Kanten zwischen den 
+Repräsentantenknoten. Der Jaccard-Koeffizient fungiert als Kantengewicht.</li>
+</ul>
+
+<h4 id="probabilitsitsches-clustering">Probabilitsitsches Clustering</h4>
+<p>Da ein Wert im Allgemeinen zu mehr als einem Cluster gehören kann, ist die 
+wahrscheinlichkeitsbasierte Sichtweise auf Clustering notwendig. Man möchte die Cluster 
+finden, die für gegebene Daten am wahrscheinlichsten sind.</p>
+
+<p>Bei der Betrachtung von gekauften Kameras (A: Privat, B: Professionell) mit dem Preis
+an der x-Achse, lassen sich Werte besonders an der Überlappung der Cluster nicht eindeutig
+zuordnen. Unter der Annahme, dass eine Gauss-Verteilung zugrunde liegt, möchte man nun
+herausfinden, mit welcher Wahrscheinlichkeit eine Kamera von einer Privatperson oder einem
+Profi gekauft wurde.</p>
+
+<p>(img kamera.png)</p>
+
+<p>Das <em>Finite-Mixture-Problem</em> ist das Problem Wahrscheinlichkeitsverteilung durch eine Menge
+von k Wahrscheinlichkeitsverteilungen zu beschreiben. Dabei kann jede der k Verteilungen 
+ein Cluster beschreiben, die Verteilungen innerhalb eines Clustes sind aber nicht bekannt.
+Cluster selbst können unterschiedlich wahrscheinlich sein.</p>
+
+<p><em>Clustering mit Finite-Mixtures</em> finden die Parameter (pA, μA, μB, σ²A, σ²B) gegeben der
+Datenobjekte, der Anzahl der CLuster k und der Art der Verteilung der Cluster. Unter der
+Annahme einer Gauss-Verteilung ist dieses Problem lösbar, ohne Annahmen im Allgemeinen aber 
+nicht.</p>
+
+<p>Die Idee des <strong>Expectation Maximization Algorthmus</strong> ist es, mit einem zufällig gewählten 
+Modell zu starten, und abwechselnd die Zuordnung der Daten zu den einzelnen Teilen des 
+Modells (<em>Expectation-Schritt</em>) und die Parameter des Modells an die neueste Zuordnung 
+(<em>Maximization-Schritt</em>) iterativ zu verbessern.</p>
+
+<p>Die initiale Belegung der Parameter (pA, μA, μB, σ²A, σ²B) wird geraten, die Cluster-
+Wahrscheinlichkeiten für jedes Datenobjekt ausgerechnet (<em>Expectation-Schritt</em>), die
+Parameter des Clusters neu berechnet (<em>Maximization-Schritt</em>) und dann das Vorgehen wiederholt.
+Die Schätzung der Parameter ist abhängig davon, wie wahscheinlich ein Datenobjekt zu einem
+Cluster gehört. Die Wahrscheinlichkeiten wirken dabei wie Gewichte.
+EM terminiert dann, wenn das Gütermaß des Clustering (<em>overall likelihood</em>)
+erreicht wird. Der optimale Punkt wird allerdings nie erreicht. Es kann nur das lokale 
+Optimum gefunden werden, nicht das globale. Man kann den Algorithmus mit unterschiedlichen
+Initialisierungen wiederholen und das Gütemaß als Auswahlkriterium für den besten Algorithmus
+wählen.   Angenommen, die Verteilungen
+beschreiben Datenbestand gut:Dann sind viele Instanzennahe bei einem Cluster-Mittelpunkt
+(z. B. μB ), und Pr[x i | B] ist groß. Angenommen, die Cluster-Mittelpunkte sind abseitig:
+Dann ist sowohl Pr[x i | A] als auch Pr[x i | B] für viele Instanzen klein.</p>
+
+<p>(img overall-likelihood.png)</p>
+:ET

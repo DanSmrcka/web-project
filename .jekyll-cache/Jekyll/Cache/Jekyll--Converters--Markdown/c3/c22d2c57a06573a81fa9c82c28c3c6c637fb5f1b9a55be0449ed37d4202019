@@ -1,0 +1,1111 @@
+I"�+<div style="background-color: #EAEFF4; border: 1px solid #b5aeb1; border-radius: 3px;  padding: 10px; margin-right: 10px">
+    <strong>Vorlesung:</strong> <a href="https://campus.studium.kit.edu/ev/LSwjSOYfRp6QN-PKh4W42Q">Algorithmen II</a>, Stammmodul, 6 ECTS <br />
+    <strong>Dozent:</strong> Peter Sanders  <br />
+    <strong>Übungsleitung:</strong> Sebastian Lamm, Demian Hespe  <br />
+   <strong>Vorlesungswebsite:</strong> <a href="http://algo2.iti.kit.edu/AlgorithmenII_WS18.php">http://algo2.iti.kit.edu/AlgorithmenII_WS18.php</a> <br />   
+   <strong>Klausur:</strong> 19.2.2019 13:00 - 15:00  <br />
+   <strong>Nachklausur:</strong> (noch unklar)  <br />
+  
+</div>
+
+<h2 id="organisatorisches">Organisatorisches</h2>
+
+<h3 id="vorlesungen">Vorlesungen</h3>
+<ul>
+  <li><strong>15.10.2018</strong>: Organisatorisches und Foliensatz 1-1 bis 1-19</li>
+  <li><strong>16.10.2018</strong>: Dozent krank, VL wird von Übungsleiter gehalten (Foliensatz 2, hat Nummerierung 3): 3-1 bis 3-23</li>
+  <li><strong>22.10.2018</strong>: 1-20 bis 1-32; Wdh. Foliensatz 2; (Foliensatz 3 hat Nummerierung 2) 2-1 bis 2-65</li>
+  <li><strong>23.10.2018</strong>: 2-10 bis 2-27 und Übung 1</li>
+  <li><strong>29.10.2018</strong>: 2-28 bis Ende Kapitel 3</li>
+  <li><strong>30.10.2018</strong>: 4-1 bis 4-22, Übung 2</li>
+  <li><strong>05.11.2018</strong>: 4-23 bis Ende Kapitel 4; 5-1 bis 5-25</li>
+  <li><strong>06.11.2018</strong>: 5-12 bis 5-19, Übung 3</li>
+  <li><strong>12.11.2018</strong>: 5-20 bis 5-61</li>
+  <li><strong>13.11.2018</strong>: 5-61 bis 5-68, Übung 4</li>
+  <li><strong>19.11.2018</strong>: 5-68 bis Ende Kapitel 5, 6-1 bis 6-2</li>
+  <li><strong>20.11.2018</strong>: 6-3 bis Ende Kapitel 6; Übung 5</li>
+  <li><strong>26.11.2018</strong>: Kapitel 7</li>
+  <li><strong>27.11.2018</strong>: Kapitel 8-1 bis 8-6; Übung 6</li>
+  <li><strong>03.12.2018</strong>: Kapitel 8-7 bis Ende, Kapitel 9-1 bis 9-7</li>
+</ul>
+
+<h3 id="material">Material</h3>
+<p>Das Material der Vorlesung besteht aus:</p>
+<ul>
+  <li><strong>Folien</strong>: Folien mit einer Chilischote am oberen Rand sind <em>nicht prüfungsrelevant</em></li>
+  <li><strong>Übungsblättern</strong></li>
+  <li><strong>Buch</strong>: <em>Algorithms and Data Structures — The Basic Toolbox</em>, K. Mehlhorn, P. Sanders, Springer 2008, macht ca. 40% der Vorlesung aus, vor allem empfehlenswert, 
+wenn man Algorithmen I nicht am KIT oder gar nicht gehört hat.</li>
+  <li><strong>Skript</strong>: ergänzende Informationen die nicht im Buch stehen</li>
+</ul>
+
+<h3 id="übungen">Übungen</h3>
+<p>Die Übungen finden jeweils in der zweiten Hälfte der Dienstagsvorlesung statt. Die Übungsblätter erscheinen 14-tägig jeweils am Dienstag. 
+Die Mustelösung kommt 9 Tage später und wird in den Übungen nicht besprochen. Die Bearbeitung der Übungsblätter ist freiwillig und wird wärmstens Empfohlen (na klar).
+Das erste Blatt erscheint am 23.10.2018.</p>
+
+<h3 id="klausur">Klausur</h3>
+<p>Die Klausurbearbeitung beträgt 120 Minuten und es darf ein doppelseitig handbeschriebenes DIN A4 Blatt mitgenommen werden.</p>
+
+<h2 id="vorlesungsinhalt">Vorlesungsinhalt</h2>
+
+<h3 id="algorithm-engineering">Algorithm Engineering</h3>
+<blockquote>
+  <p>Algorithm Engineering ist eine umfassenendere Sicht auf die Algorithmik und liefert eine bessere Kopplung zu Anwendungen, als die 
+Algorithm Theory.</p>
+</blockquote>
+
+<p><strong>Algorithm Theory:</strong> Das Problem in der Umsetzung von Algorithmen liegt zwischen Theorie, Praxis und interdiziplinären Felden.</p>
+<ul>
+  <li><em>Theorie</em>: Model -&gt; Design -&gt; Analysis -&gt; Performance Guarantees</li>
+  <li><em>Practice</em>: Implementation -&gt; Applications</li>
+  <li><em>Other Disciplines</em>: Publications? Money?
+Die Schwierigkeit liegt darin, die großen Kluften zwischen diesen Gebieten zu überwinden.</li>
+</ul>
+
+<p><em>Beispiele:</em></p>
+<ul>
+  <li>Komplexe theoretische Algorithmen lassen sich oft durch “einfache” FOR-Schleifen implementieren</li>
+  <li>fortgeschrittene Datenstrukturen lassen sich durch Arrays implementieren</li>
+  <li>Kontanten werden in der Laufzeitberechnung vernachlässigt, machen in Realität aber 42% der Effizienz aus</li>
+</ul>
+
+<p><strong>Algorithmics as Algorithm Engineering</strong>: Den Zusammenhang von Theorie und Praxis kann man sich besser als Kreislauf vorstellen, 
+bei welchem Model, Design, Analysis, Implementation und Experiment ineinander übergehen und zusätzlich interdisziplinäre Forschung mit einbeziehen.</p>
+
+<p><strong>Realistic Models</strong>: Vorsichtige Definition von Modellen, die sowohl in der Theorie funktionieren, als auch auf realen Maschinen laufen können.</p>
+
+<p><strong>Design</strong>: algorithm that work well in practice; simplicity, reuse, constant factors, easy instances</p>
+
+<p><strong>Analysis</strong>: constant factors matter, beyond worst case analysis → practical algorithms might be difficult to analyze</p>
+
+<p><strong>Implementations</strong>: Sanity check for algorithms; Challenges in semantic gaps: abstract algorithms ↔ C++ ↔ hardware</p>
+
+<p><strong>Experiments</strong>: sometimes good instead of analysis, rather too much than too little output data, reproducibility (10 years!); need a possible outcome 
+that fasifies a hypothesis;</p>
+
+<p><strong>Quality Criteria</strong>: new algorithms must be good (really good, not only with “toy data”); show through comparision old - new algorithm: use same data, 
+benchmarks, quality and speed, real world data if possible, many different inputs if possible</p>
+
+<h3 id="fortgeschrittene-datenstrukturen">Fortgeschrittene Datenstrukturen</h3>
+<p>Anmerkung: Foliensatz 02 trägt die Nummerierung 3</p>
+
+<p><strong>Prioritätslisten</strong>: <a href="https://de.wikipedia.org/wiki/Vorrangwarteschlange">Wikipedia</a>: “Den Elementen, die in die Warteschlange gelegt werden, 
+wird ein Schlüssel mitgegeben, der die Reihenfolge der Abarbeitung der Elemente bestimmt.”, 
+Operationen: insert, extractMin, remove, decreaseKey (=Priorität erhöhen)</p>
+
+<p><strong>Adressierbare Prioritätslisten</strong>: Elemente in Prioritätsliste können verändert werden* → zur Identifikation des zu verändernden Elements adressierbar,
+z.B. remove nicht nur mit oberstem Element möglich; Operationen in Prioritätslisten: build, size, insert, min, deleteMin, remove<em>, decreaseKey</em>, merge* 
+(*neu ggü einfachen Prioritätslisten);
+Anwendungen: Dijkstra, Greedy-Algorithmen (<a href="https://de.wikipedia.org/wiki/Greedy-Algorithmus">Wikipedia</a>: “schrittweise den Folgezustand auswählen, 
+der zum Zeitpunkt der Wahl den größten Gewinn bzw. das beste Ergebnis verspricht”)</p>
+
+<p><strong>Heap-Eigenschaft</strong>: Wurzel eines Teilbaums muss immer kleiner sein als seine Kindknoten (→ min-heaps; max-heaps gibt es aber auch)</p>
+
+<p><strong>Wald heap-geordneter Bäume</strong>: nicht nur einen Baum → ganzer Wald = Menge an Bäumen; kein Binärbaum, Knoten kann mehrere Kinder haben<br />
+Operationen:</p>
+<ul>
+  <li><em>Cut:</em> Teilbaum eines Baumes, als eigenen Baum in den Wald einfügen (Knoten der Wurzel werden soll: parent := null)</li>
+  <li><em>Link:</em> Verknüpfen zweier Bäume a,b; wenn a &lt; b → b Teilbaum von a: $ union(a,b): link(min(a,b), max(a,b)) $</li>
+</ul>
+
+<p><strong>Pairing Heaps</strong>: Operationen:</p>
+<ul>
+  <li><em>insertItem(h: Handle):</em> Einfügen eines neuen Baums für Handle h; $ O(1) $</li>
+  <li><em>newTree(h: Handle):</em> Einfügen eines neuen Elements in den Wald mit Handle h, zur effizienten Ausgabedes kleinsten Elements Pointer aktualisieren, 
+wenn eingefügtes Element kleiner als bisheriger min</li>
+  <li><em>decreaseKey(h: Handle, k: Key):</em> Update Key des handles, wenn sich key verkleinert, unklar ob Baum noch heap-Eigenschaft erfüllt, deshalb: 
+ist Element Wurzel → update und fertig, wenn <em>keine</em> Wurzel → cut; unbewiesen: $ O(log log n) ≤ T ≤ O(log n) $ → sehr schnell in Realität</li>
+  <li><em>cut(h: Handle):</em> Herausschneiden aus Baum: Entfernen des gesamten Teilbaum und einfügen als neuen Baum in Wald (newTree(h)); 
+update des minPointers (minPtr)</li>
+  <li><em>deleteMin : Handle:</em> Element m auf das minPtr zeigt wird aus Wald entfernt → muss root sein, das kleinste Element kann nicht unterhalb eines Baumes sein, 
+alle Kinder von m werden als neue Teilbäume in Wald eingefügt; paarweise Vereinigung der Wurzeln, Vergleiche Wurzeln von nebeneinanderstehenden Bäumen und
+hänge das größere Element unten an; $ O(log n) $</li>
+  <li><em>merge(c: addressablePQ):</em> aus zwei Heaps einen Heap bilden; kleinere minPtr wird für neuen Heap übernommen; Vereinigung der Wälder der Heaps; 
+Ursprungswald := ∅; $ O(1) $</li>
+</ul>
+
+<p>Repräsentation: Wurzeln in doppelt verketteter Liste; zwei Varianten (Vgl. Foliensatz 2 Abb 3-10); Pointer auf linken bzw. rechten Sibling, weil sonst 
+Parent alle Pointer auf Kinder halten müsste</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Variante 1:</td>
+          <td>parent</td>
+          <td>data</td>
+          <td>left sibling</td>
+          <td>right sibling</td>
+          <td>one child</td>
+          <td>→ einfacher, mehr Speicherplatz</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Variante 2:</td>
+          <td>data</td>
+          <td>parent or left sibling</td>
+          <td>right sibling</td>
+          <td>one child</td>
+          <td>→ spart Platz, etwas komplizierter</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Fibonacci-Heaps</strong>: Wichtige Begriffe:</p>
+<ul>
+  <li><em>Rang:</em> direkte Anzahl Kinder</li>
+  <li><em>Verinigung nach Rang:</em> Unnion nur für gleichrangige Wurzeln (Union by Rank)</li>
+  <li><em>Markieren:</em> Knoten die ein Kind verloren haben</li>
+  <li><em>Kaskadierende Schnitte:</em> Schneide markierte Knoten (mehr als 2 Kinder verloren)</li>
+</ul>
+
+<p>Armotisierte Komplexität: $ O( o + d log n)$ für d=#deleteMin, o=#otherOps,  n = maxAnzahlKnoten</p>
+
+<p>Repräsentation: wie Variante 1, plus Rank, Markierung zusammen mit data speichern</p>
+
+<p>Operationen:</p>
+<ul>
+  <li><em>deleteMin : Handle:</em> Element m auf das minPtr zeigt wird aus Wald entfernt → muss root sein, das kleinste Element kann nicht unterhalb eines Baumes sein, 
+alle Kinder von m werden als neue Teilbäume in Wald eingefügt; solange ein a,b ∈ forest existiert, für das gilt rank(a) = rank(b) →  Vereinigung von a und b,
+inkrement Rang der verbliebenen Wurzeln, update  minPt und return minPtr; Analyse: $ O(maxRank) = O(log n)  $ (Beweis siehe Foliensatz 02 Abb. 3-16), 
+maxRank logarithmisch, $ 2^k + 1 × insert, 1 × deleteMin → rank k $, Binomialbäume haben Struktur, dass Teilbäume von allen Rängen darunter enthalten sind
+→ Problem: durch Rausschneiden ergeben sich kleine aber hochrangige Bäume → Kaskading Cuts in Fibonacci Heaps</li>
+  <li><em>Union-by-Rank:</em> Roots haben Rang, Array mit Länge des größten Rangs, jedes Element wird im Array an Stelle seines Rangs gehängt, ist Feld besetzt, 
+werden Elemente vereint (der größe nach aneinander gehängt), dadurch verändert sich Rang und Baum muss an anderer Stelle im Array eingesetzte werden, ist 
+dieses wieder besetzt muss wieder Vereinigt werden,… (vgl Foliensatz 02 Abb. 3-15); Analyse: $ O(AnzahlUnions + AnzahlForest)$</li>
+  <li><em>Cascading Cuts/Kaskadierenden Schnitte:</em> in decreseKey kein normaler cut, sondern cascadingCut(h): wenn h keine Wurzel ist, p := parent(h), unmark wenn
+markierung, cut, wenn p marked dann cascadingCut(p), else mark p; Beweis, dass kaskadierende Schnitte maxRank logarithmisch halten (vgl. Foliensatz 02: 3-19)</li>
+</ul>
+
+<p>Name Fibonacci-Heaps: Bekannt, dass i-te Fibonacci-Zahl $ ≥ 1.618^i $, exponentiell in i → ein Baum mit Rank i enhält exponentiell viele Knoten → nur
+logarithmisch viele Ranks, z.B. v mit rank(v) = i enthält $ ≥ F^{i+2} = 1.618^i+2 $ Elemente → logarithmische Zeit für deleteMin 
+(Beweis auf Foliensatz 02: 3-21)</p>
+
+<p><em>Ende der Vorlesung vom 16.10.2018</em></p>
+
+<h3 id="fortgeschrittene-graphenalgorithmen">Fortgeschrittene Graphenalgorithmen</h3>
+<p><strong>Kürzeste Wege</strong>: Graph mit Knoten V und Kanten E, Kostenfunktion c und Anfangsknoten s; Gesucht Länge $ \mu (v)$ des kürzesten Pfads von s nach v →
+Pfad mit der kleinsten Summe aus den Kosten der Kanten; zwei Knotenarrays: d[v] (vorläufige Distanz von s nach v;  $ d[v] ≥ \mu (v)$), 
+parent[v] (Vorgänger von v auf Pfad von s nach v);<br />
+<em>Initialisierung:</em> $ d[s] = 0, parent[s] = s; d[v] = ∞, parent[v] = ⊥ $ (⊥ = Bottom Symbol, undefined)<br />
+<em>Kanten relaxieren:</em> falls $ d[u] + c(u,v) &lt; d[v] → d[v] := d[u] + c(u,v) $ und $ parent[v] := u  $
+<em>Pseudocode von Dijkstra:</em></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">initialize</span> <span class="n">d</span><span class="p">,</span> <span class="n">parent</span>
+<span class="nb">all</span> <span class="n">nodes</span> <span class="n">are</span> <span class="n">non</span><span class="o">-</span><span class="n">scanned</span>
+<span class="k">while</span> <span class="err">∃</span> <span class="n">non</span><span class="o">-</span><span class="n">scanned</span> <span class="n">node</span> <span class="n">u</span> <span class="k">with</span> <span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="err">∞</span>
+    <span class="n">u</span> <span class="p">:</span><span class="o">=</span> <span class="n">non</span><span class="o">-</span><span class="n">scanned</span> <span class="n">node</span> <span class="n">v</span> <span class="k">with</span> <span class="n">minimal</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="n">relax</span> <span class="nb">all</span> <span class="n">edges</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="n">out</span> <span class="n">of</span> <span class="n">u</span>
+    <span class="n">u</span> <span class="ow">is</span> <span class="n">scanned</span> <span class="n">now</span></code></pre></figure>
+
+<p>d ist anschließend optimale Entfernung und parent zugehörige Wege; v erreichbar, es wird irgendwann gescannt; v gescannt $ \mu (v) = d[v]$</p>
+
+<p><em>Laufzeit:</em> $T_{Dijkstra} = O(m · T_{decreaseKey} (n) + n · (T_{deleteMin} (n) + T_{insert} (n)))$ mit 
+<a href="https://de.wikipedia.org/wiki/Fibonacci-Heap">Fibonacci-Heapprioritätslisten</a> (Wikipedia: “Elemente mit festgelegter Priorität 
+in beliebiger Reihenfolge effizient im Heap gespeichert werden können und stets ein Element mit höchster Priorität 
+entnommen werden kann.”), wenn zudem m hinreichend groß (m &gt; log log n), dominiert m die Laufzeit und hinterer Teil nichtmehr relevant
+ $T_{DijkstraFib} = O(m · 1 + n · (log  n + 1)) =
+ O(m + n  log  n)$ → ABER: konstante Faktoren sind größer als bei binären Heaps</p>
+
+<p><em>Laufzeit im Durchschnitt:</em> maximal m decreaseKey Operationen (eine pro Kante) → Erwartungswert der Laufzeit ist Durchschnitt: 
+$ E[Anzahl decreaseKey-Operationen] = O(n log \frac {m} {n}) $  → $ E[T_DijkstraBHeap] = O(m + n log log \frac {m} {n} log n) $, bei
+dichten Graphen sogar lineare Laufzeit ($ m = Ω(n log n log log n)$)</p>
+
+<p><em>Ende der Vorlesung vom 22.10.2018</em></p>
+
+<p><em>Präfixminimum:</em> Zum Beweis, dass die Anzahl decreseKey Operationen in $ O(n log \frac {m} {n}) $ laufen: Ansehen der eingehenden Kanten von v, 
+ in der Reihenfolge in der sie gescannt wurden, decrese Key findet statt, wenn $ μ(u_i) + c(e_i) &lt; min (μ(u_j) + c(e_j))$; wenn aber $ μ(u_i) ≥ μ(u_j) $,
+ (Wege zu $u_i$ kürzer sind als zu $u_j$) für j &lt; i muss das <em>Präfixminimum</em> gelten: $ c(e_i) &lt; min_{j&lt;i} c(e_j) $ → es findet decreaseKey bei 
+ Bearbeitung von $e_i$ statt; nur Abschätzung (sonst sehr schwierig, da Reihenfolge der $u_i$ unbekannt), es kann z.B. garkein decreaseKey kommen;
+ Da erstes Minimum zu insert führt gilt: $ ≤ H_k − 1 ≤ (ln k + 1) − 1 = ln k $ erwartete decreaseKeys 
+ <em>Präfixminima einer Zufallsfolge:</em> Da Folge zufällig permutiert, ist jede Zahl mit der gleichen Wahrscheinlichkeit die kleinste: bei i Zahlen $ \frac{1}{i}$</p>
+
+<p>Ziel: Dijkstras Algorithmus schneller zu machen, dafür bereits angesehen: Fibonacci-Heaps (schlecht bei decreaseKey, im average-Case nicht so wichtig; ABER:
+auch Betrachtung des Worst-Case). Daher nochmal Prioritätslisten ansehen:</p>
+
+<p><strong>Monotone ganzzahlige Prioritätslisten</strong>: bei ganzzahligen Schlüsseln gut und ausnutzen, dass deleteMin immer monoton steigende Werte liefert → weitere
+Verbesserung von Dikjstras Algorithmus möglich; sehr viel eingesetzt in Praxis (nicht nur Dijkstra);</p>
+
+<p><strong>Bucket-(Priority)-Queue:</strong> zahlen in sehr engem Bereich zu repräsentieren (Ring um settled nodes); zyklisches Array B mit Länge C+1, 
+jeder Arrayeintrag enthält doppelt verkettete Liste von prioriy-queue Einträgen, alle Einträge in Bucket haben gleiche Priorität, 
+Knoten mit Distanz d[v] wird in B[d[v] mod(C+1)] gespeichert<br />
+<em>Initialisierung:</em> C+1 leere Listen, min = 0
+<em>Operationen in Bucket Queues:</em></p>
+<ul>
+  <li>insert(v): v wird in B[d[v] mod(C+1)] eingefügt; Analyse: $O(1)$</li>
+  <li>decreseKey(v): entfernen von v und neu einfügen in B[d[v] mod(C+1)] mit neuem Key; Analyse: $O(1)$</li>
+  <li>deleteMin: anfangen bei B… (im moment das Minimum gespeichert), falls leer inkrement min, solange bis nicht leerer Bucket gefunden (sonst geht nicht weil
+Queue leer) → hier Monotonizität wichtig: wenn Schlüsselwerte sinken können, müsste man “rückwärts schauen” können → extra Kosten; Analyse: im Worst-Case
+muss man einmal durch die Queue also $ O(nC) $ oder $ O(n+maxPathLength) $</li>
+</ul>
+
+<p><strong>Radix-Heaps</strong>: Array von -1 bis k Buckets ($ K = 1 + ⌊log_2 C⌋ $); min ist zuletzt aus Q entfernte Distanz; für jeden Knoten v gilt 
+$ d[v] ∈ [min, . . . , min +C] $; nun hat man C mögliche Schlüssel, aber nur log C mögliche Buckets → wie abbilden? → “Bitfummelei” :D 
+Beispiel: C=9, binär 1001 → K=4; Vergleich binär min und binär v → suche erste Stelle an der sie sich unterscheiden. Spezialfall: bei keinem 
+Unterschied in B[-1]; Unterscheiden sie sich an einer größeren Stelle als K → B[K]; sehr schnell zu berechnen mit Maschinenbefehl XOR → Unterschiede
+werden zur 1, gleiche Zahlen zur 0 → suche nun höchstwertige 1 in Ergebnis (Operation <em>msd(a,b)</em> = “most significant difference”)</p>
+<ul>
+  <li><em>deleteMin:</em> wenn B[-1] nicht leer, steht min dort; sonst suche erstes nicht leere Bucket, suche in der Liste dieses Buckets B[i] das min und schiebe 
+es nach B[-1] → neu “aufräumen” mit msd-Formel in B[i] (nur B[i], alle anderen nicht betroffen) → return B[-1]; Analyse: $ O(K+|B[i]|)$</li>
+</ul>
+
+<p><em>Ende der Vorlesung vom 23.10.2018</em></p>
+
+<p><em>Vergleich Djkstra:</em></p>
+<ul>
+  <li>Dijkstra: $ T_{Dijkstra} = O(m · T_{decreaseKey} (n) + n · (T_{deleteMin} (n) + T_{insert} (n))) $</li>
+  <li>mit Radix-Heaps: $ T_{DijkstraRadix} = O(m + n · (K + K)) = O(m + n · log C) $</li>
+</ul>
+
+<p><strong>All-Pairs Shortest Paths</strong>: kürzeste Pfade für alle Paare bestimmen, negative Kosten erlauben, aber keine negativen Kreise;
+Verschiedene Möglichkeiten:</p>
+<ul>
+  <li>n mal Bellman Ford: $ O(n²m) $</li>
+  <li>Knotenpotentiale: $ O(nm+n²logn) $</li>
+</ul>
+
+<p><strong>Knotenpotentiale</strong>: Knoten bekommen Potentiale (von “potentieller Energie” in Physik, z.B. mit Elektroauto bergab fahren hat negatives Kantengewicht 
+→ kann über Potential ausgedrückt werden); Potentiale definierten <em>reduzierte Kosten</em>, Kosten finden gleiche küzeste Pfade (genaue
+Definion der Potentiale egal): Durch aufsummieren der Potentiale (erst positiv, dann negativ) ergibt sich $ ̄c(e) = pot(u) + c(e) − pot(v) $ (+ und - hebt sich auf
+es bleibt nurnoch erster und letzter Knoten);<br />
+<em>Einfügen eines Hilfsknotens s:</em> von Knoten s aus Kanten zu allen Knoten einführen, die Kosten 0 haben. Anschließend <a href="https://de.wikipedia.org/wiki/Bellman-Ford-Algorithmus">Bellman-Ford</a>
+ zur kürzesten Pfade Berechnung; definiere $ pot (v) := μ(v) $ für alle v → nun alle Kosten <em>nicht negativ</em> und Dijkstra kann verwendet werden, warum sind alle Kanten positiv:</p>
+<ul>
+  <li>Keine negativen Kreise, pot(v) = wohldefiniert → lässt sich durch Bellman-Ford “herausschneiden”</li>
+  <li>Für beliebige Kanten gilt: $ μ(u) + c(e) ≥ μ(v) $  → $ c̄(e) = μ(u) + c(e) − μ(v) ≥ 0 $
+<em>Analyse:</em> s hinzufügen $O(n)$; Postprocessing (zurück zu ursprünglichen Kosten): $ O(n²) $; n mal Dijkstra dominiert  → $ O(n(m + n log n)) = O()nm + n^2 log n) $<br />
+<em>Distanz zu Zielknoten:</em></li>
+  <li>Bidirektionale Suche: abwechselnd s und t, Vorwärtssuche auf G, Rückwärtssuche auf G’ (= umgedrehte Kantengewichte), bei jedem Schritt kürzeste
+Distanz speichern: $ d[s,t] = min(d[s,t], d_{forward} [u] + d_{backward} [u]) $; Abbruchkriterium: Suche scannt Knoten, der in anderer Richtung bereits gescannt wurde: $ d[s,t] ⇒ μ(s,t)$</li>
+  <li>A*-Suche: Scanne Knoten möglichst nah an t, Funktion $f(v)$ schätzt $μ (v,t)$: $ pot(v) = f(v)$ und $ c̄(u,v) = c(u,v) + f(v) − f(u) $;<br />
+ f(v) benötigt folgende Eigenschaften:
+    <ul>
+      <li>Konsistenz (reduzierte Kosten nicht negativ): $c(e) + f(v) ≥ f(u) ∀e = (u, v)$</li>
+      <li>wird t aus Q entfernt wenn f(t) = 0 und $ f(v) ≤ μ (v,t) ∀v ∈ $</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="anwendungen-von-dfs">Anwendungen von DFS</h3>
+<p><strong>Tiefensuche (Depth-First-Seacht, DFS)</strong>: <a href="https://de.wikipedia.org/wiki/Tiefensuche">Tiefensuche</a> “Pfad vollständig in die Tiefe beschritten, bevor abzweigende Pfade beschritten werden”; 
+Algorithmus:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">unmark</span> <span class="nb">all</span> <span class="n">nodes</span><span class="p">;</span> <span class="n">init</span>      <span class="o">//</span><span class="n">dfsPos</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">:</span> <span class="mf">1.</span><span class="o">..</span><span class="n">n</span><span class="p">;</span> <span class="n">finishingTime</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">:</span> <span class="mf">1.</span><span class="o">..</span><span class="n">n</span>
+
+<span class="n">foreach</span> <span class="n">s</span> <span class="err">∈</span> <span class="n">V</span> <span class="n">do</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">marked</span> <span class="n">then</span>
+        <span class="n">mark</span> <span class="n">s</span>          <span class="o">//</span> <span class="n">make</span> <span class="n">s</span> <span class="n">a</span> <span class="n">root</span> <span class="ow">and</span> <span class="n">grow</span>
+        <span class="n">root</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>        <span class="o">//</span> <span class="n">a</span> <span class="n">new</span> <span class="n">DFS</span><span class="o">-</span><span class="n">tree</span> <span class="n">rooted</span> <span class="n">at</span> <span class="n">it</span><span class="p">;</span>  <span class="n">dfsNum</span> <span class="p">[</span><span class="n">s</span><span class="p">]:</span><span class="o">=</span> <span class="n">dfsPos</span> <span class="o">++</span>
+        <span class="n">DFS</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">Procedure</span> <span class="n">DFS</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="n">NodeId</span> <span class="p">)</span>      <span class="o">//</span> <span class="n">Explore</span> <span class="n">v</span> <span class="n">coming</span> <span class="k">from</span> <span class="n">u</span><span class="o">.</span>
+    <span class="n">foreach</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="err">∈</span> <span class="n">E</span> <span class="n">do</span>
+        <span class="k">if</span> <span class="n">w</span> <span class="ow">is</span> <span class="n">marked</span> <span class="n">then</span> <span class="n">traverseNonTreeEdge</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+        <span class="k">else</span>
+            <span class="n">traverseTreeEdge</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>         <span class="o">//</span> <span class="n">dfsNum</span> <span class="p">[</span><span class="n">w</span><span class="p">]:</span><span class="o">=</span> <span class="n">dfsPos</span> <span class="o">++</span>
+            <span class="n">mark</span> <span class="n">w</span>
+            <span class="n">DFS</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+            <span class="n">backtrack</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>        <span class="o">//</span> <span class="k">return</span> <span class="k">from</span> <span class="n">v</span> <span class="n">along</span> <span class="n">the</span> <span class="n">incoming</span> <span class="n">edge</span><span class="p">;</span> <span class="n">finishingTime</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span><span class="o">=</span> <span class="n">dfsPos</span> <span class="o">++</span></code></pre></figure>
+
+<p><strong>Starke Zusammenhangskomponenten (SCC)</strong>: fundamental Eigenschaft von Graphen, zur Anwendung, Analyse und Vereinfachung von Graphen benötigt. Relation ↔* besagt, u ist zusammenhängend mit
+v, wenn es einen Pfad von u nach v gibt und einen Pfad von v nach u → man kann in beide Richtungen gehen, Relation ist Äquivalenzrelation, definiert Relationsklassen: jede Teilmenge ist wiederum
+ stark zusammenhängend, beliebige Knoten in Teilmenge können sich gegenseitig erreichen; bei <em>Zusammenschrumpfen</em> des Graphen (=jede Zusammenhangskomponente durch neuen Knoten ersetzen, 
+ entstehender Graph = <em>Schrumpfgraph</em>), dann entsteht ein <em>gerichteter Azyklischer Graph</em></p>
+
+<h3 id="maximum-flows-und-matchings">Maximum Flows und Matchings</h3>
+<p><strong>Network</strong>: <a href="https://de.wikipedia.org/wiki/Fl%C3%BCsse_und_Schnitte_in_Netzwerken#Netzwerk">Network</a>; directed weighted graph, source node $s$ and sink node $t$, s has no incoming edges, 
+t no outgoing edges, weight $c_e$ is nonnegative capacity of edge $e$</p>
+
+<p><strong>Flows</strong>: <a href="https://de.wikipedia.org/wiki/Fl%C3%BCsse_und_Schnitte_in_Netzwerken#Fluss">Fluss</a>; Funktion f die Netzwerk einen nichtnegativen Flusswert zuweist<br />
+Bedingungen:</p>
+<ul>
+  <li><em>Kapazitätskonformität:</em> Flusswert auf Kante ist max. so groß wie Kapazität der Kante</li>
+  <li><em>Flusserhalt:</em> in jeden Knoten muss genau so viel “hineinfließen” wie “herausfließen”</li>
+</ul>
+
+<p><strong>Cuts</strong>: <a href="https://de.wikipedia.org/wiki/Fl%C3%BCsse_und_Schnitte_in_Netzwerken#Schnitt">Schnitt</a>; echte Teilmengen S und T der Knoten in Netzwerk mit $s \in S$ und $t \in T$; 
+Kapazität des Schnittes ist Summe der Kapazitäten der Kanten von S nach T</p>
+
+<blockquote>
+  <p>Wert von Max-Flow = min. Kapazität eines s-t-Cuts</p>
+</blockquote>
+
+<p><strong>Max-Flow Berechnung</strong>:</p>
+<ul>
+  <li><em>Linear:</em> Flussvariablen $x_e$ für jede Kannte, Fluss pro Kante hat max. Kapazität, eingehende Fluss = ausgehender Fluss, maximiere ausgehende Kanten vom Startknoten s aus</li>
+  <li><em>Augmenting Paths:</em> finde Pfad von s nach t, sodass Kante noch Kapazität übrig hat, sättige Kante mit kleinster übriger Kapauität, passe Kapazitäten an (erstelle <em>Residualgraph</em>) und wiederhole</li>
+</ul>
+
+<p><strong>Residual Graph</strong>: <a href="https://de.wikipedia.org/wiki/Fl%C3%BCsse_und_Schnitte_in_Netzwerken#Residualnetzwerk">Residualnetzwerk</a>; Das Residualnetzwerk mit Residualgraphen $G_f$, Fluss $f$ und 
+Residualkapazitäten $u_f$ zeigt restliche Kapazitäten des Netwerks an; Residualgraph besitzt gleiche Knotenmengen wie G und besteht aus den von $f$ nicht ausgelasteten Kanten und ergänzt
+Rückkanten (für $f(e) &gt; 0$), und Kanten (wenn $f(e) &lt; c(e)$)</p>
+
+<p><strong>Augmenting Paths</strong>: Pfad p von s nach t finden, sodass jede Kante $e$ nonzero residual capacity hat</p>
+
+<p><strong>Ford Fulkerson Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/Algorithmus_von_Ford_und_Fulkerson">Algorithmus</a> zu Bestimmung des Maximalen Flusses; am 
+Besten Beispiel auf Wikipedia anschauen</p>
+
+<p><strong>Max-Flow-Min-Cut Theorem</strong>: <em>max-flow = min-cut</em>; offensichtlich: <em>any-flow ≤ max-flow ≤ min-cut ≤ any-cut</em>; Theorem gilt
+für beliebige Flussnetzwerke, wenn alle ≤ zu = werden, Beweis: (S, T) flow = (S, T) cut capacity ⇒ (S, T) flow = max-flow = min-cut</p>
+
+<p><strong>Blocking Flows:</strong> $f_b$ ist ein Blockierender Fluss, wenn alle Kanten $e$ von $f_b$ gleich der Kosten von $e$ sind: 
+$∀ paths p = \langle s,…,t\rangle: ∃e ∈ p : f_b(e) = c(e)$</p>
+
+<p><strong>Dinitz-Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/Algorithmus_von_Dinic">Algorithmus</a>
+<em>DinitzMaxFlow:</em> berechnet MaxFlow, Rückwärtsbreitensuche von t nach s, solange
+ein Pfad von s nach t existiert, füge Kante von u nach v in den Layer Graph L ein, mit der Distanz $d(v) = d(u)-1 $; ausgehend von t haben also alle Knoten
+die direkt von t erreichbar sind die d = 1, t selbst 0, usw. dadruch entsteht ein layer graph (Schichtengraph), in dem alle Knoten mit dem selben 
+Abstand zu t einer Schicht angehören; finde einen Blocking Flow $f_b$ in L, vergößere den Fluss f um den eben gefundenen blocking flow $f_b$<br />
+<em>blockingFlow:</em> langer Algorithmus, besteht aus 3 Teilen: breakthrough, extend, retreat, loop solange bis return Blocking flow $f_b$ wenn v=s</p>
+<ul>
+  <li>breakthrough: δ = minimale Residualkapazität von Kanten im Graph</li>
+  <li>extend: pushe Knoten w auf p</li>
+  <li>retreat: delete last edge</li>
+</ul>
+
+<p>Analyse: $O(m+nm) = O(nm)$, d(s) erhöht sich pro Runde min. um 1, streng polynomiell: O(mn²), O(mn log n) min dynamic tree, at most 
+$ 2 \sqrt{m} $BF computations $O((m+n)\sqrt{m}$</p>
+
+<p><em>Unit Capacity:</em> min{indegree(v), outdegree(v)} = 1</p>
+
+<p><em>Matching:</em> ungerichteter Graph G=(V,E) mit M ⊆ E, gdw. (V,M) max grad ≤ 1; M ist maximal wenn $\nexists e ∈ E \ M : M ∪ {e} $ ist matching;
+M hat maximale Kardinalität $\nexists matching M’: |M’| &gt; |M|$</p>
+
+<p><strong>Preflow</strong>: Fluss für den Eingangskanten größer sein dürfen als Ausgangskanten: $ excess(v) := inflow - outflow ≥ 0 $; Knoten (nicht s,t) ist
+<em>aktiv</em> wenn excess &gt; 0</p>
+
+<p><strong>Preflow-Push Algorithms</strong>: Familie von Algorithmen; maintain approximation d(v) of BFS distance from v to t in $G_f$</p>
+<ul>
+  <li>Invariante 1: $d(t) = 0$</li>
+  <li>Invariante 2: $d(s) = n$</li>
+  <li>Invariante 3: no steep edges $ ∀(v, w) ∈ E_f: d(v) ≤ d(w) + 1 $</li>
+</ul>
+
+<p><em>Edge Directions:</em></p>
+<ul>
+  <li>steep: d(w) &lt; d(v) − 1</li>
+  <li>downwards: d(w) &lt; d(v)</li>
+  <li>horizontal: d(w) = d(v)</li>
+  <li>upwards: d(w) &gt; d(v)</li>
+</ul>
+
+<p><em>Analyse:</em> $O(n²m)$</p>
+
+<p>*Ende Vorlesung vom 13.11.2018**</p>
+
+<p><strong>FIFO Preflow push</strong>: Wie kann Anzahl nicht-saturierender Pushes verringert werden? → FIFO besser als Stack  → $O(n³)$</p>
+
+<blockquote>
+  <p>Grundsätzlich gilt : $n ≤ m$ mit Knoten n und Kanten m, da ansonsten Knoten isoliert wären und für den Fluss nicht betrachtet werden müssten.</p>
+</blockquote>
+
+<p><strong>Highest Level Preflow Push</strong>: verbessert Dinitz weiter: Knoten, die möglichst weit weg sind werden bearbeitet, “Fluss sammelt sich unten an, bevor man ihn
+wegschiebt”, select active nodes, that maximize $d(v)$, with bucket priority queue, not monotone, relabels pay for scan operations → highest level preflow
+push finds a max flow in $O(n²\sqrt{n})$<br />
+still better: with aggressive local relabeling and global relabelling and special treatment of nodes with $d(v) ≥ n$ → no node can connect to t across an empty
+level</p>
+
+<h3 id="randomisierte-algorithmen">Randomisierte Algorithmen</h3>
+
+<blockquote>
+  <p><strong>Randomisierte Algorithmen</strong> verwenden Zufall(sbits) zur Beschleunigung/Vereinfachung von Algorithmen</p>
+</blockquote>
+
+<p><strong>Las Vegas Algorithmen</strong>: Ergebnis immer korrekt, Laufzeit ist Zufallsvariable (z.B. quicksort, hashing)</p>
+
+<p><strong>Monte Carlo Algorithmen</strong>: Ergebnis mit bestimmer Wahrscheinlichkeit p inkorrekt, k-fache Wiederholungen machen Fehlerwahrscheinlichkeit
+exponentiell klein $p^k$</p>
+
+<p><strong>Permutationseigenschaft</strong>: Sortiertheit</p>
+
+<p><strong>Sortieren - Ergebnisüberprüfung (Checking)</strong>: Überprüfung ob Vektor1 eine Permutation von Vektor’ ist, durch Polynom berechnen  (Differenz der Werte 0) wenn
+Vektoren permutiert; Polynom q kann höchstens n Nullstellen haben, Auswertung an zufälliger Stelle $x in F$, $p(q!= 0 und q(x) = 0) ≤ \frac{n}{|F|}$
+→ Körper F muss möglichst groß gewählt werden; Monte-Carlo → Verkleinern von p durch mehrfache Durchführung</p>
+
+<p><em>Ende Vorlesung vom 19.11.2018</em></p>
+
+<p><strong>Alternatives Checking mit Hash Funktion</strong>: Ist Folge $E$ Permutation von $E’$? → h ist zufällige Hash-Funktion mit
+ Wertebereich $0..U-1$; Checker return $h(E) = h(E’)$; Zwei Möglichkeiten:</p>
+<ul>
+  <li>$E = E’$ → Checker gibt definitiv gleichen Wert zurück, das Hash Funktion auf gleiche Werte angewandt wurde</li>
+  <li>$E \neq E’$ → Wahrscheinlichkeit, dass $h(E) = h(E’) \leq \frac{1}{U}$</li>
+</ul>
+
+<p><strong>Perfektes Hashing</strong>: keine Kollisionen, Abbildung in Array Länge n bei n Elementen (injektiv)
+ $\omega(n)$ bits nur für codierung der Hashfunktion</p>
+
+<p><strong>Cuckoo Hashing</strong>: Hashtabelle mit Länge $(2+\epsilon)n$; jedes Element ist entweder durch erste Hashfunktion $h_1$ oder 
+durch zweite Hasfunktion $h_2$ in bucket eingeordnet; “Rausschmeißen” bzw. “Verdrängung” der Elemente und Neuordnung durch alternative 
+Hashfunktion; schnell in Lookup und delete, konstant beim Einfügen</p>
+<ul>
+  <li><em>Insert</em>: ist erfolgreicht, gdw der Graph nicht mehr Kanten als Knoten enthält</li>
+  <li><em>Rebuild</em>: notwendige rebuilds nicht mehr als $O(\frac{1}{n})$</li>
+</ul>
+
+<p><em>Ende Vorlesung vom 20.11.2018</em></p>
+
+<h3 id="externe-algorithmen">Externe Algorithmen</h3>
+
+<blockquote>
+  <p>Im Extremfall: Rechenoperationen der CPU zählen nichtmehr, nurnoch I/O Operationen</p>
+</blockquote>
+
+<p><strong>Sekundärspeichermodell</strong>: M = schneller Speicher der Größe M (Hauptspeicher), B = Blockgröße (Wörter die auf einmal aus Hintergrund
+speicher gelesen/geschrieben werden können) → Analyse: Blockzugriffe zählen</p>
+
+<p><strong>Externe Stapel</strong>: Datei mit Blöcken, 2 interne Puffer, pro Puffer je ein <em>Top-of-Stack</em>-Pointer (TOS); Warum zwei Puffer? → bei nur 
+einem Puffer, im Falle dass abwechselnd push &amp; pop aufgerufen werden würde → Kreislauf → alle 2 Operationen ein I/O Zugriff → viel zu teuer</p>
+<ul>
+  <li><em>push</em>: falls Platz in Puffer, sonst Puffer 1 in Datei (push auf Blockebene) → Puffer 1 und Puffer 2 tauschen Plätze</li>
+  <li><em>pop</em>: falls vorhanden, pop aus Puffer → sonst lese Puffer 1 aus Datei (pop auf Blockebene)<br />
+→ $ O(\frac{1}{B}) $ I/Os pro Operation</li>
+</ul>
+
+<p><strong>Externes Sortieren</strong>: Eingabegröße $n$, Größe $M$ des schnellen Speichers, Blockgröße $B$; Vorgehen beim <em>externalMerge(a,b,c: File of Element)</em>
+Elemente x = read(a) und y = read(b), von j=1 bis a+b: if x ≤ x → write(c), x = read(a) else write(c), y = read(b)<br />
+<em>Analyse:</em> $\leq 3 + 3 \frac{|a|+|b|}{B}$ → Bedingung: 3 Pufferblöcke: $M &gt; 3B$</p>
+
+<p><strong>Run Formation</strong>: sortiere Eingabeportionen der Größe M; I/Os ca. $2\frac{n}{B}$</p>
+
+<p><strong>Externe Prioritätslisten</strong>: Problem bei Binary Heaps: $\theta(log \frac{n}{M})$ I/Os pro deleteMin</p>
+
+<p><strong>Minimale Spannbäume</strong>: Semiexterner Kruskal: Annahme: $M = \Omega(n)$ konstat viele Maschinenworte pro Knoten</p>
+
+<p><em>Ende Vorlesung vom 26.11.2018</em></p>
+
+<h3 id="approximationsalgorithmen">Approximationsalgorithmen</h3>
+
+<blockquote>
+  <p>Umgang mit NP-harten Probleme, fast alle interessanten Optimierungsprobleme sind NP-hart → trotzdem optimale Lösungen suchen und riskieren, dass 
+Algorithmus nicht fertig wird, wie gut ist Lösung? → <strong>Approximationsalgorithmen</strong>: polynomielle Ausführungszeit, aber Lösung die “nah” am Optimum 
+ist, also die <em>effiziente</em> Berechnung einer <em>vernünftigen Näherung</em>.</p>
+</blockquote>
+
+<p><strong>Scheduling</strong> unabhängiger gewichteter Jobs auf parallelen Maschinen: identische Maschinen, unabhängige Jobs, bekannte Ausführungszeiten, 
+offline:</p>
+<ul>
+  <li>$x(j)$: Maschine auf der Job $j$ ausgeführt wird</li>
+  <li>$L_i$: $ \sum_{x(j)=i} t_j $ Last von Maschine i</li>
+  <li>Zielfunktion: Minimiere Makespan $L_{max} = max_i L_i$</li>
+</ul>
+
+<p><em>$L_{max}$ bei vielen kleinen Jobs:</em></p>
+<ul>
+  <li><em>obere Schranke:</em> Falls $l$ der zuletzt beendete Job ist: $L_{max} ≤ \sum_j \frac{t_j}{m} + \frac{m-1}{m} t_l$</li>
+  <li><em>untere Schranken:</em> $L_{max} ≥ \sum_j \frac{t_j}{m}$ und $L_{max} ≥ max_j t_j$</li>
+</ul>
+
+<p><strong>Approximationsfaktor</strong>: Der Approximationsfaktor ist das <em>Gütekriterium</em> eines Approximationsalgorithmuses. 
+Ein Minimierungsalgorithmus ALG erzielt einen Approximationsfator $\rho$ bezüglich Zielfunktion $f$, 
+falls er für alle Eingaben $I$, eine Lösung $ALG(I)$ findet, so dass: $ \frac{f(ALG(I))}{f(OPT*(I))} ≤ \rho $ wobei $OPT(I)$ die optimale
+Lösung für die Eingabe $I$ bezeichnet.   <br />
+→ List Scheduling erzielt einen Approximationsfaktor von $2-\frac{1}{m}$
+<em>Beispiel</em>: Ein Algorithmus ALG schätzt die Distanz einer Strecke x auf die nächste Zweierpotenz $2^{\lceil log|x| \rceil}$.
+Der Algorithmus OPT bestimmt die korrekte Distanz |x|: $\frac{w(ALG)}{w(OPT)} = \frac{2^{\lceil log|x| \rceil}{|x|}} 
+≤ \frac{2^{log |x| + 1}}{|x|}} = \frac{2|x|}{|x|} = 2 = \rho$ <br />
+Für $|x| = 2^{10} + 1 → \frac{2^{11}}{2^{10}+1} = s - \frac{2}{2^{10}+1} ≈ 2 $</p>
+
+<p><em>Ende Vorlesung vom 27.11.2018</em></p>
+
+<p><strong>Traveling Salesman Problem (TSP)</strong>: ist ein NP-vollständiges Problem, bei dem eine Reihenfolge für den Besuch mehrerer 
+Orte so zu wählen ist, dass keine Station außer der ersten mehr als einmal besucht wird, die gesamte Reisestrecke des 
+Handlungsreisenden möglichst kurz und die erste Station gleich der letzten Station ist.</p>
+
+<p><em>Nichtapproximierbarkeit des TSP:</em> Gegeben ein Graph G = (V,V × V), finde einen einfachen Kreis C = (v_1,v_2,…,v_n,v_1), 
+so dass n = |V| und $\sum_{(u,v) \in C} d(u,v)$ minimiert wird. Es ist NP-hart TSP innerhalb irgendeines Faktors a zu approximieren. 
+Aus diesem Grund werden nun Abschätzungen getroffen:</p>
+
+<p><strong>Abschätzung durch Hamiltonkreis</strong>: HamiltonCycle $≤_p$ a-Approximation von TSP</p>
+
+<p><em>Hamiltonkreis</em>: ist ein geschlossener Pfad in einem Graphen,der jeden Knoten genau einmal enthält. Das Hamiltonkreisproblem NP-vollständig.</p>
+
+<p><strong>2-Approximation durch minimalen Spannbaum (MST)</strong>: <em>Gesamtgewicht MST ≤ Gesamtgewicht jeder TSP-Tour</em></p>
+
+<p><em>Euler-Kreis</em>: Ein Euler-Kreis ist ein Zyklus, der alle Kanten eines Graphen genau einmal enthält. 
+Ein beliebiger zusammenhängender, ungerichteter Graph G = (V,E) und |E| = m hat einen Euler-Kreis genau dann, 
+wenn G zusammenhängend und alle Knoten einen geraden Grad haben. <br />
+<em>Analyse:</em> Euler-Kreise lassen sich in O(|E| + |V|) finden.</p>
+
+<p><em>Minimale Spannbäume</em>: Ein Spannbaum ist ein Teilgraph eines ungerichteten Graphen, der ein Baum ist und alle Knoten 
+dieses Graphen enthält. Spannbäume existieren nur in zusammenhängenden Graphen. Ein Spannbaum ist<em>minimal</em>, wenn kein anderer 
+Spannbaum in demselben Graphen mit geringerem Gewicht existiert.</p>
+
+<p><em>3/2 Approximations Algorithmus für TSP:</em> Gegeben Graph G = (V,E) (vollständig, ungerichtet): 
+(hier Abbildung TSP-graph.png einfügen)</p>
+<ol>
+  <li>bestimmte MST T</li>
+  <li>bestimmte Knoten U mit ungeradem Grad in T</li>
+  <li>finde minimales perfektes Matching M auf (U,E) (Summe der Gewichte der Matchingkanten minimal)</li>
+  <li>fügen Kanten M zu T → T’ hinzu</li>
+  <li>bestimme Eulerkreis EK auf T’ (alle Knoten haben geraden Grad)</li>
+  <li>wandle EK zu Hamiltonkreis</li>
+</ol>
+
+<p>(Hier alle 6 Abbildungen einfügen TSP-i.png)</p>
+
+<p><em>Beweis:</em> Zunächst folgende Abschätzung: w(HK) ≤ w(EK) = w(T’) = w(T) + w(M) ≤ w(OPT) + w(M).
+Nun muss w(M) bestimmt werden:</p>
+<ul>
+  <li>Sei HK’ ein Hamiltonkreis auf U (Knoten mit ungeradem Grad T) (erzeugt durch Überspringen aller
+Knoten V ohne den Knoten in U im OPT) (Abbildung beweis-tsp-hk.png)</li>
+  <li>definiere alternierende perfekte Matchings $M_1, M_2$ auf HK’ (muss existieren, da |U| gerade, HK’ = $M_1 \cup M_2$)<br />
+(Abbildungen beweis-tsp-m1.png und beweis-tsp-m2.png)  <br />
+→ $w(M) ≤ w(M_1), w(M) ≤ w(M_2)$ (M min. Matching!)<br />
+→ $2·w(M) ≤ w(M_1) + w(M_2) = w(HK’) ≤ w(OPT)$  (Überspringen gerader Knoten und Dreiecks-Ungleichung)<br />
+Daraus ergibt sich die Abschätzung: $w(HK) ≤ \frac{3}{2} w(OPT)$</li>
+</ul>
+
+<p>(Überschrift Approximationsklassen)</p>
+
+<p><strong>Pseudopolynomielle Algorithmen (APX)</strong>: Eine Möglichkeit mit Problemen umzugehen, die ansonsten NP-hart sind sind <em>Pseudopolynomielle
+Algorithmen</em>.  Ein Algorithmus A ist ein polynomieller Algorithmus wenn seine Laufzeit ein Polynom im numerischen Wert der Eingabe ist 
+(A(n) ∈ P(n)). Dabei ist n die Anzahl der Eingabebits, wenn alle Zahlen unär (Beispiel: 0: , 1: |, 4: ||||) kodiert werden.</p>
+
+<p><strong>Polynomial Time Approximation Scheme (PTAS)</strong>: für eine eingegebene Instanz I sowie einen Fehlerparameter ε, bei
+ einer Polynomiellen Zeit in |I|, ist ein Algorithmus A ist ein Polynomial Time Approximation Scheme (PTAS) für</p>
+<ul>
+  <li><em>Minimization Problem</em>, wenn  die Ausgabequalität f(x) = (1+ε)opt.</li>
+  <li><em>Maximization Problem</em>, die Ausgabequalität f(x) = (1-ε)opt.</li>
+</ul>
+
+<p><strong>Fully Polynomial Time Approximation Scheme (FPTAS)</strong>: Wenn ein PTAS zudem polynomielle Güte 
+1/ε benötigt, heißt er Fully Polynomial Time Approximation Scheme (FPTAS).</p>
+
+<p><strong>Übersicht</strong>:</p>
+<ul>
+  <li><em>Approximable (APX):</em> ρ = konstant, T polynomiell in n (z.B. $T(n, ε) = n^{\frac{1}{ε}}, ρ(n, ε) = 2$)</li>
+  <li><em>Polynomial time approximation scheme (PTAS):</em> ρ = 1 ± ε, bel. ε ∈ ( 0 , 1 ) , T poly. in n  (z.B. $T(n, ε) = n^{\frac{1}{ε}}, ρ(n, ε) = 1 - ε$)</li>
+  <li><em>Fully Polynomial time approximation scheme (FPTAS):</em> ρ = 1 ± ε, bel. ε ∈ ( 0 , 1 ) , T poly. in n  (z.B. $T(n, ε) = \frac{1}{ε}n, ρ(n, ε) = 1 + 2ε$)</li>
+</ul>
+
+<p>(Hier Bild approximationsklassen.png einfügen)</p>
+
+<p><em>Beispielschranken:</em></p>
+<ul>
+  <li>PTAS: $n+2^{1/ε}, n{log 1/ε}, n^{1/ε}, n^{42/ε³}, n+2^{2^{1000/ε}}$</li>
+  <li>FPTAS: $n²+\frac{1}{ε}, n+\frac{1}{ε⁴}, \frac{n}{3} $</li>
+</ul>
+
+<p>(Hier Bild approximationsklassen.png einfügen)</p>
+
+<p>(Überschrift Beispielalgorithmen Approximationsklassen)</p>
+
+<p><strong>Rucksackproblem als Polynomieller Algorithmus</strong>: Aus einer Menge n von Objekten, die jeweils ein Gewicht $w_i$ und einen Profit $p_i$ haben, soll eine Teilmenge x 
+ausgewählt werden, deren Gesamtgewicht eine vorgegebene Gewichtsschranke W nicht überschreitet. Unter dieser Bedingung 
+soll der Profit P der ausgewählten Objekte maximiert werden. <br />
+Die kleinste Kapazität der Gegenstände 1,…,i die einen Profit ≥ P ergeben: $ ∀ 1 ≤ i ≤ n : C(i, P) = min(C(i − 1, P),C(i − 1, P − p_i ) + w_i )$
+<em>Analyse:</em> P̂ ist die obere Schranke für den Profit: O(nP̂) pseudo polynomiell und Speicherbedarf P̂ + O(n) Maschinenworte plus P̂n bits</p>
+
+<p><strong>FPTAS für das Rucksackproblem</strong>: maximaler Einzelprofit $P := max_i p_i$, Skalierungsfaktor 
+$K := \frac{εP}{n}$, skaliere Profiten $p_{i^{‘}} := \lfloor \frac{p_i}{K} \rfloor$, x’ := dynamicProgrammingByProfit(p’,w,C)
+gibt x’ aus
+<em>Analyse</em>: p·x′ ≥ (1 − ε)opt und O(n³/ε)</p>
+
+<h3 id="fixed-parameter-algorithmen">Fixed-Parameter-Algorithmen</h3>
+<p>Eine weiter Möglichkeit mit NP-harten Problemen umzugehen sind <em>Fixed Parameter Algorithmen</em>. Um diese “schwierigen”
+Probleme zu lösen (z.B. Minimum Vertex Cover), welche für allgemeine Instanzen zu lange Berechnungszeiten haben, gibt es die
+Möglichkeit mit parametrisierten Algorithmen diese Spezialfälle zu berechnen. Neben der Eingabegröße gibt es nuneinen zweiten Parameter 
+<em>k</em>. Falls die Komplexität der Berechnung des Problems in diesem Parameter steckt, kann man dadzrch effiziente
+Lösungen für ein konstantes k erreichen. Dieser kann beispielweise k = Ausgabegröße gewählt werden. 
+Beispiel: Finde die maximale Anzahl an Leuten, so dass in einem Graph alle Leute direkt oder über einen Freund erreicht werden bzw.
+mit einem Parameter k: Finde maximal k Leute, so dass alle Leute direkt oder über einen Freund erreicht werden können. Letzteres ist einfach
+zu lösen.</p>
+
+<p><strong>Fixed Parameter Tractable</strong>: Formal ist ein Problem parametrisierbar (auch: fixed parameter tractable oder FPT), 
+wenn ein Algorithmus existiert, der es mit einer Laufzeit von  $O(f(k) \cdot p(n))$ löst, 
+wobei f eine berechenbare Funktion, k der Parameter, p ein beliebiges Polynom und n die Eingabelänge ist. f ist unabhängig von n
+und p ist unabhängig von k.</p>
+
+<p><em>Beispiele:</em> $2^k n^k, k^{k!}n^333, n + 1.1^k$ <br />
+<em>Gegenbeispiele:</em> $n^k, n^{log log k}$</p>
+
+<p><strong>Vertex Cover</strong>: ist ein klassisches NP-hartes Problem und ein trivialer Brute-Force-Algorithmus $(O(n^(k+1))$. Ein Vertex Cover ist
+zu einem gegebenen einfachen Graphen und einer natürlichen Zahl k eine Knotenüberdeckung der Größe von 
+höchstens k. In anderen Worten: Eine Teilmenge U, die aus maximal k Knoten besteht, ist ein Vertex Cover, wenn jede Kante des 
+Graphen mit mindestens einem Knoten aus U verbunden ist.</p>
+
+<p>(Hier Bild vertex-cover.png einfügen)</p>
+
+<p>Vertex Cover ist ein FPT bezüglich des Parameters der Ausgabekomplexität. Mit Hilfe der Entwurfstechniken <em>Kernbildung</em> und <em>Suche mit
+beschränkter Tiefe</em> werden zwei Algorithmen zu Lösung von Vertex Cover Problemen entwickelt:</p>
+
+<p><em>Kernbildung (Kernelization):</em> Reduktionsregeln reduzieren das Problem aus die Größe O(f(k)) (also wird p(n) wegreduziert). Die
+Probleminstanz wird auf den (eigentlichen schwieirigen) Problemkern reduziert und dieser dann mit einer anderen Technik gelöst.  Die Beobachtung
+hinter der Idee der Kernbildung ist, dass alle Knoten v größer sein müssen als k. Daraus ergibt sich, dass v entweder in der Lösung
+des Vertex Covers liegen muss oder es keine Lösung für das Vertex Cover Problem gibt. Insgesamt ergibt sich damit eine Laufzeit 
+von $O(nk+2^kk^2)$ <br />
+Kernbildung ist außerdem eine wichtige Vor/Zwischenverarbeitungsstrategie für Optimierungsprobleme und auch polynomiell lösbar.</p>
+
+<p>(Hier Bild kernbildung.png einfügen)
+(Hier Bild bsp-kernbildung.png einfügen)</p>
+
+<p><em>Systematische Suche mit beschränkter Tiefe:</em> Der Parameter k beschränkt die Tiefe, wodruch erschöpfendes
+ Aufzählen und Testen aller Möglichkeiten durch einen geeigneten Suchbaum möglich sind. Für den Fall k = 0 bricht der Algorithmus ab und die Laufzeit
+wird damit beschränkt. Die Rekursionstiefe k führt zu $O(2^k)$ rekursiven Aufrufen, also insgesamt zu einer Laufzeit von $O(2^k(n+m))$. Die Lösung der
+Rekursion: T(k) = (n+m) + 2T(k-1).</p>
+
+<p>(Hier Bild tiefenbeschr-suche.png einfügen)</p>
+
+<h3 id="parallele-algorithmen">Parallele Algorithmen</h3>
+<p>Parallele Algorithmen werden eingesetzt, um eine bessere Performance zu erreichen.</p>
+<ul>
+  <li><em>Geschwindigkeitssteigerung:</em> Eine Anzahl von p Computern können ein Problem bis zu p mal so schnell lösen. Allerdings sind
+dabei gute Koordinationsalgorithmen notwendig.</li>
+  <li><em>Energieersparnis:</em> Wenn zwei Prozessoren mit halber Taktfrequenz arbeiten, benötigen sie weniger Energie als ein voll getakteter Prozessor.</li>
+  <li><em>Speicherbeschränkung</em> von Einzelprozessoren</li>
+  <li><em>Kommunikationsersparnis:</em> Wenn Daten anfallen, kann man sie auch parallel (verteilt) (vor)verarbeiten.</li>
+</ul>
+
+<p><strong>Modell Nachrichtengekoppelte Parallelrechner</strong>: In nachrichtengekoppelten Parallelrechner existieren P <em>Prozessoren</em>, die <em>RAMs</em> (PRAMs) sind.
+Eine <em>asynchrone Programmabarbeitung</em> ist gewährleistet, sowie <em>Interaktion</em> der Prozessoren durch <em>Nachrichtenaustausch</em>. Jeder
+Prozessor kann gleichzeitig maximal eine Nachricht senden und empfangen (vollduplex). Dabei existiert eine <em>Punkt-zu-Punkt</em> Verbindung,
+sowie eine <em>vollständige Verknüfung</em>. Für eine Nachrichtenlänge l dauert der Austausch der Nachricht $T_{comm}(l) = T_{start} + l T_{byte}$.
+Wobei $T_{start}$ die Latenz ist und $T_{byte}$ die Kommunikationsbandbreite, welche stets größer als $T_{start}$ ist.</p>
+
+<p>(Hier Bild modell-nachr-parallel.png einfügen)</p>
+
+<p><em>Bulk Synchronous Parallel Computers (BSP)</em>: bezeichnet ein Modell des massiv parallelen Rechners. Das BSP-Modell besagt, dass die 
+Laufzeit eines parallelen Algorithmus nicht nur von dem Grad der sequentiellen Teile abhängt, sondern von mehreren Parametern. 
+BSP berücksichtigt die Kosten des kollektiven Nachrichtenaustausches aller Rechner in Abhängigkeit zur Nachrichtenlänge.</p>
+
+<p><em>Speicherkonflikte in PRAMs:</em> Beim zeitgleichen Zugriff mehrerer Rechner auf einen geteilten Speicher, kann es zu Speicherkonflikten
+kommen. Diese lassen sich in Lese- (read (R)) bzw Schreibzugriffe (write (W)) und in gleichzeitigen (concurrent (C)) bzw. exklusiven
+Zugriff (exclusive (E)) klassifizieren. Daraus ergeben sich die folgenden Zugriffsarten:</p>
+<ul>
+  <li>EREW: exclusive Read, exclusive Write</li>
+  <li>ERCW: exclusive Read, concurrent Write (Schwachsinn!)</li>
+  <li>CREW: concurrent Read, exclusive Write</li>
+  <li>CRCW: concurrent Read, concurrent Write
+    <ul>
+      <li>common: Alle Prozessoren müssen den gleichen Wert schreiben.</li>
+      <li>arbitrary: Der Wert eines zufälligen Prozessors muss geschrieben werden.</li>
+      <li>priority: Der Wert des Prozessors mit der kleinsten Prozessor-ID wird geschrieben.</li>
+      <li>combine: Die Aggregation der Werte aller Prozessoren wird geschrieben (z.B. Summe).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Analyse paralleler Algorithmen</strong>: Im Gegensatz zur Analyse sequentieller Algorithmen, bei der die Laufzeit nur abhängig
+von der Eingabe I ist, ist die Laufzeit bei parallelen Algorithmen zusätzlich abhängig von der Prozessorenanzahl p. Ziel ist es
+die <em>Ausführungszeit</em> $T(I,p)$ zu finden. <br />
+<em>Work:</em> $W=pT(p)$ ist das Kostenmaß des Algorithmus. Wird p klein genug, ist die Arbeit lediglich vond er Instanzgröße I abhängig. <br />
+<em>Span:</em> $T_{\infty} = sup_p T(p)$ misst die Parallelisierbarkeit bzw. die Zeit die benötigt werden würde, wenn beliebig 
+viele Prozessoren zum Einsatz kommen. Das bedeutet, dass alle Berechnungen, die gleichzeitig stattfinden können, auch tatsächlich 
+gleichzeitig stattfinden. <br />
+<em>(absoluter) Speedup:</em> $S=T_seq/T(p)$ ist die Beschleuning die gegenüber des besten sequentiellen Algorithmus erreicht werden kann. <br />
+<em>Effizienz:</em> $E = S/p$. mit dem Ziel, dass E ≈ 1 bzw. E = Θ(1). Die <em>superlineare Beschleuningung</em> für E &gt; 1, ist nur bedingt
+möglich. Die parallele Maschine hat mehr Ressourcen und kann daher besser arbeiten, aufgrund des Emulationsoverhead ist ein 
+solcher Speedup eher unwahrscheinlich.</p>
+
+<p><strong>Reduktion am Beispiel Assoziativer Operationen</strong>: Ein assoziativer Operator, der in konstanter Zeit berechnen werden kann, 
+lässt sich zerlegen und in der Zeit O(log p) berechnen. Kommutative Beispiele sind + , · , max, min, ein nichtkommuatatives
+Beispiel ist die Matrixmultiplikation.</p>
+
+<p>(hier bild assoziation.png einfügen)</p>
+
+<p><em>Beispiel Summe:</em> Zur verteilten Berechnung einer Summe addieren benachbarte Prozessoren ihre lokale Summe, dabei führt der
+Prozessor mit geradem Index die Berechnung aus. Der Prozessor mit ungeradem Index schickt sein Ergebnis an den benachbarten Prozessor
+mit gerader Summe. Dies wird mehrfach ausgeführt, am Ende berechnet Prozessor 0 die Gesamtsumme. <br />
+<em>Analyse</em>: Bei n Prozessoreinheiten benötigt die Berechnung der Summe O(log n) Zeit. Der Speedup ist O(n/log n) und die Effizienz O(1/log n).</p>
+
+<p>(hier bild verteilte-summe.png einfügen)</p>
+
+<p>Für p Prozessoreinheiten addiert nun jeder Prozessor n/p Elemente sequentiell, ehe er dann die parallele Summe für p 
+Teilsummen berechnet. <br />
+<em>Analyse:</em> Dafür wird insgesamt die Zeit $T_{seq}(n/p) + Θ(log p)$ benötigt. Die Effizienz benötigt 1/ (1 + Θ(p log(p)) /n) und wird
+daher besonders gut (≈ 1), wenn n groß gegen p log p wird.</p>
+
+<p>(hier bild verteilte-summe-inkl-sequentiell.png einfügen)</p>
+
+<p>Kapitel Verbindungsnetzwerke</p>
+
+<p><strong>Vollverkabelung</strong>: Eine vollständige Verkabelung ist nur bei einer geringen Anzahl an Rechnern sinnvoll. Für p Rechner sind die
+Kosten einer Vollverkabelung $\frac{p \cdot (p-1)}{2}. Eine Vollverkabelung gibt es als Simplex (i → j), Telefon (i ↔ j) und Duplex (i → j, j → i)</p>
+
+<p><strong>Hyperwürfel</strong>: Hyperwürfel sind n-dimensionale Analogien zum Quadrat bzw. Würfel. Sie dienen zur Kommunikation zwischen
+Prozessoren und sind billiger als eine Vollvermaschung. Die Knoten sind jeweils mit dem Knoten verbunden, dessen Label in der Binärrepräsentation
+nur ein Bit unterschiedlich hat. Eine Verkabelung im Hyperwürfel kostet p log p Verbindungen.<br />
+<em>Analyse:</em> $T_{Prefix} = O((T_{Start} + l T_{byte}) log p) ist nicht optimal bei $lT_{byte} &gt; T_{start}$</p>
+
+<p>(hier bild hypercube.png einfügen)
+(hier bild hyperwürfelalg.png einfügen)</p>
+
+<p>Kapitel Sortieren</p>
+
+<p><strong>Paralleler Quicksort</strong>: Der sequentielle Quicksort wählt ein Pivotelement und ordnet alle Elemente so, dass 
+d_0,…,d_{k−1} ≤ v &lt; d_k,…,d_{n−1}. Anschließend werden für den ersten Teil ($d_0,…,d_{k−1}$) und den 
+zweiten Teil ($d_k,…,d_{n−1}$) rekursive Aufrufe gestartet. Eine Parallelisierun, die eine Laufzeit von 
+ $O(T_{start} log² p)$ benötigt, könnte beispielsweise so aussehen:</p>
+
+<p>(hier Bild par-qs.png)</p>
+
+<h3 id="geometrische-algorithmen">Geometrische Algorithmen</h3>
+<p><em>Geometrische Algorithmen</em> beschäftigen sich mit der algorithmischen Lösung geometrisch 
+formulierter Probleme. Ein zentrales Problem ist dabei die Speicherung und Verarbeitung 
+geometrischer Daten. Im Gegensatz zur Bildbearbeitung, deren Grundelemente Bildpunkte 
+(Pixel) sind, arbeitet die algorithmische Geometrie mit geometrischen Strukturelementen 
+wie Punkten, Linien, Kreisen, Polygonen und Körpern. Beipiele für Probleme geometrischer
+Algorithmen sind Konnvexe Hülle, Kleinste einschließende Kugel, Range Search.</p>
+
+<p><strong>Elementare geometrische Objekte</strong> sind Punkte $x \in R^d$, Strecken $\overline{ab}:= { α a + (1 − α )b : α ∈ [0, 1]}$
+und noch mehr wie z.B. Halbräume, Ebenen und Kurven.</p>
+
+<p><strong>Dimension d</strong>:</p>
+<ul>
+  <li><em>1:</em> oft trivial und gilt nicht als geometrisches Problem</li>
+  <li><em>2:</em> Geographische Informationssystem (GIS), Bildverarbeitung,…</li>
+  <li><em>3:</em> Computergrafik, Simulationen, …</li>
+  <li><em>≥ 4:</em> Optimierung, Datenbanken, maschinelles Lernen, … (curse of dimensionality)</li>
+</ul>
+
+<p><strong>Typische Fragestellungen</strong>:</p>
+<ul>
+  <li>Schnittpunkte zwischen n Strecken</li>
+  <li>Konvexe Hülle</li>
+  <li>Triangulation von Punktmengen (z.B. Dalunaytriangulierung: Kein Dreieck enthält weitern Punkt)</li>
+  <li>Vornoi-Diagramme: Unterteilung von $M ⊆ R^d$ in n Voronoizellen</li>
+  <li>Punktlokalisierung</li>
+</ul>
+
+<p><strong>Geometrische Datenstrukturen</strong>:</p>
+<ul>
+  <li><em>Baumstrukturen:</em>
+    <ul>
+      <li>1-dim: Interval Tree</li>
+      <li>2-dim: Quad Tree, Wavelet-Tree</li>
+      <li>3-dim: BinarySpacePartition Tree</li>
+      <li>n-dim: k-d-Tree</li>
+    </ul>
+  </li>
+  <li><em>Facetten:</em> Delaunay Triangulierung (), Voronoi Diagramm</li>
+</ul>
+
+<p><strong>Streckenschnitt (line segment intersection)</strong> <br />
+Beim <em>Streckenschnitt</em> will man gegeben n Strecken S={s1,…,sn} Schnittpunkte zwischen den Strecken finden. Ein
+allgemeiner Anwendungsfall sind <em>Plane-Sweep-Algorithmen</em> die unter anderem für die Kontruktion für konvexe Hüllen
+oder Voronoi-Diagrammen benötigt werden. Die Anzahl der ausgegebenen Schnitte ist k.</p>
+
+<p>(img streckenschnitt.png)</p>
+
+<p>Die <em>Sweep-Line</em> strukturiert die Abrarbeitung eines Problems. Dabei wird ausgenutzt, dass geometrisch nahe Objekte sich
+gegenseitig beeinflussen und geometrisch weit entferne Objekte (nahezu) unabhängig sind. Im Allgemeinen werden n-dim
+auf (n-1)-dim reduziert.</p>
+
+<p><em>Dominierung</em>: Ein Punkt heißt nicht-dominiert genau dann, wenn kein anderer Punkt in der Menge existiert, dessen Koordinaten
+alle größer oder gleich der Koordinaten des Punktes sind. Formal dominiert a den Punkt b genau dann, wenn ∀i : ai ≤ bi
+und ∃i : ai &lt; bi.</p>
+
+<p>(img dom.png)</p>
+
+<p><em>Beispiel: Berechnung einer Skyline:</em> Dabei sind nur Höhenänderungen relevant. Jede Änderung definiert ein eindimensionales
+Problem (Maximumsbildung). Bei der Berechnung des Skylines Problem müssen <em>nicht dominierte Punktmengen</em> berechnet werden.</p>
+
+<p>Das naive Vorgehen zur Suche der Schnittpunkte wäre für jedes Streckenpaar die Schnittpunkte zu überprüfen, was
+mit einer Laufzeit von Θ(n²) zu langsam bei großen Datenmengen ist.</p>
+
+<p><em>Plane-Sweep-Algorithmen</em>: Eine (waagrechte) <em>Sweep-Line l</em> verläuft von oben nach unten. Die Invariante dieser 
+Algorithmen ist, dass Schnittpunkte oberhalb von <em>l</em> bereits korrekt ausgegeben wurden. Der Ansatz ist jeweils Segmente, 
+die l schneiden zu speichern und deren Schnittpunkte zu finden.</p>
+
+<p>(img plane-sweep1.png)</p>
+
+<p><em>Plane-Sweep für orthogonale Strecken</em> <br />
+Ein möglicher <em>Plane-Sweep-Algorithmus für den orthogonalen Streckenschnitt</em> benötigt die Gesamtlaufzeit von O(n log n + k).</p>
+
+<p>(img plane-sweep-orth-pseudo.png)</p>
+
+<p><em>Verallgemeinerung</em>
+Nun wied der orthogonalen Plane-Sweep-Algorithmus unter der Annahme, dass keine horizontalen Strecken und keine
+Überlappungen existieren, sowie dass Schnittpunkte jeweils im inneren von genau zwei Strecken liegen, verallgemeinert. 
+Dabei kann man beobachten, dass kleine zufällige Perturbationen (= Störungen) die allgemeine Lage produzieren. <br />
+Der <em>Status T</em> ist definiert als eine nach x geordnete Folge der l schneidenden Strecken. Ein <em>Ereginis</em> ist definiert
+als eine Statusänderung der Sweep-Line (sie berührt einen Startpunkt, Endpunkt oder Schnittpunkt). Der <em>Schnitttest</em> wird 
+nur für Segmente ausgeführt, die an einem Ereignispunkt in T benachbart sind.</p>
+
+<p>(img plane-sweep-verallg.png)</p>
+
+<p>Die <em>Korrektheit</em> ergibt sich dadurch, dass zwei Geraden s,t, die einen Schnittpunkt (x,y) gemeinsam haben, ein Eregnis triggern
+sodass die beiden Geraden auf l Nachbarn werden. Zu Beginn sind s,t nicht benachbart, bei einem y + ε sind s und t benachbart, das
+heißt es muss ein Ereignis geben, bei dem s und t Nachbarn werden.</p>
+
+<p>(img korrektheit-ps.png)</p>
+
+<p><em>Implementierung</em></p>
+
+<p>(img ps-impl1.png ps-impl2.png ps-impl3.png ps-impl4.png)</p>
+
+<p><em>Beispiel</em></p>
+
+<p>(img ps-bspi.png for i=1,..,16)</p>
+
+<p>Dieser Algorithmus benötigt eine <em>Laufzeit</em> von O((n+k) log n).</p>
+
+<p><strong>2D Konvexe Hülle</strong> <br />
+Eine Menge heißt <em>konvex</em>, wenn für je zwei beliebige Punkte, die zur Menge gehören, auch stets deren Verbindungsstrecke 
+ganz in der Menge liegt. Die <em>konvexe Hülle</em> einer Teilmenge ist die kleinste konvexe Menge, die die Ausgangsmenge enthält.
+Die Menge wird also komplett von der konvexen Hülle eingeschlossen.</p>
+
+<p>Gegeben einer Menge P = {p1,…,pn} ∈ R² wird ein konvexes Polygon K mit Eckpunkten in P (also P ⊆ K) gesucht.</p>
+
+<p><em>Graham’s Scan</em> ist ein Algorithmus zur Berechnung der konvexen Hülle in O(sort(n)), also O(n log n). Dazu werden die
+Punkte in P lexikographisch nach (x,y) (zuerst x, wenn x gleich, nach y) sortiert. (p1&lt;p2&lt;.. &lt;pn). Zudem wird nur die
+obere Hülle berechnet.</p>
+
+<p>(img grahams-scan.png grahams-scan-bsp.png)</p>
+
+<p><strong>Kleinste einschließende Kugel</strong> <br />
+Die <em>Kleinste einschließende Kugel</em> ist eine kugelförmige konvexe Hülle. Gegeben einer Menge P = {p1,…,pn} ∈ R² wird 
+die kleinste einschließende Kugel mit Radius K in P (also P ⊆ K) gesucht.</p>
+
+<p><em>Smallest Enclosing Ball (sEB)</em> ist ein Algorithmus zur Berechnung der kleinsten einschließenden Kugel in O(n).</p>
+
+<p>(img smallest-encl-ball.png)</p>
+
+<p>Zur <em>Korrektheit</em> ist zu Zeigen, dass ein x $\notin$ B existiert, das x auf dem Rand von sEB(P) liegt. Durch Kontraposition
+kann man zeigen, dass ein x, das nicht auf dem Rand von sEB(P) liegt, auf dem sEB(P{x}) liegen muss, was wiederum = B ist.
+Dadurch muss x ∈ B gelten.<br />
+Smallest Enclosing Balls sind <em>eindeutig</em>. Zum Beweis wird angenommen, dass zwei sEBs B1, B2 existieren, welche nicht gleich
+sind. Daraus folgt → P ⊆ B1 ∧ P ⊆ B2 und P ⊆ B1 ∩ B2 ⊆ sEB(B1 ∩ B2) =: B. Aber dann muss gelten radius(B) &lt; radius (B1), 
+was ein Widerspruch zur Annahme, dass B1 ein sEB ist.</p>
+
+<p>(img seb-korr.png)</p>
+
+<p>Die <em>Analyse</em> der kleinsten einschließenden Kugel ergibt, dass allgemein eine Zeit von T(p,0) ≥ d!n zur Berechnung von sEB gilt.</p>
+
+<p>(img seb-anal.png)</p>
+
+<h2 id="übung">Übung</h2>
+<h3 id="übung-1">Übung 1</h3>
+<p><strong>Amortisierte Analyse:</strong> <a href="https://de.wikipedia.org/wiki/Amortisierte_Laufzeitanalyse">Amortisierte Laufzeitanalyse</a> wurde in Algorithmen I behandelt. Im
+Gegensatz zur allgemeinen Laufzeitanalyse wird der Worst-Case in mehreren Durchläufen des Algorithmuses analysiert. Ziel ist es die durchschnittliche 
+obere Schranke im Worst-Case zu bestimmen, da in z.B. teure Operationen nur selten auftreten.</p>
+
+<p><strong>Kontomethode:</strong> <a href="https://de.wikipedia.org/wiki/Account-Methode">Account-Methode</a>: Verfahrensweise der armotisierten Laufzeitanalyse; wichtig: bei 
+Tokenerzeugung darf es keine Zyklen geben!</p>
+
+<p><strong>Kontomethode mit Fibonacci-Heaps:</strong></p>
+<ul>
+  <li><em>Insert:</em> Erzeuge neuen Baum mit Element zum einfügen, füge ihn den Wurzeln hinzu, ggf. min Pointer anpassen; erstelle Union-Token 
+(je Wurzel ein Union-Token); insert kostet konstante Zeit</li>
+  <li><em>deleteMin:</em> siehe Übungsfolie 1</li>
+</ul>
+
+<h3 id="übung-2">Übung 2</h3>
+<p><strong>Spezielle Priority Queues</strong>: monoton, ganzzahlig; Bedingungen:</p>
+<ul>
+  <li>positive, ganzzahlige Schlüssel</li>
+  <li>neue/geänderte Schlüssel ≥ minmale Schlüssel</li>
+  <li>maximales Schllüsselinkrement C (bezogen auf min. Schlüssel)</li>
+</ul>
+
+<p><strong>Bucket Queues</strong>: zirkuläre Liste aus Buckets, Variable min, init min = 0; C Schlüsselinkremente → #Buckets |B| = C + 1</p>
+<ul>
+  <li><em>insert:</em> Einfügen in B[key mod(C+1)]; Laufzeit: $O(1)$</li>
+  <li><em>deleteMin:</em> Entfernen aus B[min mod(C+1)] oder aus erstem nicht-leeren Folgebucket; Laufzeit: $O(C)$</li>
+  <li><em>decreaseKey:</em> Verschieben von altem in neues Bucket; Laufzeit $O(1)$ <br />
+→ Abstand min-Element und max-Element maximal C → ansonsten geht einfürgen nicht; vgl. <em>Spezielle Priority Queues</em>-Bedingungen; Problem sonst, dass man kleinste Element finden, obwohl noch
+kleineres Element in Queue vorhanden</li>
+</ul>
+
+<p><strong>Radix Heaps</strong>:  Liste aus Buckets, Variable min; C Schlüsselinkremente →  #Buckets $ |B| = K + 2 = (\lfloor log C \rfloor)  + 1 ) + 2 $ z.B. mit C = 9 → 6 Buckets; maximal können pro Bucket[i]
+$max(1,2^i)$ verschiedene Werte in Bucket stehen</p>
+<ul>
+  <li><em>Bucket[i]:</em> i = min(msd(min, key), K)</li>
+  <li><em>Bucket[k]:</em> Overflow Bucket</li>
+  <li><em>Bucket[-1]:</em> min<br />
+Vorgehen:</li>
+  <li><em>insert:</em> Einfügen in Bucket B [min( msd(min, key), K)]; Laufzeit: $O(log C)$ → da wenn min entfernt wird, alle Elemente verschoben werden müssen, erstellen nach Kontomethode bei insert
+bereits genug Token um verschieben zu “bezahlen”</li>
+  <li><em>deleteMin:</em> min = minimaler Schlüssel (aus Bucket i), Elemente aus Bucket i verschieben, Entfernen aus Bucket B [− 1 ]; Laufzeit: $O(log C)$</li>
+  <li><em>decreaseKey:</em> Verschieben von altem in neues Bucket; Laufzeit $O(1)$<br />
+→ Warum Formel [min( msd(min, key), K)]? → bei min Änderung potentiell alle Buckets zu verändern → schlechte Laufzeit und man muss nicht alle Elemente verschieben, d.h. armotisierte 
+Laufzeit Erklärung funktioniert nicht</li>
+</ul>
+
+<p><strong>Average Case Analyse für Minimale-Spannbäume (MST)</strong>: Minimaler Spannbaum ist Baum aus Graph, der nur Kanten aus Graph verwendet, alle Knoten miteinander verbindet und Kanten sollen
+minimales Gewicht haben; Jarnik-Prim Algorithmus:</p>
+<ul>
+  <li>Wähle beliebigen Startknoten s</li>
+  <li>Füre Knoten v zu MST mit kleinstem Abstand d[v]<br />
+Analyse: m Kanten, mit zufällig geordneten Gewichten → wie oft wird decreaseKey im Durchschnitt ausgeführt? → Nachbarn durchnummerieren, in Reihenfolge in der sie zu MST hinzugefügt
+wird, wann muss Kante relaxiert werden → Distanz an v ist größer als Kante die sich nun ergeben hat → DecreaseKey wird dann ausgeführt, wenn d[v] &gt; d[über neu hinzugefügte Kanten]<br />
+Wie oft passiert das? → $ E( M_k ) = H_k $ → $ O ( n ln \frac{m}{n}) $</li>
+</ul>
+
+<h3 id="übung-3">Übung 3</h3>
+<p><strong>Dijkstras Algorithmus</strong>: nicht-negative Kantengewichte, vorläufige Distanzen in Priority Queue d, unterscheidet zwischen
+erreichten Knoten und gescannten Knoten</p>
+
+<p><strong>Bidirektionale Suche</strong>: Beschleunigung, zweimal Dijkstra ausführen (Vorwärtssuche s → t auf G, Rückwärtssuche von t → s auf $G^r$ mit umgekehrten
+ Kanten); Vorgehen: einen Schritt Vorwärtssuche, einen Schritt Rückwärtssuche, Abbruch wenn ein Knoten von beiden Suchen gescannt (nicht nur erreicht);</p>
+
+<p><strong>A*-Suche</strong>: Dijkstra in Richtung t gesteuert, Potentialfunktion pot ordnet jedem Knoten reele Zahl zu; Vorgehen entwerder reduzieren der
+Kantengewichte $$ \bar{c}(u, v) := c(u, v) + pot(v) − pot(u)$ <strong>oder</strong> modifizieren der Schlüssel $\bar{d}[v] : = d[v] + pot(v)$; gültige Potentialfunktion:</p>
+<ul>
+  <li>untere Schranke für Distanz zum Ziel t: $ pot(u) ≤ \mu(u,t) $</li>
+  <li>nicht-negative reduzierte Kantengewichte: $ \bar{c}(u, v) := c(u, v) + pot(v) − pot(u) ≥ 0 $</li>
+  <li>t hat potential 0
+Woher Potentialfunktionen? Sollen Schätzung für tatsächliche Distanz sein, z.B. Manhattan-Distanz, Euklidischer Abstand
+A*-Suchen Möglichkeiten:</li>
+  <li>Suche mit reduzierten Kantengewichten</li>
+  <li>Suche mit geänderten Schlüsseln in Priority Queue</li>
+  <li>Suche mit Landmarks: Kompormiss, berechne Potentiale für einige Knoten, bei konkreter Anfrage wähle Landmark hinter dem Ziel, Landmarks immer
+korrekt dank Dreicksungleichung (oben definierte Potentialfunktionseigenschaften müssen gegeben sein), Algorithmus kann langsam sein (z.B. Suche
+in  falscher Richtung)</li>
+</ul>
+
+<p><strong>Starke Zusammenhangskomponenten</strong>: 
+Nomenklatur:</p>
+<ul>
+  <li><em>oNodes:</em> Stack, offene Knoten</li>
+  <li><em>oReps:</em> Stack, Repräsentaten der offenen Komponenten</li>
+  <li><em>aktive Knoten:</em> Knoten die während dfs markiert, aber noch nicht finished, kein Backtracking</li>
+  <li><em>offene SCCs:</em> enthält nur aktive Knoten und keine abgeschlossenen Knoten</li>
+  <li><em>abgeschlossene SCCs:</em> alle Knoten finished (markiert), backtracking gemacht</li>
+  <li><em>Repräsentanten der SCC:</em> Knoten mit kleinster dfsNumber (Reihenfolge der Knotenabarbeitung bei Tiefensuche)  in SCC</li>
+</ul>
+
+<p>Invarianten:</p>
+<ul>
+  <li><em>Invariante 1:</em> Keine Kanten von geschlossenen in offene Komponenten.</li>
+  <li><em>Invariante 2:</em> Offene Komponenten liegen auf Pfad.</li>
+  <li><em>Invariante 3:</em> Repräsentanten partitionieren offene Komponenten bzgl. dfsNum.</li>
+</ul>
+
+<p><strong>Floyd-Warshall Algorithmus</strong>: kubischer Algorithmus, berechnet transitive Hülle</p>
+
+<p><strong>Floyd-Warshall Algorithmus und SCCs</strong>: Transitive Hülle einer SCC ist ein vollständiger Graph, betrachte Schrumpfgraph, 
+deutlich schneller: #SCC³ &lt; n, Eintrag pro SCC</p>
+
+<h3 id="übung-4">Übung 4</h3>
+<p><strong>Residualgraph</strong>: Verwalten von Restkapazitäten, Modellierung und Erkennung von Gegenflüssen, keine 0 Gewicht Kanten, Flüsse
+über Kanten und Gegenkanten erlaubt</p>
+<ul>
+  <li><em>Restkapazität:</em> $c^f(e) = c(e) − f(e)$</li>
+  <li><em>Fluss:</em>  $c^f(e^{rev}) = f(e)$</li>
+</ul>
+
+<p><strong>Dinitz Distanz Label</strong>: geben Distanz im Residualgraphen zur Senke t an, Rückwärtsgerichtete Breitensuche → Layered Graph</p>
+
+<p><strong>Dinitz Blocking Flow</strong>: “Auf jedem Weg durch den Graphen mindestens  eine Kante bis zur maximalen Kapazität ausgelastet ist”,
+Berechnung auf Schichtgraph, kein Rückfluss möglich; Berechnung basiert auf Tiefensuche von s aus:</p>
+<ul>
+  <li>extend: gehe einen Knoten näher ans Ziel (Schichtgraph)</li>
+  <li>retreat: Sackgasse gefunden, gehe zurück, lösche Kante</li>
+  <li>breakthrough: Tiefensuche hat Senke erreicht, lösche saturierte Kanten
+<em>Analyse</em>: $O(nm)$</li>
+</ul>
+
+<h3 id="übung-5">Übung 5</h3>
+<p><strong>Potentialmethode</strong>: Stack mit Operationen:</p>
+<ul>
+  <li>push(v): Element v oben auf Stack legen $O(1)$</li>
+  <li>pop: oberstes Element aus Stapel entfernen $O(1)$</li>
+  <li>multipop(k): oberste k Elemente aus Stapel entfernen $O(n)$
+Beweis: Warum $O(n)$ und nicht $O(n²)$ wie vermutet für n Operationen im worst-case
+Anzahl Elemente $\phi$ auf Stack $\phi = |Elemente auf Stack| \geq 0$; Push erhöht $\phi$, pop bzw. multipop verringert $\phi$;
+bei n Operationen $|push| \leq n$ maximal n Erhöhungen, Verringerungen max n → alle Änderungen $\leq 2n$ → maximal O(n)</li>
+</ul>
+
+<p><strong>Preflow Push Algorithmus</strong>: Bezeichnungen:</p>
+<ul>
+  <li><em>Aktiver Knoten:</em> Knoten $v$ aktiv, wenn $excess(v) = inflow(v) - outflow(v) &gt; 0$</li>
+  <li><em>gültige Kante:</em> Kante $(v,w) \in G^{f}$ gültig, wenn Level $d(v) = d(w) + 1 $<br />
++
+Ablauf:
+    <ol>
+      <li>wähle <em>aktiven Knoten</em> $v$</li>
+      <li>falls <em>gültige Kante</em> $(v,w)$ existiert push (schiebe Fluss entlang $(v,w)$, vorausgesetzt: d(u) = d(v) + 1)</li>
+      <li>ansonsten <em>relabel</em> (erhöht Level eines Knoten, erhält $d(u) \leq d(v) + 1 in G^{f}$, nur wenn push vom Knoten nicht möglich)</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Oft nicht klar, welche Knoten, Kanten etc, daher Heuristiken:<br />
+Auswahl des aktiven Knotens:</p>
+<ul>
+  <li><em>generic preflow push:</em> $O(n²m³)$</li>
+  <li><em>FIFO preflow push:</em> $O(n³)$ Typisch für Ausführung per Hand → Klausur</li>
+  <li><em>highest-level preflow-push:</em> $O(n²\sqrt{m})$</li>
+</ul>
+
+<p>Unterschiedliches relabel:</p>
+<ul>
+  <li><em>aggressive local relabeling:</em> erhöhe in einem Schritt so, dass gültige Kante existiert</li>
+  <li><em>global relabeling:</em> setze Levels nach: (Berechnung der Distanzen über Breitensuche)
+    <ul>
+      <li>$\mu(v,t)$: falls t von v erreichbar</li>
+      <li>$n+\mu(v,s)$: sonst, falls s von v erreichbar</li>
+      <li>$2n-1$: sonst</li>
+    </ul>
+  </li>
+  <li><em>gap heuristic:</em> wird Level durch relabel(v) leer, setze Level von v und aller von v erreichbaren Knoten auf $d(w) = max{d(w), n}$</li>
+</ul>
+
+<p>Knotenauswahl:</p>
+<ul>
+  <li><em>two-phase approach:</em>
+    <ul>
+      <li>Phase 1: wähle nur Knoten Level $d(v) &lt; n$ aus → erzeuge maximum preflow → korrekter Fluss in t</li>
+      <li>Phase 2: nur noch Knoten mit Level $d(v) \geq n$ aus → Fluss nur nach s möglich</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="übung-6">Übung 6</h3>
+<p><strong>Randomisierte Algorithmen</strong>
+<strong>Las Vegas Algorithmus</strong>: immer korrekte/optimale Lösung, Laufzeit ist Zufallsvariable (erwartete Laufzeit $E[T]$))</p>
+
+<p><strong>Monte Carlo Algorithmus</strong>: falsche/suboptimale Lösung mit Wahrscheinlichkeit p, deterministische Laufzeit</p>
+
+<p><strong>Monte Carlo Simulation</strong>: <strong>! ≠ Monte Carlo Algorithmus !</strong>, Zufallsexperimente sehr oft ausführen, je länger/öfter
+ausgeführt, desto besser Ergebnis</p>
+
+<p><strong>Las Vegas → Monte Carlo</strong>: gegeben Las Vegas Algorithmus mit erwarteter Laufzeit $E[T] = f(n)$, gesucht Monte Carlo
+Algorithmus mit Laufzeit $O(f(n))$ und Fehlerrate p <br />
+<em>Idee:</em> Abbruch nach Zeit $\alpha f(n)$, Ausgabe Falsch wenn Algorithmus abgebrochen
+wurde, Markov Ungleichung: $P[T &gt; \alpha f(n)] ≤ \frac{1}{\alpha}</p>
+
+<p><strong>Monte Carlo → Las Vegas</strong>: Monte Carlo Algorithmus mit Laufzeit $O(f(n))$ und Fehlerrate p Korrektheit in $O(g(n))$ überprüfbar,
+ gesucht Las Vegas Algorithmus mit erwarteter Laufzeit $E[T] = f(n)$ <br />
+ <em>Idee:</em> Wiederhole Monte Carlo bis korrektes Ergebnis gefunden, Laufzeit $T ≤ i * O(f(n) + g(n))$, $E[T] = \frac{1}{1⁻p}$</p>
+
+<p><strong>Probability Booting</strong>: Matrix Multiplikation, nur false postives möglich, bei p ≤ 0.5 schnelle Konvergenz, Laufzeit $O(kn²)$, 
+Wiederhole Test k mal mit unterschiedlicher Wahl von r:</p>
+<ul>
+  <li>liefert Test FALSCH: AB ≠ C</li>
+  <li>liefern ALLE Tests Korrekt: mit $p ≤ 0.5^k$ false positive</li>
+</ul>
+
+<p><strong>Coupon Collector</strong>: Ziel n versch. Sammelkarten in Müslipackungen: Erwartungswert $n H_n ≤ n ln n + n$</p>
+
+<p><strong>Speichermodell</strong>
+<strong>Parallel Disk Model (PDM)</strong>: Speicherzugriff in Blöcken, Blockzugriffe minimieren (Datenlokalität), Muster
+wiederholt sich in Speicherhierarchie immer wieder</p>
+
+<p><strong>I/O-effizientes Design</strong>: nicht nur relevant bei Disk I/O, z.B. Dijkstra → Strukturierter Zugriff wichtiges Designprinzip  <br />
+<em>Blockgrößen</em>:</p>
+<ul>
+  <li>$T_{seek}$: Positionierungszeit</li>
+  <li>$W_{max}$: maximale Bandbreite<br />
+→ Lesedauer: $T = T_{seek} + \frac{B}{W_{max}}$  <br />
+<em>Grundlegende Techniken</em>:</li>
+  <li>Zugriffsmuster:
+    <ul>
+      <li>Random Access: $O(n)$ I/Os</li>
+      <li>Linearer Scan: $O(\frac{n}{B})$ I/Os</li>
+    </ul>
+  </li>
+  <li>Sortieren: $ sort(n) = O(\frac{2n}{B}(1+\lceil log_{M/B} \frac{n}{M}))$ I/Os</li>
+  <li>Prioritätswarteschlangen: sort(n)I/Os</li>
+</ul>
+
+:ET

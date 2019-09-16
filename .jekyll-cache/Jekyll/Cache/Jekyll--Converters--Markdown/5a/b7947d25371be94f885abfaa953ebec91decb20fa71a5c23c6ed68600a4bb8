@@ -1,0 +1,40 @@
+I"<ol class="sidenav">
+  <li><a href="#organisatorisches">Organisatorisches</a>
+    <ol>
+      <li><a href="#vorlesungen">Vorlesungen</a></li>
+      <li><a href="#material">Material</a></li>
+      <li><a href="#klausur">Klausur</a></li>
+    </ol>
+  </li>
+  <li><a href="#vorlesungsinhalt">Vorlesungsinhalt</a>
+    <ol>
+      <li><a href="#opening">Opening</a></li>
+      <li><a href="#introduction">Introduction</a>
+        <ol>
+          <li><a href="#distributed-systems--middleware">Distributed Systems &amp; Middleware</a></li>
+          <li><a href="#web-services">Web Services</a></li>
+          <li><a href="#web-services-resource-framework-wsrf">Web Services Resource Framework (WSRF)</a></li>
+        </ol>
+      </li>
+      <li><a href="#grid">Grid</a>
+        <ol>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#job-submission">Job Submission</a></li>
+          <li><a href="#infrastructures">Infrastructures</a></li>
+        </ol>
+      </li>
+      <li><a href="#big-data">Big Data</a>
+        <ol>
+          <li><a href="#introduction-1">Introduction</a></li>
+          <li><a href="#management-at-lhc">Management at LHC</a></li>
+          <li><a href="#data-stewardship-curation-and-preservation">Data Stewardship, Curation and Preservation</a></li>
+          <li><a href="#open-access">Open Access</a></li>
+          <li><a href="#metadata">Metadata</a></li>
+          <li><a href="#map-reduce">Map Reduce</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+:ET

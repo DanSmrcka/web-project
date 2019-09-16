@@ -1,0 +1,36 @@
+I"i<ol class="sidenav">
+  <li><a href="#organisatorisches">Organisatorisches</a>
+    <ol>
+      <li><a href="#vorlesungen">Vorlesungen</a></li>
+      <li><a href="#material">Material</a></li>
+      <li><a href="#übungen">Übungen</a></li>
+      <li><a href="#klausur">Klausur</a></li>
+    </ol>
+  </li>
+  <li><a href="#vorlesungsinhalt">Vorlesungsinhalt</a>
+    <ol>
+      <li><a href="#algorithm-engineering">Algorithm Engineering</a></li>
+      <li><a href="#fortgeschrittene-datenstrukturen">Fortgeschrittene Datenstrukturen</a></li>
+      <li><a href="#fortgeschrittene-graphenalgorithmen">Fortgeschrittene Graphenalgorithmen</a></li>
+      <li><a href="#anwendungen-von-dfs">Anwendungen von DFS</a></li>
+      <li><a href="#maximum-flows-und-matchings">Maximum Flows und Matchings</a></li>
+      <li><a href="#randomisierte-algorithmen">Randomisierte Algorithmen</a></li>
+      <li><a href="#externe-algorithmen">Externe Algorithmen</a></li>
+      <li><a href="#approximationsalgorithmen">Approximationsalgorithmen</a></li>
+      <li><a href="#fixed-parameter-algorithmen">Fixed-Parameter-Algorithmen</a></li>
+      <li><a href="#parallele-algorithmen">Parallele Algorithmen</a></li>
+      <li><a href="#geometrische-algorithmen">Geometrische Algorithmen</a></li>
+    </ol>
+  </li>
+  <li><a href="#übung">Übung</a>
+    <ol>
+      <li><a href="#übung-1">Übung 1</a></li>
+      <li><a href="#übung-2">Übung 2</a></li>
+      <li><a href="#übung-3">Übung 3</a></li>
+      <li><a href="#übung-4">Übung 4</a></li>
+      <li><a href="#übung-5">Übung 5</a></li>
+      <li><a href="#übung-6">Übung 6</a></li>
+    </ol>
+  </li>
+</ol>
+:ET

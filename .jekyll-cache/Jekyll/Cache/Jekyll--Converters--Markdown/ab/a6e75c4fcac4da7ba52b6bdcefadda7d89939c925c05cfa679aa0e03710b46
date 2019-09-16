@@ -1,0 +1,27 @@
+I"<ol class="sidenav">
+  <li><a href="#intelligenz">Intelligenz</a>
+    <ol>
+      <li><a href="#was-ist-ai">Was ist AI?</a>
+        <ol>
+          <li><a href="#acting-humanly">Acting humanly</a></li>
+          <li><a href="#thinking-humanly">Thinking humanly</a></li>
+          <li><a href="#logik">Logik</a></li>
+          <li><a href="#acting-rationally">Acting rationally</a></li>
+        </ol>
+      </li>
+      <li><a href="#foundations-of-ai">Foundations of AI</a>
+        <ol>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#mathematics">Mathematics</a></li>
+          <li><a href="#economics">Economics</a></li>
+          <li><a href="#neuroscience">Neuroscience</a></li>
+          <li><a href="#psychology">Psychology</a></li>
+          <li><a href="#computer-engineering">Computer Engineering</a></li>
+          <li><a href="#control-theory-and-cybernetics">Control Theory and cybernetics</a></li>
+          <li><a href="#linguistics">Linguistics</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+:ET

@@ -1,0 +1,212 @@
+I"!<p>AIMA (abbrev.) ist <a href="http://aima.cs.berkeley.edu/">online verfügbar</a> und in der KIT Bibliothek.</p>
+
+<h2 id="intelligenz">Intelligenz</h2>
+<p>… macht den Menschen aus (homa “sapiens”). Bei AI geht es nicht
+nur darum zu verstehen, wie Intelligenz beim Menschen funktioniert, sondern
+auch eigene Intelligenz zu “bauen”.</p>
+
+<p>Der Begriff AI wird seit 1956 geprägt.</p>
+
+<h3 id="was-ist-ai">Was ist AI?</h3>
+
+<p>Rational bedeutet, dass ein Aktor tut, was zu seinem Wissenstands richtig ist.
+Die unterschiedlichen Strömungen können wie folgt unterteilt werden:</p>
+
+<table>
+  <tr><td>Menschlich denkend</td><td>Rational denkend</td></tr>
+  <tr><td>Menschlich handelnd</td><td>Rational handelnd</td></tr>
+</table>
+
+<h4 id="acting-humanly">Acting humanly</h4>
+
+<p>Turing Test (1950)
+Fragen per Brief stellen -&gt; Antworten per Brief bekommen -&gt; entscheiden, ob es
+sich um einen Menschen oder einen Roboter handelt</p>
+
+<p>Total Turing Test ist eine Erweiterung bei der auch ein Videosignal und Interaktion
+durch das Reichen von Gegenständen möglich ist.</p>
+
+<p>Folgende Bereiche wären nötig, um eine Maschine zu bauen, die den Turing Test
+bestehen könnte:</p>
+
+<ul>
+  <li>Natural Laguage Processing (NLP)</li>
+  <li>Knowledge Representation (store knowledge and things which were heard)</li>
+  <li>Automated Reasoning (infer behaviour/an answer from knowledge)</li>
+  <li>Machine Learning (Adapt to changes and extrapolate patterns)</li>
+  <li>Robotics (Interact with the physical world)</li>
+  <li>Computer Vision (Perceive the visual world)</li>
+</ul>
+
+<p>Auch wenn der Test nach all den Jahre immernoch herausfordernd ist, war er nie
+wirklich das Zentrum der Forschung. Vergleich mit dem Bau des Flugzeugs.
+Irgendwann hat man aufgehört das Flugverhalten der Taube nachgeahmt und aufgehört
+ein Gerät mit Flügelschlag bauen zu wollen.</p>
+
+<h4 id="thinking-humanly">Thinking humanly</h4>
+
+<p>Cognitive Sciences</p>
+
+<p>“Program thinks like humans”</p>
+
+<p>Wie denkt der Mensch? Wir wissen es nicht. Herausfinden kann man es durch:</p>
+
+<ul>
+  <li>Introspektion: Versuchen Gedanken wahrzunehmen bei sich selbst</li>
+  <li>Bildgebende Verfahren beim Menschen</li>
+  <li>Psychologische Experimente</li>
+</ul>
+
+<p>INPUT A -&gt; AI -&gt; OUTPUT B
+INPUT A -&gt; HUMAN -&gt; OUTPUT C</p>
+
+<p>Wenn B ähnlich C, dann könnte man vermuten, dass der Prozess in der AI
+ähnlich dem des Menschen ist.</p>
+
+<p>Notiz: Gute Ergebnisse machen eine AI nicht menschlich im Denken, denn es geht
+um den Vergleich der beiden Leistungen. Von dem Abgleich hat man in Computer
+Vision profitiert.</p>
+
+<h4 id="logik">Logik</h4>
+
+<p>(Rational denkend)</p>
+
+<p>Syllologismus: “Sokrates ist ein Mensch. Menschen sind sterblich. Sokrates ist ein Mensch.”</p>
+
+<p>Ab 1965 ist die Logik mächtig genug, um jedes lösbare Problem theoretisch zu
+lösen. Jedoch ist es in der Praxis so, dass bei großen Suchräumen die Suche
+sehr lange dauert und eine Lösung nicht von einem Scheitern abzugrenzen ist durch
+die Suchzeit.</p>
+
+<p>“Logicist tradition” will AI so bauen, dass sie rational denkt.
+Die Probleme dabei sind:</p>
+
+<ul>
+  <li>Zu großer Suchraum (wo soll man anfangen?)</li>
+  <li>Schwierig informelles Wissen in formelle Logik zu überführen.
+  100%-Wahrscheinlichkeiten sind in der Realität selten (-&gt;fuzzy?)</li>
+</ul>
+
+<h4 id="acting-rationally">Acting rationally</h4>
+
+<p>Agent = Handler (latein agere)
+Rationaler Agent = rationales Handler</p>
+
+<p>Korrekte Schlussfolgerung (Inferenz) bildet nicht die komplette Rationalität ab.
+Instintives Handeln (wie zum Beispiel Reflexe) sind auch ohne logisches Schlussfolgern
+wertvoll. Manche Entscheidungen können nicht für richtig oder falsch befunden werden,
+generell ist aber trotzdem ein Handeln nötig.
+=&gt; Inferenz ist nicht alles -&gt; rationales Handeln besserer Ausgangspunkt für AIMA</p>
+
+<p>Rationalität ist gut wissendschaftlich definiert und kann besser erarbeitet werden
+als das Denken oder Handeln eines Menschen, was immer mit Spekulieren zu tun hätte.</p>
+
+<p>In der Realität ist für kaum eine Augabe die Zeit, alle nötigen Berechnungen
+durchzuführen (vergleiche Schach mit Sport). Dieses Thema nennt sich
+beschränkte Rationalität (“limited rationality”).</p>
+
+<h3 id="foundations-of-ai">Foundations of AI</h3>
+
+<p>Die folgenden Gebiete sind die Ursprünge von AI.</p>
+
+<h4 id="philosophy">Philosophy</h4>
+
+<p>Wo und wie funktioniert Denken? Wie entsteht Handeln?</p>
+
+<p>Artistoteles mit seinen Syllologismen. Viele Maschinen und Ideen von früher.
+DaVinci…</p>
+
+<p>Rationalismus.
+Dualismus: Gehirn und Seele…
+Materialismus: Es geht ohne Seele.</p>
+
+<p>Empirie: Wissen durch Erforschung mit den Sinnen (nicht nur theoretische Gedanken)
+Induktion: Regeln erlernen durch das wiederholte Beobachten vom Zusammenspiel
+den Regeln unterworfener Objekte.</p>
+
+<p>Logischer Positivismus: Alles ist erklärbar und durch logisches Inferieren ableitbar.
+(Kombination aus Ratiionalismus und Empirismus)</p>
+
+<h4 id="mathematics">Mathematics</h4>
+
+<ul>
+  <li>Mit Logik rechnen können: Algorithmen, Rechenmaschinen</li>
+  <li>Wahrscheinlichkeitstheorie</li>
+</ul>
+
+<p>Incompleteness theorem: Es gibt am Grunde (genauso wie bei Zahlen) eine kleine
+    Menge von Annahmen, die man treffen muss. (Goedel) -&gt; Es gibt Funktionen,
+    die sind nicht berechenbar (andere Interpretation)</p>
+
+<p>-&gt; Turing: Berechenbarkeit. Halteproblem, Turing &amp; Church thesis</p>
+
+<p>Die theoretische Berechenbarkeit ist aber in der Realität nicht passend. Die
+Frage muss sein, was kann in annehmbarer Zeit berechnet werden: Tractability</p>
+
+<p>-&gt; NP-completenes, exponential time?</p>
+
+<p>-&gt; Man könnte für manche Probleme vielleicht die richtige Lösung finden, aber
+der Algorithmus ist in seiner Laufzeit nicht kontrollierbar.
+Daher benötigt man Heuristiken! Wahrscheinlichstheorie! Pascal, LaPlace, Fermat,
+Bernoulli, Bayes</p>
+
+<h4 id="economics">Economics</h4>
+
+<p>Wie bekommt man das beste Ergebnis bei geringstem Einsatz. Wirtschaftliches Handeln
+im Kontext von Staaten und die Spieltheorie.</p>
+
+<p>Utility, Decision theory…</p>
+
+<p>Von Neumann macht Computer und Analyseketten. Wichtige Überschneidung Markow-Ketten.</p>
+
+<p>Nobelpreis für “satisficing” -&gt; Modelle liefern Ergebnis, das ist “gut genug”
+und nicht perfekt -&gt; menschenähnlicher</p>
+
+<h4 id="neuroscience">Neuroscience</h4>
+
+<p>Ist die Wissenschaft über Gehirn und Neuronen. Es wurden immer mehr Zusammenhänge
+und Funktionsweisen von Körperteilen und Fähigkeiten mit Orten im Hirn
+verortet, aber es gibt noch zu viele Rätsel. Wie funktionieren Erinnerungen,
+das Ersetzen von Funktionsbereichen bei Ausfällen…</p>
+
+<p>Neuronen erforschen. EEG, fMRI.</p>
+
+<h4 id="psychology">Psychology</h4>
+
+<p>Wie denken und verhalten sich Menschen und Tiere?</p>
+
+<p>Helmholtz mit seinem Schüler in Leipzig maßgebend. Etablierung schwierig.
+Introspektion wurde nicht als wissenschaftlich angesehen durch den “behaviourism”,
+der mentale Prozesse als Ergebnis akzeptiert.</p>
+
+<p>Änderte sich dann aber (Cognitive Psychology). behaviourism hatte bei Tieren
+Erfolg, aber nicht bei Menschen.</p>
+
+<p>Helmholtz hat ein Buch über das visuelle System geschrieben, das immernoch als
+Standardlektüre gilt.</p>
+
+<h4 id="computer-engineering">Computer Engineering</h4>
+
+<p>Die Maschinen wurden dann wirklich gebaut um den zweiten WK herum.
+Programmiersprachen, Komplexitätsberechnung, schnellere Hardware.</p>
+
+<p>Der Supercomputer kommt nicht in allen Fällen an das menschliche Gehirn heran.
+Vor allem zu wenige Cores, auch wenn man nicht sagen kann, was ein menschlicher
+Core ist.</p>
+
+<h4 id="control-theory-and-cybernetics">Control Theory and cybernetics</h4>
+
+<p>Control theory will Error einer Zielfunktion minimieren, was AI auch tut. Homeostatic sollte eine
+physikalische Schaltung des Hirns mit Feedbackschleifen ermöglichen.</p>
+
+<p>Wie kann man einen Roboter bauen, damit die KI mit der Realität interagieren kann.</p>
+
+<h4 id="linguistics">Linguistics</h4>
+
+<p>Moderne Linguistik entsteht zusammen mit KI. Zwei Monate bevor am MIT die Arbeit
+an AI beginnt, gibt es eine Konferenz auf der Chomsky ein wichtiges Paper über
+Sprache vorstellt. Es geht um Berechenbarkeit etc.</p>
+
+<p>Natural Language Processing ist eine Gemeinsamkeit genauso wie Computational Linguistics.
+Erst ab den 60ern wird klar, wie schwierig das Verstehen von Sprache wirklich ist.</p>
+:ET

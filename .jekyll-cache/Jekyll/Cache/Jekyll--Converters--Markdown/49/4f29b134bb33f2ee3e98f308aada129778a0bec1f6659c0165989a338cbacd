@@ -1,0 +1,1122 @@
+I"}�<h2 id="1-vorlesung">1. Vorlesung</h2>
+
+<p>Link zu den <a href="https://ilias.studium.kit.edu/goto.php?target=file_879241_download&amp;client_id=produktiv">Folien</a> der ersten Vorlesung.</p>
+
+<h3 id="organisation">Organisation</h3>
+
+<p>Institut für Anthropomatik und Robotik (IAR)</p>
+
+<p>Hochperformante humanoide Technologien (H²T)</p>
+
+<p><a href="http://www.humanoids.de">humanoids.de</a></p>
+
+<p>Übung findet alle 14 Tage statt.</p>
+
+<p>Videos von WS17/18 auf DIVA: <a href="https://mediaservice.bibliothek.kit.edu/#/details/DIVA-2017-519">DIVA Videos</a></p>
+
+<p><a href="https://www.youtube.com/user/HumanoidRobots/videos">Coole Videos vom Lehrstuhl</a></p>
+
+<p><a href="https://ilias.studium.kit.edu/goto.php?target=crs_884802&amp;client_id=produktiv">Ilias-Kurs</a></p>
+
+<p>Schriftliche Klausur: 1 Stunde lang</p>
+
+<p>Es waren in der ersten Vorlesung sehr viele Studis da:</p>
+
+<p><img src="/assets/images/robotik.jpg" alt="" /></p>
+
+<h3 id="literatur">Literatur</h3>
+
+<ul>
+  <li>Robotics: Control, Sensing, Vision, and Intelligence; Fu, Gonzalez, Lee</li>
+  <li>Springer Handbook of Robotics; Editors: Bruno Siciliano, Oussama Khatib
+<a href="http://handbookofrobotics.org/">http://handbookofrobotics.org/</a></li>
+  <li>Artificial Intelligence - A Modern Approach, 3rd. Ed.; Russel, Norvig</li>
+  <li>Robotics, Vision and Control: Fundamental Algorithms in Matlab, Peter Corke
+Wird in den Übungen verwendet werden</li>
+  <li>Modern Robotics: Mechanics, Planning and Control, Kevin M. Lynch, Frank C. Park</li>
+</ul>
+
+<p>Folien sollten eigentlich umfangreich genug sein. Auf notwendige Zusatzliteratur wird hingewiesen.</p>
+
+<h3 id="software">Software</h3>
+
+<ul>
+  <li>Matlab</li>
+  <li><a href="http://petercorke.com/wordpress/toolboxes/robotics-toolbox">Robotics Toolbox by Peter Corke</a></li>
+  <li><a href="https://gitlab.com/Simox/simox/wikis/Installation-Source-Ubuntu">Simox (Simulator für Roboter vom H²T)</a></li>
+  <li>OpenCV for python</li>
+</ul>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>Humanoide Roboter bauen. Fokus bei H²T auf Händen und Lernen.
+Armar-Roboter. Einer hat auch Beine. Roboterhände und Prothesen.</p>
+
+<p>“Laufen ist nur die Transition” zwischen auf einem Bein stehen, auf zwei Beinen stehen und dann auf dem anderen Bein stehen.
+H²T hat eine Taxonomie erstellt, in der nach Kontaktpunkten mit Boden und Wänden und Größe dieser Kontaktpunkte alle Körperposen des Menschen eingeordnet werden.</p>
+
+<p>Das ist mit Aufnahmen von Menschen geschehen -&gt; größte, öffentlich verfügbare Bewegungsdatenbank der Welt:
+<a href="https://motion-database.humanoids.kit.edu/">https://motion-database.humanoids.kit.edu/</a></p>
+
+<p>Wenn man die Posen der Menschen nach der Taxonomie klassifiziert, dann kann man die Handlungen und Bewegungen als Transitionsgraph zwischen diesen darstellen.</p>
+
+<p>“Motion to Language”: Bewegungsaufnahme in rekurrentes Netzwerk -&gt; Ausgabe sind Beschreibungstexte. Es wurde danach sogar anders herum gemacht. Eingabe war der Beschreibungstext und Ausgabe dann eine generierte Bewegung.</p>
+
+<p>Wenn man die Taxonomie der Posen als Alphabet sieht, dann kann man die Idee von n-grams aus der Spracherkennung verwenden, um Bewegungen vorherzusagen bzw. zu planen.</p>
+
+<p>Definition Roboter? Hat sich über die Zeit gewandelt. Lange und begeisterungsreiche Historie. Auch autonome Autos sind Roboter.</p>
+
+<ol>
+  <li>Generation ab 1960: Programmierbare Manipulatoren (geringe Rechenleistung, Punkt-zu-Punkt-Programmierung und kaum Sensoren)</li>
+  <li>Generation ab 1980: Adaptive Roboter (Sensoren zur Anpassung an Umwelt, Programmiersprache VAL, geringe Intelligenz)</li>
+  <li>Generation ab heute: Autonome Roboter (hohe Rechenleistung, spezialisiert auf Aufgaben, autonomes Handeln)</li>
+  <li>Generation ab Zukunft: Humanoide/AI Roboter (hohe Flexibilität bzgl. Umwelt, Lernen und Anpassen, Selbstreflexion?, Emotion?)</li>
+</ol>
+
+<p>Teilbereiche:</p>
+
+<ul>
+  <li>Sensorik (Technologien, Signalverarbeitung)</li>
+  <li>Aktorik (Antriebe, Kinematiken, Gelenktypen)</li>
+  <li>Modellierung (Roboter, Umwelt, Sensorik)</li>
+  <li>Schnittstellen (Programmierung, Bedienung, Direkte Kommunikation)</li>
+  <li><strong>Verbunden durch:</strong> Datenvearbeitung (KI, ML, Wahrnehmung, Symbolische Planung, Manipulation, Architekturen, Regeln und Steuern, Sensordatenfusion)</li>
+</ul>
+
+<p>Industrieroboter: Wenige DOF, Art der Steuerung (Point-To-Point, kontinuierlicher Pfad, Adaptive, Teleoperativ), mechanische Struktur (SCARA, parallel)</p>
+
+<p>Serviceroboter: halb- oder vollautonom, nützliche Dienste für den Menschen (nicht Industrie)</p>
+
+<p>Personal Robot: Roboter, der menschliches Verhalten nachahmt im Bereich der Bewegung, Intelligenz und Kommunikation.</p>
+
+<h2 id="2-vorlesung">2. Vorlesung</h2>
+
+<p>“Roboter, bring mir einen Saft aus dem Kühlschrank.” -&gt; Motivation für Koordinatensystem
+(Punkte und Rotationen in 3d beschreiben)</p>
+
+<p>Generell sind drei Bereiche der Mechanik interessant für Robotik:</p>
+
+<ul>
+  <li>Statik: Behandelt Kräfte und Momente, die sich auf den ruhenden Mechanismus
+auswirken. <strong>Steifigkeit</strong></li>
+  <li>Dynamik: Betrachtet Kraft und Moment, welche durch Beschleunigung/Bewegung
+und zusätzlicher Last entstehen</li>
+  <li>Kinematik: Analysiert die Geometrie eines Manipulators oder Roboters. <strong>Position</strong></li>
+</ul>
+
+<p>Als Endeffektor bezeichnet man beim humanoiden Roboter zum Beispiel die Hände,
+Greifer oder aufgesetzte Werkzeuge.</p>
+
+<p>Ein Roboter hat Gelenke (Ellenbogengelenk) und Glieder (z. B. Unterarm). Deren
+Zusammenhang kann in einer <strong>Kinematischen Kette</strong> dargestellt werden.
+Repräsentiert als Graph. Kanten sind Glieder, Knoten sind Gelenke.</p>
+
+<p><strong>Freiheitsgrade</strong> oder Degrees of Freedom (DoF). Ist die Anzahl an Parametern,
+die nötig sind um die räumliche Lage, eines Objektes oder Mechanismus zu beschreiben.
+Zum Beispiel hat ein Punkt auf einer 2d-Ebene zwei Freiheitsgrade.
+Und ein Starrkörper hat durch seine Position und Orientierung um 3D-Raum 6 DoF.</p>
+
+<p>Starrkörperbewegung (zum Beispiel Staubsaugerroboter, aber kein Tintenfisch):</p>
+
+<ol>
+  <li>Die Distanz zweier Punkte bleibt erhalten (vgl. mit einem Schwamm)</li>
+  <li>Die Orientierung des Körpers bleibt gleich (rechtsdrehendes Koordinatensystem bleibt)</li>
+</ol>
+
+<h3 id="so3">SO(3)</h3>
+<p>Spezielle Orthogonale Gruppe im R³: <strong>SO(3)</strong></p>
+
+<ol>
+  <li>“Volumen im Raum bleibt erhalten”: $ det(A) = 1 $</li>
+  <li>“Die Transponierte ist die Inverse”: $ R^{T} R = I =&gt; R^{T} = R^{-1} $</li>
+</ol>
+
+<p>Eine 3x3-Matrix, die diese beiden Anforderungen erfüllt, kann als SO(3) für
+Rotationen von Starrkörpern verwendet werden.</p>
+
+<h3 id="se3">SE(3)</h3>
+
+<p>Spezielle Euklidische Gruppe im R³: <strong>SE(3)</strong></p>
+
+<p>Wird für die Starrkörperbewegung verwendet.</p>
+
+<p>Es handelt sich um eine Zusammensetzung einer Rotation R aus SO(3) und einem
+Translationsvektor t (Spaltenvektor 3x1):</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+    SO(3)_{1,1} & SO(3)_{1,2} & SO(3)_{1,3}   &  t_{1,1} \\
+    SO(3)_{2,1} & SO(3)_{2,2} & SO(3)_{2,3}   &  t_{2,1} \\
+    SO(3)_{3,1} & SO(3)_{3,2} & SO(3)_{3,3}   &  t_{3,1}
+\end{bmatrix} %]]></script>
+
+<h3 id="euklidischer-raum">Euklidischer Raum</h3>
+
+<p>Vektorraum R³ mit dem Standardskalarprodukt, also: Wenn ein Punkt auf einer
+Strecke zwischen zwei Punkte liegt, dann kann jeder Punkte auf der Linie durch
+eine Linearkombination der beiden Punkte dargestellt werden.</p>
+
+<p>Punkt c auf der Strecke zwischen a und b: $ c = t * a + (1-t) * b $, wobei
+t den Einfluss von a reguliert (sollte zwischen 0 und 1 liegen).</p>
+
+<p>Ein Punkt im euklidischen Koordinatensystem kann durch eine Linearkombination
+der Basisvektoren (Achsen $e_x, e_y, e_z$) repräsentiert werden.
+“3 Schritte die X-Achse entlang, -1 Schritt die Y-Achse und 2 die Z-Achse hoch.”</p>
+
+<p>Die Basisvektoren sind orthogonal zueinander und normalisiert (Länge ist 1).
+Daher spricht man von einem <strong>orthonormalen Koordinatensystem</strong>.</p>
+
+<p>Konvention: Rechtsdrehende Koordinatensysteme werden benutzt
+(Rechter Daumen der Hand zeigt nach oben, die Finger geben die Drehrichtung an)</p>
+
+<p>Rechte Hand Regel: Rechte Hand Daumen nach rechts ist die X-Achse, Zeigefinger Y
+und Mittelfinger Z. Z-Achse soll nach oben zeigen.</p>
+
+<p>Es gibt folgende Koordinatensysteme:</p>
+
+<ul>
+  <li>Basiskoordinatensystem (BKS): Steht in der Ecke vom Raum</li>
+  <li>Objektkoordinatensystem (OKS): Für ein Objekt zum Interagieren</li>
+  <li>Sensorkoordinatensystem (SKS): Für Sensoren (Kameras)</li>
+  <li>Endeffektorkoordinatensystem (EKS): Für Greifer, Hand oder ähnliches</li>
+</ul>
+
+<p>Lineare Abbildungen <script type="math/tex">\phi:  \mathbb{R}^3 \rightarrow \mathbb{R}^3</script>, die R³ auf sich selbst
+abbilden heißten Endomorphismen. Man repräsentiert sie mit quadratischen Matrizen.
+Zum Beispiel beschreibt folgende Formel ausmultipliziert eine Matrix, die
+einen <strong>Basiswechsel</strong> durchführt (also von einem   Koordinatensystem in ein anderes):
+$ (e_x e_y e_z)  (e’_x e’_y e’_z)^{-1} $</p>
+
+<p>Ein bijektiver Endomorphismus heißt Isomorphismus. (Umkehrbarkeit!)</p>
+
+<p>Interessante Eigenschaften von Isomorphismen:</p>
+
+<ol>
+  <li>Winkelerhaltend: Skalierung, Rotation</li>
+  <li>Längenerhaltend: Rotation</li>
+  <li>Händigkeitserhaltend: Rotation erhält rechtshändiges Koordinatensystem</li>
+</ol>
+
+<h3 id="rotationsmatrix">Rotationsmatrix</h3>
+
+<p>SO(3) ist ein Isomorphismus mit allen drei Eigenschaften.
+SO(3) enthält <strong>alle möglichen Rotationen</strong> um willkürlich durch den Ursprung
+gelegte Achsen und ist nicht kommutativ (keine abelsche Gruppe).</p>
+
+<p>Wichtig für die Robotik: Objektpose und mit Verkettung mit Translation kann
+die Transformation zwischen zwei Gelenkachsen dargestellt werden.
+Dafür benötigen wir folgenden <strong>affinen</strong> Isomorphismus (nicht linear):</p>
+
+<script type="math/tex; mode=display">\phi ( \cdot ) = R x + t, \space x, t \in \mathbb{R}^3, \space R \in SO(3)</script>
+
+<p>In 2d:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+  cos \alpha  & -sin \alpha \\
+  sin \alpha  &  cos \alpha
+\end{bmatrix} %]]></script>
+
+<p>Test: Handelt es sich um eine Rotationsmatrix?</p>
+
+<p>Antwort: Wenn $det(A) = 1$ und $R^{T} R = I$</p>
+
+<p>Was machen, wenn man nicht um den Ursprung rotieren will? Dann verschiebt man
+vor der Rotation die Ebene über den Ursprung und schiebt sie dann wieder zurück.
+-&gt;  Das ist als affine Transformation darstellbar.</p>
+
+<p>In 3d:</p>
+
+<p>Für jede Achse gibt es eine Rotationsmatrix.
+Bei einer Rotation um die Z-Achse werden nur die Punkte im X-Y-Raum rotiert usw.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+R_{x, \alpha} =
+\begin{bmatrix}
+1   &   0           &   0           \\
+0   &   cos \alpha  &   -sin \alpha \\
+0   &   sin \alpha  &   cos \alpha
+\end{bmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+R_{y, \alpha} =
+\begin{bmatrix}
+cos \alpha    &         0           &   sin \alpha           \\
+0             &         1           &       0                \\
+-sin \alpha   &         0           &   cos \alpha
+\end{bmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+R_{z, \alpha} =
+\begin{bmatrix}
+cos \alpha    &         -sin \alpha   &       0                \\
+sin \alpha    &         cos \alpha    &       0                \\
+0             &         0             &       1
+\end{bmatrix} %]]></script>
+
+<p>Die inverse Rotationsmatrix entspricht der transponierten (Spiegelung über die
+  Diagonale).</p>
+
+<p>Verkettung von Rotationen: Man kann die Verkettung entweder von innen nach außen
+oder andersherum ausmultiplizieren.</p>
+
+<ol>
+  <li>Von rechts nach links (innen nach außen): globale Achsen, z. B. Roll-Pitch-Yaw (x-y-z)</li>
+  <li>Von links nach rechts (außen nach innen): lokale Achsen, z, x’, z’’</li>
+</ol>
+
+<p>Probleme mit Rotationsmatrizen:</p>
+
+<ol>
+  <li>Redundanz: 27 Werte für 3 DoF (3 3x3-Matrizen für Rotation eines 3D-Punktes)</li>
+  <li>Ungültige Rotationsmatrizen: Problematisch für Machine Learning</li>
+</ol>
+
+<h3 id="eulerwinkel">Eulerwinkel</h3>
+
+<p>Drei Rotationen um drei willkürliche Achsen können jede Rotation beschreiben.
+<strong>Euler-Konvention der Achsen z, x’, z’‘</strong>. Die Winkel $\alpha, \beta und \gamma$
+sind die Eulerwinkel. Sie beschreiben die Rotationsmatrix.</p>
+
+<p>Diese ergibt sich, wenn man folgende Rotationsmatrizen von links nach rechts
+multipliziert:
+ <script type="math/tex">R_{z, \alpha} R_{x', \beta} R_{z'', \gamma}</script></p>
+
+<p>Es sind 12 verschiedene Abfolgen für die Rotationsmatrizen möglich: z-x-z, x-y-x, … <br />
+Diese kann man wiederum global oder lokal drehen -&gt; 24 Möglichkeiten</p>
+
+<p><strong>Euler-Konvention</strong> ist x-y-z. Man nennt sie auch:</p>
+<ul>
+  <li>Rotation um x-Achse des BKS um alpha: Roll</li>
+  <li>Rotation um y-Achse des BKS um beta: Nick/Pitch</li>
+  <li>Rotation um z-Achse des BKS um gamma: Gier/Yaw</li>
+</ul>
+
+<script type="math/tex; mode=display">R = R_z(\gamma)  R_y(\beta)  R_x(\gamma)</script>
+
+<p>Eulerwinkel sind aussagekräftiger und kompakter als Rotationsmatrizen.</p>
+
+<p>Nachteile sind, dass Drehungen nicht eindeutig sind und sie sind nicht kontinuierlich.
+Letzteres heißt, dass eine stetige Interpolation zwischen zwei Eulerwinkeln
+nicht möglich ist.
+Des weiteren haben Eulerwinkel den Gimbal Lock. Gimbal (kardanische Lagerung)
+wird zum Beispiel in einem Gyroskop verwendet.
+Das bedeutet, dass es Rotationen gibt, die zwei Achsen voneinander abhängig
+machen, wodurch ein Freiheitsgrad verloren geht.
+Zum Beispiel für: $\beta = - {\pi \over 2} $</p>
+
+<h2 id="3-vorlesung">3. Vorlesung</h2>
+
+<p>=&gt; Bei allen 3x3-Darstellungen fehlt die Translation, die man gesondert bearbeiten
+muss. Daher nutzt man affine Transformationen (aus der Geometrie), um den
+euklidischen Raum zu erweitern. Aus 3D-Koordinaten werden dann die 4D-Koordinaten
+namens <strong>homogene Koordinaten</strong>.</p>
+
+<p>$a = (a_x, a_y, a_z, h)^T$ mit $h \in {0, 1}$</p>
+
+<p>Homogene 4x4-Matrix</p>
+
+<p>$T = \begin{bmatrix}
+  A   &amp; t <br />
+  o^T &amp; 1
+\end{bmatrix}$</p>
+
+<p>mit A ist aus SO(3) und t ein Translationsvektor.</p>
+
+<p>Wenn man den Ortsvektor $p_{OKS}$ im BKS darstellen möchte, dann geht das
+wie folgt: $p_{BKS} = T * p_{BKS}$ mit T …</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+T =
+\begin{bmatrix}
+n_x & o_x & a_x & u_x \\
+n_y & o_y & a_y & u_y \\
+n_z & o_z & a_z & u_z \\
+0   & 0   & 0   & 1
+\end{bmatrix} = \begin{bmatrix} n & o & a & u \\ 0 & 0 & 0 & 1\end{bmatrix} %]]></script>
+
+<p>n: Ursprung des OKS
+n,o,a: Einheitsvektoren des OKS</p>
+
+<p>Dort, wo eine 1 in der Diagonalen steht. Wo wird rotiert? Das soll man aus einer
+Rotationsmatrik lesen können.</p>
+
+<h3 id="homogene-matrix">Homogene Matrix</h3>
+<p>Homogene 4x4-Matrix: Repräsentiert Rotation und Translation in einer Matrix.
+Der Eintrag unten rechts ist der Skalierungsfaktor, bleibt
+aber in der Robotik immer eine 1.
+Die drei übrigen Einträge der Matrix haben auch Bedeutung für die Perspektive,
+sind aber bei uns immer Nullen.</p>
+
+<h4 id="invertierung">Invertierung</h4>
+
+<p>Die SO(3) kann einfach transponiert werden. Die letzte Zeile bleibt gleich.
+Nur die rechte Spalte ist besonders, es gibt aber eine geschlossene Form.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+  SO(3)^T   &   &   &   -n^{T} u \\
+            &   &   &   -o^{T} u \\
+            &   &   &   -a^{T} u \\
+        0   & 0 & 0 &  1    
+\end{bmatrix} %]]></script>
+
+<ul>
+  <li>Eine homogene Matrix enthält 12 (4 x 3 n,o,a,u) nicht triviale Kenngrößen.
+Im Gegensatz zu den 6 notwendigen: $x, y, z, \alpha, \beta, \gamma$.</li>
+  <li>Redundanz wegen Orthogonalität ($RR^T = I$)</li>
+  <li>Drehachsen und Drehreihenfolge sind implizit enthalten</li>
+</ul>
+
+<p>Lagebeschreibung 4x4 eines Objektes obj im Koordinatensystem KS:
+$\vphantom{\mathbf{C}}^{KS} \mathbf{C}^{}_{obj}$</p>
+
+<p>Verkettete Lagebeschreibungen werden von links nach rechts multipliziert.</p>
+
+<p>Man kann “kürzen”:
+<script type="math/tex">\vphantom{\mathbf{H}}^{BKS} \mathbf{H}^{}_{B} = \vphantom{\mathbf{H}}^{BKS} \mathbf{H}^{}_{A} \cdot \vphantom{\mathbf{H}}^{A} \mathbf{H}^{}_{B}</script></p>
+
+<p>Die homogene Matrix macht die Drehungen jedoch weiterhin über die Rotationsmatrix,
+daher hat sie auch die gleichen Nachteile.</p>
+
+<h3 id="quaternionen">Quaternionen</h3>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/d4EgbgTm0Bg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zjMuIxRvygQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>https://eater.net/quaternions/video/intro</p>
+
+<p>https://eater.net/quaternions/video/doublecover</p>
+
+<p>Quaternionen sind eine Erweiterung der Komplexen Zahlen von Hamilton (Dublin).
+“Hyperkomplexe Zahlen” $\mathbb{H} = \mathbb{C} + \mathbb{C}_j$ mit
+$j^2 = -1$ und $i \cdot j = -j \cdot i$.</p>
+
+<p>Ein Quaternion $q \in \mathbb{H}$ hat folgende Form: $q = (a, \boldsymbol{u}) = a + u_1 \cdot i + u_2 \cdot j + u_3 \cdot k$
+mit $k = i \cdot j$.</p>
+
+<h4 id="regeln">Regeln</h4>
+
+<p>Hamilton Regeln:</p>
+
+<ul>
+  <li>$i^2 = j^2 = k^2 = -1$</li>
+  <li>$ij = +k, \space jk = +i, \space ki = +i$</li>
+  <li>$ji = -k, \space kj = -i, \space ik = -j$</li>
+</ul>
+
+<p>Der Koeffizient a wird als <strong>Realteil</strong> bezeichnet. <strong>Imaginärteil</strong> ist der
+Name von <strong>u</strong>. Hamilton hat alle Quaternionen mit einem Realteil von Null
+als Vektoren bezeichnet.</p>
+
+<p>Rechenregeln für zwei Quaternionen q und r: $q = (a, u_1, u_2, u_3)^T und \space r = (b, v_1, v_2, v_3)^T$</p>
+
+<p>Addition: $q + r = (a + b, u_1 + v_1, u_2 + v_2, u_3 + v_3)^T$</p>
+
+<p>Skalarprodukt: $ \langle q | r \rangle = a \cdot b + u_1 \cdot v_1 + u_2 \cdot v_2 + u_3 \cdot v_3 $</p>
+
+<p>Multiplikation: <strong>Ausmultiplizieren, aber nicht kommutativ!</strong></p>
+
+<p>Konjugation: Wenn Quaternion $q = (a, \boldsymbol{u} )^T $, dann ist die Konjugation $ q^{*} = (a, - \boldsymbol{u} ) $</p>
+
+<p>Norm:
+<script type="math/tex">\bigl| q \bigl| = \sqrt {q \cdot q^*} = \sqrt {q^* \cdot q} = \sqrt {a^2 + {u_1}^2 + {u_2}^2 + {u_3}^2}</script></p>
+
+<p>Inverses Element: $ q^{-1} = {q^* \over {| q |}^2} $</p>
+
+<p>Darstellung eines Skalars s als Quaternion: $q = (s, 0)^T$</p>
+
+<p>Darstellung eines Vektors v als Quaternion: $q = (0, v)^T$</p>
+
+<p>Die Einbettung von SO(3) nach $\mathbb{H}$ nennt sich Einheitsquaternionen $\mathbb{S}^3$.
+Sie bilden folgende Gruppe: $\mathbb{S}^3 = { q \in \mathbb{H} \bigl| { | q | }^2 = 1 }$</p>
+
+<p><strong>Beweis über Gruppeneigenschaften:</strong></p>
+
+<p>Eine Gruppe ist ein Paar (G, <em>) bestehend aus einer Menge G und einer inneren zweistelligen
+Verknüpfung * auf G. $</em>: G \times G \rightarrow G, (a, b) \rightarrow a * b$.
+Wenn die Verknüpfung folgende schwache Gruppenaxiome erfüllt, dann wird (G, * )
+eine Gruppe genannt:</p>
+
+<p>Es existiert ein linksneutrales Element $e \in G$, so dass gilt:</p>
+
+<ol>
+  <li>Für alle Gruppenelemente a gilt e * a = a</li>
+  <li>Zu jeden $a \in G $ existiert ein linksinverses Element $a^{-1} \in G$ mit $a^{-1} * a = e$</li>
+</ol>
+
+<h4 id="rotation">Rotation</h4>
+
+<p>Eine Rotation um eine Drehachse $\boldsymbol{a}$ mit $ | \boldsymbol{a} | = 1 $
+und einem Drehwinkel $\phi$ kann wie folgt als Quaternion dargestellt werden:
+<script type="math/tex">q = ( cos {\phi \over 2} , \boldsymbol{a} sin { \phi \over 2} )</script></p>
+
+<p>Um die Rotation auf einen Vektor v anzuwenden, stellt man diesen als Quaternion
+dar und berechnet folgendes:</p>
+
+<script type="math/tex; mode=display">v' = q v q^{-1}</script>
+
+<p>Weil q ein Einheitsquaternion ist, gilt $q^{-1} = q^{ * }$, daher können wir die
+Anwendung der Rotation auch wie folgt schreiben:</p>
+
+<script type="math/tex; mode=display">v' = q v q^{ * }</script>
+
+<p>Verkettete Einheitsquaternionen q und r können zum Rotieren multipliziert werden:
+$q \cdot r$.</p>
+
+<h4 id="interpolation">Interpolation</h4>
+
+<p>So wie man die Punkte auf einer Strecke zwischen zwei Punkten im Euklidischen
+Raum interpolieren kann, nutzt man auch einen Parameter $ t \in [0,1] $
+um zwischen zwei Quaternionen zu interpolieren.</p>
+
+<p><strong>SLERP Interpolation</strong> (Spherical Linear Interpolation):
+<script type="math/tex">Slerp(\boldsymbol{q_1}, \boldsymbol{q_2}, t) = \boldsymbol{q_1} \cdot ( \boldsymbol{q_1}^{-1} \cdot \boldsymbol{q_2} )^t</script>
+Das t ist eine Potenzierung und keine Transponierung.</p>
+
+<p>Da das Potenzieren von Quaternionen nicht behandelt wird in der Vorlesung,
+gibt es eine direktere Formulierung der SLERP Interpolation:</p>
+
+<p><script type="math/tex">Slerp( \boldsymbol{q_1}, \boldsymbol{q_2}, t) = { sin(1-t) \theta \over sin \theta} \cdot \boldsymbol{q_1} + { sin t \theta \over sin \theta} \cdot \boldsymbol{q_2}</script>
+Mit $ \langle  \boldsymbol{q_1} | \boldsymbol{q_2} \rangle = cos \theta $</p>
+
+<p>Mit dieser Formel erhält man eine konstante Winkelgeschwindigkeit.</p>
+
+<p><strong>Doppelte Abdeckung:</strong> Alle Orientierungen von SO(3), die in $\mathbb{H}$ als
+Einheitsquaternionen eingebettet sind, werden doppelt abgedeckt, das heißt, es
+gibt immer zwei Wege zu ihnen. $\boldsymbol{-q}$ und $\boldsymbol{q}$.
+Dass es sich um die gleiche Rotation handelt lässt sich über das Streichen
+von negativen Vorzeichen und der Konjugation zeigen.</p>
+
+<p>=&gt; SLERP berechnet nicht immer die kürzeste Rotation, d.h. man muss immer prüfen,
+   welche kürzer ist.</p>
+
+<h3 id="duale-quaternionen">Duale Quaternionen</h3>
+
+<p>Ersetze die vier reellen Werte der Quaternionen durch Dualzahlen, um Translationen
+ausdrücken zu können.</p>
+
+<h2 id="4-vorlesung">4. Vorlesung</h2>
+
+<p>(Tool Center Point, zum Beispiel Zentrum der Hand.)</p>
+
+<p>Gelenktypen:</p>
+
+<ul>
+  <li>Rotationsgelenk R: Schulter</li>
+  <li>Torsionsgelenk T: Unterarmdrehung</li>
+  <li>Revolvergelenk V: Auch Schultergelenk bei passendem Winkel</li>
+  <li>Lineargelenk L (auch prismatic joint, Schubgelenk oder Translationsgelenk genannt)</li>
+</ul>
+
+<p>R, T und V sind rotatorische Gelenke.</p>
+
+<p><strong>Arbeitsraum:</strong> Alle Punkte im Raum, die erreichbar sind -&gt; in 3d sind mindestens
+  3 DoF nötig</p>
+
+<p><strong>Grundform des Arbeitsraumes:</strong> Arbeitsraum ohne Behinderung durch Roboterkörper
+  oder gegenseitige Behinderung von Gelenken</p>
+
+<p>Robotertypen:</p>
+
+<ul>
+  <li>Cartesian Robot</li>
+  <li>Cylindrical Robot</li>
+  <li>Kinematische Struktur</li>
+  <li>Spherical Robot</li>
+  <li>Articulated Robot</li>
+  <li>Parallel Robot, z. B. Stewart-Plattform für Autotests (6 DoF durch 3 rotatorische und 3 translatorisch)</li>
+  <li>Delta (Parallele Kinematik), z. B. bei selbstgebauten 3D-Druckern</li>
+</ul>
+
+<p>Radkonfigurationen:</p>
+
+<ul>
+  <li>Differentialantrieb</li>
+  <li>Dreiradantrieb</li>
+  <li>Synchro-Drive</li>
+  <li>Mecanum-Antrieb (passive, zum Reifen tangentiale Rollen (45°)
+auf Reifen sorgen für geringere Reibung -&gt; Bewegungen in alle Himmelsrichtungen,
+Armar3 und Armar6, KUKA)</li>
+</ul>
+
+<p>Antriebe:</p>
+
+<ul>
+  <li>Fluidische Antriebe: Linearantrieb (Kolbenkraft, Kolbengeschwindigkeit, Drehmoment)</li>
+  <li>Muskelartige Antriebe: Pneomatisch (bei größeren Robotern durch Hydraulik ersetzen)
+(Hydraulik ist aber eigentlich nicht so präzise und schmierig in der Praxis -&gt; Boston Dynamics benutzt aber für Atlas Hydraulik)
+Für Hände ist Pneumatik auch genutzt, weil es Platz für Sensoren in den kleinen
+Händen lässt. Man muss nur ein Ventil am Unterarm anbringen. (Armar3)
+Der Vorteil von Luft ist auch noch, dass sie nachgiebig ist und man daher
+auch zerbrechliche Sachen greifen kann</li>
+  <li>Elektrische Antriebe: Weniger Kraft, aber klein und schon elektrisch</li>
+</ul>
+
+<p>Getriebe</p>
+
+<p>Haben unterschiedliche Funktionen: Drehrichtung von Zahnrad wechseln,
+ Achse wechseln, Umwandlung Drehmoment</p>
+
+<ul>
+  <li>Planetengetriebe: abhängig davon, wie viele Zahnräder und welche man fixiert.
+Antrieb, Abtrieb</li>
+  <li>Schneckenradgetrieben</li>
+  <li>Zahnstangengetriebe</li>
+  <li>Seilzug</li>
+  <li>Stirnradgetriebe</li>
+  <li>Schrauben und Spindelgetriebe: Formel dazu muss man nicht können</li>
+  <li>Harmonic Drive AG: Harmonic Drive Spannungswellengetriebe
+es können 1/3 bis 1/2 der Zähne im Angriff sein (aufeinanderliegen)
+-&gt; viele kleien Zähne und wenig Spiel =&gt; Genauigkeit und sehr gute Umsetzung</li>
+</ul>
+
+<p>Übersetzung</p>
+
+<p>Kleinstes Zahnrad nennt sich Ritzel</p>
+
+<h2 id="5-vl--1-übung">5. VL = 1. Übung</h2>
+
+<h3 id="eulerwinkel-aus-so3">Eulerwinkel aus SO(3)</h3>
+
+<p>Interessante Informationen aus der Besprechung des ersten Übungsblattes:</p>
+
+<p>Wenn man aus einer kompletten Rotationsmatrix (z, x’, z’’): $R_{s} = R_{z}( \alpha ) \cdot R_{x’}( \beta ) \cdot R_{z’’}( \gamma )$
+ die Winkel herleiten möchte, dann kann man das entweder herleiten oder unter Annahme folgende Regeln verwenden:</p>
+
+<ul>
+  <li>$ \alpha = atan ( - {a_x \over a_y} ) $</li>
+  <li>$ \beta = acos ( a_z ) $</li>
+  <li>$ \gamma = atan ( {n_z \over o_z} ) $</li>
+</ul>
+
+<p>Bedingung: $a_y \not= 0 $ und $ o_z \not= 0 $</p>
+
+<h3 id="so3---quaternion">SO(3) -&gt; Quaternion</h3>
+
+<p>Wie kann man aus einer Rotationsmatrix R1 ein Quaternion berechnen, das die
+gleiche Rotation beschreibt.</p>
+
+<script type="math/tex; mode=display">Rx = Ix \\
+Rx - Ix = 0 \\
+( R-I ) \cdot x = 0 \\
+( R - \lambda I ) x = 0  \| \lambda = 1 \\</script>
+
+<p>Es handelt sich um ein Eigenwertproblem. Der Eigenvektor ist die Rotationsachse.
+-&gt; LGS -&gt; linear abhängige Terme</p>
+
+<p>Drehwinkel:
+Zwei Varianten:</p>
+<ol>
+  <li>Rotation um orthogonalen Vektor</li>
+  <li>Spur: Wenn Rotationsachse normiert: $Spur(R(\alpha)) = 1 + 2 \cdot cos ( \alpha )$</li>
+</ol>
+
+<h2 id="6-vorlesung">6. Vorlesung</h2>
+<p>5.11.2018</p>
+
+<p>Kinematisches Modell: Zusammenhänge zwischen Konfigurationsraum (Gelenke)
+und der Pose des Endeffektors im Arbeitsraum.</p>
+
+<p>Welche Auswirkung hat nun eine Bewegung der kinematischen Kette? -&gt; Kollision, Arbeitsraum</p>
+
+<p><strong>Vorwärtskinematik:</strong> Bestimmung der Lage des Endeffektors</p>
+
+<p><strong>Inverse Kinematik:</strong> Wie muss ich meine Gelenkwinkel verschieben, um in eine
+Pose zu kommen?</p>
+
+<p>Gelenkwinkel $\theta_1 , … \theta_n$.</p>
+
+<ul>
+  <li>Direkte Kinematik: $X = f( \theta )$ mit X zum Beispiel aus $R^6: (x, y, t, \alpha, \beta, \gamma)$</li>
+  <li>Inverse Kinematik: $\theta = f^{-1}(X)$</li>
+</ul>
+
+<p>Die Funktion $f$ muss aber nicht eindeutig umkehrbar sein.</p>
+
+<p>Roboterarmbasis kann als Fixpunkt für kinematische Kette eines Armes interpretiert werden.
+Das wäre dann eine <strong>offene kinematische Kette</strong>, weil sie nur einen Fixpunkt hat.
+Wenn beide Enden fixiert sind, dann handelt es sich um eine <strong>geschlossene kinematische Kette</strong>.</p>
+
+<p>Annahmen für die Berechnung der Pose des EEF:</p>
+
+<ol>
+  <li>Jedes Armelement ist ein Starrkörper</li>
+  <li>Jedes Gelenk hat nur einen Freiheitsgrad (Gegenbeispiel wäre ein Kugelgelenk)</li>
+</ol>
+
+<p>Drehgelenke werden als Rolle dargestellt. Man kann sie auch kombinieren, um
+zum Beispiel eine Hüfte nachzuahmen.</p>
+
+<h3 id="denavit-hartenberg">Denavit-Hartenberg</h3>
+
+<p>Denavit-Hartenberg Konvention (in der Literatur nur DH) ermöglicht
+eine Translation und Rotation zwischen zwei Gelenkenkoordinatensystemen
+in einer kinematischen Kettte.</p>
+
+<p>Wenn man mehrere solcher Denavit-Hartenberg-Transformationen verkettet, dann
+kann man unter Eingabe der Variablen (Drehwinkel…) eine kinematische Kette
+in der direkten Kinematik beschreiben.</p>
+
+<p>Im Gegensatz zu einer homogenen Matrix oder (x,y,z,$\alpha$, $\beta$, $\gamma$) benötigt man nur 4 Parameter:</p>
+
+<ol>
+  <li>Armelementlänge a</li>
+  <li>Verwindung $\alpha$</li>
+  <li>Gelenkabstand d (Variable für Schubgelenke)</li>
+  <li>Gelenkwinkel $\theta$ (Variable für Drehgelenke)</li>
+</ol>
+
+<p>Das heißt: $R^4 \rightarrow SE(3) \in R^{4x4}$, wobei man sagen muss, dass
+DH nicht den gesamten SE(3) abdeckt.</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AryCSxvWioA?start=1477" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Für jedes Gelenk muss man auch ein “Offset” angeben, um die Null-Lage zu definieren.</p>
+
+<h3 id="jacobi">Jacobi</h3>
+
+<p>Bei den Jacobi-Matrizen handelt es sich um das wichtigste Element für die
+Vorwärtskinematik und Inverse Kinematik.
+Mit ihr kann man Drehwinkelgeschwindigkeiten und Drehmomente in Gelenken
+berechnen. Beispiel: Ein Roboterarm soll 10kg tragen (Kraft am EEF),
+welche Drehmomente müssen die Antriebe leisten, damit es gehoben werden kann.</p>
+
+<p>Beispiel Armar-1: $f: R^{n=7} \rightarrow R^{m=6}$, wobei f differentierbar sein muss.</p>
+
+<p>[…]</p>
+
+<h2 id="7-vorlesung">7. Vorlesung</h2>
+
+<p>8.11.2018</p>
+
+<h2 id="8-vorlesung">8. Vorlesung</h2>
+
+<p>12.11.2018</p>
+
+<h2 id="9-vorlesung">9. Vorlesung</h2>
+
+<p>15.11.2018</p>
+
+<h2 id="10-vorlesung">10. Vorlesung</h2>
+
+<p>19.11.2018</p>
+
+<p>Gastvortrag Stefan Schaale Google X</p>
+
+<h2 id="11-vorlesung">11. Vorlesung</h2>
+
+<p>22.11.2018</p>
+
+<p>Wiederholung Lagrange-Methode</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1U6y_68CjeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BjD-pL819LA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>In der kinetischen Energie sind Gelenkwinkelgeschwindigkeit und translatorische
+Geschwindigkeit erhalten.</p>
+
+<p>Bewegungsgleichung:
+<script type="math/tex">\tau_i = {d \over dt} ( { \partial L \over \partial \dot{q}_i } ) - { \partial L \over \partial q_i}</script></p>
+
+<p>Wobei $\tau_i$ generalisierte Kräfte (Drehmomente in den Gelenken) und $q_i$ generalisierte Koordinaten.</p>
+
+<p>Bei Lagrange handelt es sich um ein geschlossenes Modell.</p>
+
+<ol>
+  <li>$E_kin$ und $E_pot$ für jedes Gelenk berechnen</li>
+  <li>Beide E in generaliserten Koordinaten ausdrücken: <script type="math/tex">L(q, \dot{q}) = E_kin(q, \dot(q)) - E_pot(q)</script></li>
+  <li>Ableiten zum Lösen ($O(n^3)$)</li>
+</ol>
+
+<p>Lagrange sagt aber nichts über Kräfte zwischen Segmenten (z. B. Oberarm zu Unterarm aus).
+Diese “Interaktionskräfte” nennt der Prof. Momente.</p>
+
+<p>Die Herleitung aus der Arbeit eliminiert Momente oder externe Kraft durch Gewicht
+des zu hebenden Objektes -&gt; Wechselwirkungen</p>
+
+<h3 id="newton-euler">Newton-Euler</h3>
+
+<p>Methode zur Modellierung der Dynamik ist linear $O(n)$, also gut berechenbar.
+Diese benutzt man auch wirklich!</p>
+
+<p>Vorteile:</p>
+
+<ul>
+  <li>Beliebige Anzahl Gelenke</li>
+  <li>Belastung der Armelemente</li>
+  <li>O(n) -&gt; echtzeitfähig</li>
+  <li>Rekursion</li>
+</ul>
+
+<p>Es werden die Massenschwerpunkte $m_i$ der Segmente betrachtet. Darauf wirkt
+Kraft $F_i$ und dadurch Beschleunigung $\dot{v}_{s,i}$</p>
+
+<p>Die Kraft entspricht dem Impuls abgeleitet nach Zeit (2. Gesetz Newton).
+<script type="math/tex">F_i = { d \over dt} (m_i v_{s,i}) = m_i \dot{v}_{s,i}</script></p>
+
+<p>Drehmoment enspricht Drehimpuls abgeleitet nach Zeit
+<script type="math/tex">N_i = {d \over dt} (I_i \dot{\omega}_{s,i})</script></p>
+
+<p>I steht hier für den Trägheitstensor. $\dot{v}$ ist eine translatorische Beschleunigung und
+$\dot{\omega}_{s,i}$ eine Winkelbeschleunigung.</p>
+
+<p>Diese Beschleunigungen eines Armelements hängen von den Beschleunigungen der
+vorgehenden Armelementen ab. Dadurch kann man die Beschleunigungen von der Basis
+bis zum Endeffektor entlang der kinematischen Kette berechnen.
+-&gt; <strong>Vorwärtsgleichungen</strong></p>
+
+<p>Die Kraft und Drehmomente eines Armelements hängen von den folgenden Armelementen ab.
+Man rechnet also vom Endeffektor zur Basis -&gt; <strong>Rückwärtsgleichungen</strong></p>
+
+<h4 id="vorwärts">Vorwärts</h4>
+
+<p>Ausgehend von den Ergebnissen der Kinematik $q$, $\dot{q}$ und $\ddot{q}$ werden
+folgende Werte bestimmt:</p>
+
+<ul>
+  <li>Winkelgeschwindigkeit $\omega_i$</li>
+  <li>Winkelbeschleunigung $\dot{\omega}_i$</li>
+  <li>Geschwindigkeit $v_i$ und Beschleunigung $\dot{v}_i$ der Basen der Koordinatensysteme</li>
+  <li>Geschwindigkeiten $v_{s,i}$ und Beschleunigungen $\dot{v}_{s,i}$ der Massenmittelpunkte der
+Armelemente</li>
+</ul>
+
+<p>Man kann nun die Berechnung rekursiv formulieren, muss auch noch initialisieren.</p>
+
+<h4 id="rückwärts">Rückwärts</h4>
+
+<p>Man berechnet vom Greifer zu Basis mit den Ergebnissen aus der Vorwärtsgleichung.</p>
+
+<p>Es werten dynamische Größen berechnet:</p>
+
+<ul>
+  <li>Auftretende Kraft $F_i$ im Schwerpunkt von Armelement i</li>
+  <li>Drehimpuls $N_i$ im Schwerpunkt von Armelem. i</li>
+  <li>Kraftvektor $f_i$, der von Armelem. i-1 auf i wirkt</li>
+  <li>Momentvektor $n_i$ vpm Armelem. i-1 auf i</li>
+  <li>Drehmoment skalar $\tau_i$ am Gelenk i</li>
+</ul>
+
+<p>Kraft-Moment-Satz:
+<script type="math/tex">F = m a = m_i \cdot \dot{v}_i = f_i - f_i+1</script></p>
+
+<p>(Beschreibt Kräftegleichgewicht zwischen den Gelenken)</p>
+
+<p>Drehimpulssatz:</p>
+
+<script type="math/tex; mode=display">N_i = I_i \cdot \dot{\omega}_i = n_i - n_{i+1} + (-s_i  - p_i) \times F_i - p_i \times f_i+1</script>
+
+<p>$p_i$ ist Länge Armelement und $s_i$ ist die Strecke vom folgenden Gelenk zum Massenschwerpunkt.</p>
+
+<p>$\dot{\omega_i}$ und $\dot{v_i}$ stammt aus der Vorwärtsgleichung.</p>
+
+<p>Und dann wieder rekursive Berechnung mit Initialisierung.</p>
+
+<h4 id="herausf">Herausf.</h4>
+
+<p>Herausforderungen Dynamik:</p>
+
+<ul>
+  <li>Nur Approximation der Dynamik</li>
+  <li>Es fehlen noch nicht-lineare Kräfte (z. B. Reibung), die nicht direkt
+modelliert werden können, aber ihr Einfluss ist auch nicht riesig
+Die nichtlinearen Effekte sind abhängig von Position, Geschwindigkeit und Beschleunigung</li>
+  <li>Dynamik ändert sich über die Zeit durch Abnutzung etc.</li>
+  <li>Dynamik ist abhängig von der Aufgabe, wenn Hammer in der Hand ist Modell anders</li>
+</ul>
+
+<p>Wie geht man damit um? In der Automobilmontage hat man dafür sehr gute Modelle
+von allem und sehr präzise Greifer, zum Beispiel bei Windschutzscheibe.</p>
+
+<p>Für humanoide Roboter muss man das lernen. Armar-6 hat 8 DoF pro Arm.
+Es wurden CAD-Modelle gemacht, aber es entstehen Ungewissheiten durch die Produktion.
+Das heißt, man sammelt Daten 6D-Pose beim Endeffektor und Messungen an Gelenken.
+Dadurch kann man ein datengetriebenes kinematisches Modell erstellen und
+benutzen ohne Visual-Servoing betreiben zu müssen.</p>
+
+<p>Die Differenz zwischen Modell und Realität versucht man mit Maschinellem Lernen
+zu verringern.</p>
+
+<h3 id="regelung">Regelung</h3>
+
+<p>Jetzt haben wir Kinematik und Dynamik betrachtet, aber eigentlich wollen wir
+Bewegungen. Wir können wir dafür sorgen, dass unsere Vorgaben erreicht werden?</p>
+
+<p><strong>Regelungstechnik</strong>: selbsttätige, gezielte Beeinflussung dynamischer Prozesse
+während des Prozessablaufs.</p>
+
+<p><strong>Regelungstechnische Grundsituation:</strong> Auch wenn System nicht gut bekannt oder Störungen,
+Forderung nach selbsttätiger, gezielter Beeinflussung</p>
+
+<p>Die Methoden der Regelungstechnik sind unabhängig vom System.</p>
+
+<p><strong>Aufbau einer Regelung</strong>
+(Die Regelung ist ein Wirkungskreislauf daher spricht man von Regelkreis)</p>
+
+<p><img src="/assets/images/Regelung.jpg" alt="" /></p>
+
+<p>Die “Störgröße wird ausgeregelt”.</p>
+
+<p>Die Norm DIN IEC 60050-351:2009-06 definiert den Begriff der Regelung wie folgt:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>„Das Regeln, die Regelung, ist ein Vorgang, bei dem fortlaufend eine variable Größe, die Regelgröße, erfasst, mit einer anderen variablen Größe, der Führungsgröße, verglichen und im Sinne einer Angleichung an die Führungsgröße beeinflusst wird.
+Anmerkung: Kennzeichen für das Regeln ist der geschlossene Wirkungsablauf, bei dem die Regelgröße im Wirkungsweg des Regelkreises fortlaufend sich selbst beeinflusst.“
+</code></pre></div></div>
+
+<p>Achtung: Regelung nicht mit Steuerung verwechseln. Bei der Steuerung gibt es
+aber keine Rückkopplung, das heißt auch kein geschlossener Wirkungskreislauf.</p>
+
+<p>Im Englischen ist Regelung <em>closed-loop control</em> und Steuerung <em>open-loop control</em>.</p>
+
+<p>Beispiel für Regelung: Drehzahlregelung eines Gleichstrommotors.</p>
+
+<h4 id="laplace">Laplace</h4>
+
+<p>Die Übertragungsglieder im Regelkreis ordnen dem Zeitverlauf der Eingangsgröße
+den Zeitverlauf der Ausgangsgröße zu.</p>
+
+<p>Um Rechenvereinfachungen zu erhalten, stellen wir die Glieder nicht im Zeitbereich
+sondern im Laplace-Bereich dar. Das ist hilfreich unter der Annahme, dass wir
+Lineare zeitinvariante Systeme (LTI, siehe Grundlagen der Automatischen Spracherkennung)
+nutzen.</p>
+
+<p>Die Übertragungsfunktion an einem Glied G wird dann wie folgt dargestellt:</p>
+
+<script type="math/tex; mode=display">G(s) = {Y(s) \over U(s)}</script>
+
+<p>wobei die Großbuchstaben für die Laplace-Transformierte stehen. $s$ ist komplexe
+Frequenz.</p>
+
+<p>Laplace-Transformation:</p>
+
+<p><script type="math/tex">L\{f(t)\} = F(s) = \int_{0}^{+ \infty } f(t) e^{-st} dt</script>
+wobei f(t) das Signal und s komplexe Zahl ($ s := \sigma + j\omega$ ).
+Für alle negativen t ist f(t)=0.</p>
+
+<p>LP-Transformierte:
+<script type="math/tex">L\{a\} = ... = a/s</script></p>
+
+<script type="math/tex; mode=display">f(t) = t
+F(t) = 1/s^2</script>
+
+<h2 id="12-vorlesung">12. Vorlesung</h2>
+
+<p>26.11.2018</p>
+
+<p>Übungsblatt 3</p>
+
+<p>Jacobi-Matrix invertieren</p>
+
+<p>Regel von Sarrus</p>
+
+<p>Singularitäten
+Eine kinematische Kette ist in einer singulären Konfiguration, wenn seine
+Jacobi nicht vollen Rang hat.
+Bei quadratischer Matrix A: wenn det(A) = 0 -&gt; Singularitäten</p>
+
+<p>Auch wenn am Ende zwei parametrische Lösungen herauskommen, sind es unendlich
+viele Singularitäten, die möglich sind, auch wenn Winkel periodisch.</p>
+
+<p>Dynamikmodellierung mit Lagrange</p>
+
+<h2 id="13-vorlesung">13. Vorlesung</h2>
+
+<p>29.11.2018</p>
+
+<h3 id="laplace-1">Laplace</h3>
+
+<p>LPTF: <script type="math/tex">L\{ f(t) \} = F(t) = \int_{0}^{\infty}{ f(t) e^{-st} dt }</script></p>
+
+<script type="math/tex; mode=display">L \{  { t^{k-1} \over (k-1)! } \}  = {1 \over s^k }</script>
+
+<p>LPTF Ableitungsfunktion:</p>
+
+<script type="math/tex; mode=display">L\{ \dot{f}(t) \} = s \cdot F(s) - f(0)</script>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/12ytmGZp5gY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>LPTF Integral:</p>
+
+<script type="math/tex; mode=display">f(t) = \int_0^{t} f(\tau) d\tau
+F(T) = 1/s F(s)</script>
+
+<p>LPTF exp:</p>
+
+<script type="math/tex; mode=display">L\{ e^{-\alpha t} \} = {1 \over s + \alpha}</script>
+
+<p>Dirac-Stoß: $\delta(t) = \infty$, wenn t=0, 0 sonst.</p>
+
+<p>Einheitssprung: $\sigma(t) = 1$, wenn t &gt;= 0, 0 sonst</p>
+
+<p>L{$\delta$} = 1</p>
+
+<p>L{$\sigma(t)$} = $e^{-\delta t} \cdot (cos \omega t - j sin \omega t)$
+Dabei handelt es sich um die komplexe Darstellung einer Schwingung für die
+gilt:</p>
+
+<ul>
+  <li>$\delta &gt; 0  \to 0$ Schwingung klingt ab</li>
+  <li>$\delta = 0  \to 1$ Dauerschwingung</li>
+  <li>$\delta &lt; 0  \to - \infty $ Schwingung klingt auf</li>
+</ul>
+
+<h3 id="transf-regeln">Transf. Regeln</h3>
+
+<ul>
+  <li>Linearität: $L{ \alpha f_1(t) + \beta f_2(t) } = \alpha F_1 (s) + \beta F_2 (s) $</li>
+  <li>Faltungssatz: $L { f_1(t) * f_2(t)} = F_1(s) \cdot F_2(s)$</li>
+  <li>Grenzwertsatz: $f_1(t=0) = \lim_{s \to \infty} s * F(s) $</li>
+  <li>Differentiationssatz: $ L {  { d \over dt } f(t) } = s F(s) $</li>
+  <li>Integrationssatz: $ L { \int f(t) dt } = {1 /over s} F(s) $</li>
+  <li>Verschiebung: $ L {  f(t - \tau) } = e^{-\tau s} F(s) $</li>
+  <li>$L{  e^{\alpha t} = { 1 \over s - \alpha} }$</li>
+  <li>$ L{t^n} = { t! \over s^{n+1} } $ für n = 1,2,…</li>
+  <li>$ L {  sin(\alpha t) } = \alpha \over {s^2 + \alpha^2} $</li>
+  <li>$ L {  cos(\alpha t) } = s \over {s^2 + \alpha^2} $</li>
+</ul>
+
+<h3 id="übertragungsglieder">Übertragungsglieder</h3>
+
+<p><img src="/assets/images/Glied.jpg" alt="Übertragungsglieder" /></p>
+
+<p>Wir betrachten hier ein LZI (Lineares zeitinvariantes) Übertragungsglied.
+<strong>LZI-Glied</strong>: y(t) = g(u(t))
+Das ist dann im Zeitbereich eine Faltung: <script type="math/tex">y(t) = g(t) * u(t)</script></p>
+
+<p>Welche zum Rechnen in den komplexen s-Bereich transformiert wird:</p>
+
+<p>Y(t) = G(t) \cdot U(t)</p>
+
+<h4 id="p">P</h4>
+
+<p>Proportionalglied P-Glied</p>
+
+<script type="math/tex; mode=display">y(t) = K u(t)</script>
+
+<p><img src="/assets/images/P-Glied.jpg" alt="P-Glied" /></p>
+
+<h4 id="i">I</h4>
+
+<p>Integrierglied</p>
+
+<script type="math/tex; mode=display">y(t) = \int_{0}^{\tau}{u(\tau) d\tau}</script>
+
+<p><img src="/assets/images/I-Glied.jpg" alt="I-Glied" /></p>
+
+<p>Laplace-Transformierte:
+<script type="math/tex">Y(s) = K \cdot {1 \over s} \cdot U(s) = {K \over s} \cdot U(s)
+\rightarrow G(s) = { K \over s }</script></p>
+
+<p>Wenn:
+<script type="math/tex">u(t) = \sigma (t)</script> Eingangssignal also Einheitssprung
+LPTF: $ U(s) = 1 \over s $</p>
+
+<p>$ Y(s) = { K \over s } \cdot { 1 \over s} = K \over s^2 $
+=&gt; Rücktransformation weil $LP^{-1} {1 \over s^2} = t$
+=&gt; $ y(t) = K \cdot t $</p>
+
+<h4 id="d">D</h4>
+
+<p>Differenzierglied</p>
+
+<script type="math/tex; mode=display">y(t) = K \cdot \dot{u}(t)</script>
+
+<p><img src="/assets/images/D-Glied.jpg" alt="D-Glied" /></p>
+
+<h4 id="t">T</h4>
+
+<p>Totzeit Glied</p>
+
+<p>$T_t$-Glied</p>
+
+<script type="math/tex; mode=display">y(t) = K \cdot u(t - T_t)</script>
+
+<p><img src="/assets/images/T_Glied.jpg" alt="T-Glied" /></p>
+
+<h4 id="s">S</h4>
+
+<p>Summenglied. Als Kreis.</p>
+
+<h4 id="kl">KL</h4>
+
+<p>Kennlinienglied</p>
+
+<p>y(t) = K f(u(t))</p>
+
+<h4 id="m">M</h4>
+
+<p>Multiplizierglied</p>
+
+<p>$ y(t) = K \cdot u_1 (t) u_2 (t) $</p>
+
+<h3 id="vorsteuerung">Vorsteuerung</h3>
+
+<p>Wenn man eine Geschwindigkeitsregelung mit einem P-Regler betrachtet, dann ergibt sich folgendes
+Problem: Man möchte einen gewissen Winkel erreichen, macht aber Geschwindigkeitsvorgaben.
+Das heißt, wenn die Geschwindigkeitsvorgabe erreicht wurde, dann ist die
+Regelabweichung Null und dadurch wird auch die Stellgröße Null.</p>
+
+<p>Diesem Problem begegnet man mit Hilfe einer Vorsteuerung.</p>
+
+<p>Wikipedia dazu:</p>
+
+<blockquote>
+  <p>Die Vorsteuerung bezeichnet ein Element des Reglerentwurfs, das die Stellgröße mit einem Wert beaufschlagt, der unabhängig von den Zuständen der Regelstrecke und daraus resultierenden Messungen ist. Die Vorsteuerung ermöglicht die Berücksichtigung des aufgrund des Sollwertverlaufs zu erwartenden Stellgrößen-Bedarfs. Da sie eine Steuerung ist, kann sie das Führungsverhalten verbessern ohne die Stabilität zu gefährden. Analog können auch gemessene Störgrößen aufgeschaltet werden. In diesem Fall spricht man von Störgrößenaufschaltung.</p>
+</blockquote>
+
+<h3 id="pid">PID</h3>
+
+<p>Ein PID-Regler besteht aus einem P-, I- und D-Glied.</p>
+
+<p><img src="/assets/images/PID.jpg" alt="PID-Regler" /></p>
+
+<script type="math/tex; mode=display">u(d) = \tau = K_p \theta_d + K_i \int \theta_d (t) dt + K_d \dot{\theta}_d</script>
+
+<p>Aufgaben:</p>
+
+<ul>
+  <li>Kp ist eine “virtuelle Feder”, den Positionsfehler minimiert</li>
+  <li>Kd ist ein “virtueller Dämpfer”, der Geschwindigkeitsfehler minimiert</li>
+  <li>Ki reduziert die Regelabweichung (Offsets)</li>
+</ul>
+
+<p>$ L{ \tau } $
+ -&gt; Übertragungsfunktion $G(s) = K_p + K_I {1 \over s} + K_{D} s $</p>
+
+<p>Wenn weder Regler noch Strecke kein I-Verhalten haben, dann wird Offset nie
+ reduziert. Gleichstrommotor hat es aber.</p>
+
+<h3 id="stabilität">Stabilität</h3>
+
+<p>Stabilität einer Regelung. Vergleiche komplexe Schwingung mit $\delta &gt; 0$.
+Bei PID wenn $K_p$ zu groß.</p>
+
+<p>Ziel ist ein <strong>stabiles System</strong>, bei dem mit der Zeit die Regelabweichung gegen Null geht.</p>
+
+<p>Wie finden?</p>
+
+<p>DGL aufstellen und mit Laplace-Transformation lösen, dann Nullstellen suchen.</p>
+
+<h3 id="testfunktion">Testfunktion</h3>
+
+<p>Antwort eines Systems auf Testfunktionen:</p>
+
+<ul>
+  <li>Impulsfunktion</li>
+  <li>Sprungfunktion</li>
+  <li>Anstiegsfunktion</li>
+  <li>Harmonische Funktion</li>
+</ul>
+
+<p>Bei humanoiden Robotern benötigen wir für die Regelung die Inverse Kinematik,
+um eine “kartesische Regelung” zu ermöglichen, da wir die Zielvorgaben ja nicht
+im Gelenkwinkelraum machen wollen.</p>
+
+<p>“98% der Instustrieroboter werden Positionsgeregelt. Erst in letzter Zeit
+Drehmoment- und Kraftregelung”.</p>
+
+<p>Wenn die IK in Regelung enthalten, dann hat man höheren Rechenaufwand.</p>
+:ET

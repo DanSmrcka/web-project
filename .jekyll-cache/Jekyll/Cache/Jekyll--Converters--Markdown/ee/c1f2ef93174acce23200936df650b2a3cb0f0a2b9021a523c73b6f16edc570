@@ -1,0 +1,341 @@
+I"Y6<p><a href="https://formal.iti.kit.edu/teaching/projektgruppe/?lang=de">Webseite von Praxis der Forschung (PdF)</a></p>
+
+<h2 id="überblick">Überblick</h2>
+
+<h3 id="was-ist-das">Was ist das?</h3>
+
+<p>Wie folgt beschrieben:</p>
+
+<blockquote>
+  <p>“Praxis der Forschung” ist eine neue Art der Lehrveranstaltung am KIT im Masterstudiengang Informatik.
+Sie haben hier die einzigartige Chance Forschung hautnah im Studium zu erleben.
+Sie arbeiten mit anderen Studenten und Wissenschaftlern zusammen an einem aktuellen
+Forschungsprojekt und setzen sich mit einer wissenschaftlichen Fragestellung auseinander.
+Während ihrer Arbeit werden Sie außerdem von einem Wissenschaftler gecoacht, lernen in
+Seminaren und begleitenden Lehrveranstaltungen, die teilweise vom House of Competence angeboten werden,
+wichtige Methodenkompetenzen und in Vorlesungen wichtiges Faktenwissen kennen und setzen diese im praktischen
+Teil im Team um.</p>
+</blockquote>
+
+<h3 id="themenfindung">Themenfindung</h3>
+
+<p>In den Wochen vor dem Uni-Start sammeln sich Stück für Stück die Themen
+auf der Internetseite von Praxis der Forschung.</p>
+
+<p>In der ersten Uniwoche findet eine Informationsveranstaltung und ein Pizzaessen
+bei Plakaten mit den betreuenden Doktoranden statt.</p>
+
+<p>Bis zum 22.10.2018 sollte man sich dann per E-Mail angemeldet haben. Zu dieser
+Anmeldung muss die Betreuung zustimmen, dann kann man sich in einem Ilias-Kurs
+anmelden.</p>
+
+<p><a href="https://ilias.studium.kit.edu/goto_produktiv_crs_880067.html">Ilias-Kurs</a></p>
+
+<h2 id="organisation">Organisation</h2>
+
+<p>Pro Semester umfasst PdF 12 LPs. Darin sind Vorlesungen, Seminare und Praktika
+enthalten. Die genaue Aufteilung muss zu Beginn des Semesters mit der Betreuung
+geklärt werden.</p>
+
+<h3 id="ects-aufteilung">ECTS Aufteilung</h3>
+
+<p>In Ilias steht:</p>
+
+<blockquote>
+  <p>Die genaue Aufteilung der verschiedenen Punkte ist vom Projekt abhängig und wird
+zu Beginn der Lehrveranstaltung für jedes Projekt bekannt gegegeben.
+Geeignet sind diese Module für Master-Studierende vorwiegend im ersten Jahr.
+Bachelorstudierende im letzten Jahr können ggf. teilnehmen, wenn sie über die
+erforderlichen Vorkenntnisse verfügen.</p>
+</blockquote>
+
+<h3 id="anrechnung">Anrechnung</h3>
+
+<p>Praxis der Forschung besteht aus 4 Modulen:</p>
+
+<p>2 x Methoden-Modul mit insgesamt 4 LP ÜQ
+2 x Projekt-Modul mit insgesamt 20 LP aus VL, P, S</p>
+<ul>
+  <li>Mind. 5 VL</li>
+  <li>Mind. 3 P</li>
+  <li>Mind. 3 S</li>
+  <li>9 LP aus VL, P, S</li>
+</ul>
+
+<h2 id="termine">Termine</h2>
+
+<p>Es gibt drei Typen von Terminen:</p>
+
+<ul>
+  <li>Vorlesungen und Workshops (inkl. Hausaufgaben)</li>
+  <li>Präsentationen von Studierenden</li>
+  <li>Prüfungen und Abgaben</li>
+</ul>
+
+<h3 id="erstes-semester">Erstes Semester</h3>
+
+<p><strong>Veranstaltungen</strong></p>
+
+<ul>
+  <li>KickOff des 1. Semesters</li>
+  <li>Literaturrecherche und Zitieren</li>
+  <li>Präsentation wiss. Arbeiten</li>
+  <li>Paper Reviews und Ausarbeitungen schreiben</li>
+  <li>Projektmanagement</li>
+  <li>Projektanträge schreiben</li>
+  <li>Experimente - Design und Durchführung</li>
+</ul>
+
+<h4 id="kick-off-veranstaltung">Kick-Off-Veranstaltung</h4>
+
+<p>Acht Stundent*innen in einem Raum mit einem Dozenten. 15 Minuten ein paar
+ Folien über PdF. Nichts spezielles, allgemeines über die Module.</p>
+
+<p>Bis zum 13.12.2018 muss man sich angemeldet haben. Davor kann man noch aussteigen,
+ wenn man nach der Literaturrecherche merkt, dass einem das Thema nicht liegt.
+ Das ist 1-2 Wochen nach dem State-of-the-Art-Vortrag.</p>
+
+<p>Wenn man an den Abschlussvorträgen der vorherigen Semester teilnehmen möchte,
+ dann soll man sich vorher anmelden.</p>
+
+<h4 id="literaturrecherche--zitieren">Literaturrecherche &amp; Zitieren</h4>
+
+<p>Direkter Übergang aus dem Kick-Off. Oberflächliche Folien über das Quellenfinden,
+ Fragenstellen, Literaturlesen, Zitieren, Literaturrechercheprogramme, etc.</p>
+
+<p>Interessant war, dass Doktorarbeiten generell eher keine gute Quelle sind,
+ man sollte ihnen vor allem misstrauen, wenn sie nicht mit einer Veröffentlichung
+ eines Papers oder einem Vortrag zusammenhängen.</p>
+
+<p>In Präsentationen sind numerische Fußnoten nicht zu empfehlen, da man nicht mal
+ schnell nachschauen kann um welche Quelle es sich denn jetzt handelt.</p>
+
+<p>Recherche als zyklischer Prozess aus:</p>
+
+<ul>
+  <li>Definieren der Suche</li>
+  <li>Suche durchführen</li>
+  <li>Material evaluieren</li>
+  <li>Review schreiben zu Material</li>
+</ul>
+
+<p><strong>Die BibTeX Einträge bei Google Scholar bedürfen manueller Überprüfung!</strong></p>
+
+<p>Programme zur Literaturrecherche sind:</p>
+
+<ul>
+  <li>Mendeley: Collab closed source</li>
+  <li>Zotero: Collab open source</li>
+  <li>JabRef: Java-Programm, das auch mal abstürzt</li>
+</ul>
+
+<h4 id="projektmanagement">Projektmanagement</h4>
+
+<p>Kann man sich sparen. Passt auch nicht wirklich zu PdF.</p>
+
+<h4 id="präsentationsworkshop">Präsentationsworkshop</h4>
+
+<p>Kann man sich sparen. Wir haben eine Stunde darauf verwendet, Leute auf der
+Bühne nach ihrem Aussehen und Auftreten zu bewerten.
+Am Ende fühlt man sich eher noch unsicher.</p>
+
+<h4 id="state-of-the-art-präsentation">State of the Art Präsentation</h4>
+
+<p>Finden in Kleingruppen mit Betreuung und Professoren statt.
+Es wird meiner Einschätzung nach sehr viel Wert darauf gelegt, dass du bereits
+weißt, was du machen willst (-&gt; hat man die Forschungslücke identifiziert)?</p>
+
+<h4 id="literaturzusammenfassung">Literaturzusammenfassung</h4>
+
+<p>Die Abgabe der Literaturzusammenfassung wird von der Betreuung bestimmt.
+Ich habe einiges an Zeit in dieses Dokument investiert und es wurde am Ende
+auch ganz anständig. Glücklicherweise hatte ich jede Woche ein Treffen mit
+meiner Betreuerin.</p>
+
+<p>Hier liegt sehr viel Zeitaufwand begraben. Man sollte sich daher ein Thema
+aussuchen, in das man sich auch gut einlesen will.</p>
+
+<h4 id="erkenntnistheorie">Erkenntnistheorie</h4>
+
+<p>Wir haben einen - meiner Meinung nach - sehr guten Vortrag hören dürfen.</p>
+
+<p>Solipsismus, Platonismus, Konstrukte, Rationalismus (Descartes), onthologischer
+Gottesbeweis, Empirismus Locke, kritischer Idealismus Kant, evolutionäre Erkenntnistheorie,
+objektiver Idealismus Hegel Dialektiv Weltgeist, Schopenhauer, dialektischer Materialismus
+Marx (Realität unabhängig von Beobachter), Positivismus Maxwellsche Gleichungen (Elektromagnetismus, Vorhersagen durch Modelle),
+früjer Wittgenstein, Ockham’s Razor, objektive Realität Problem durch Quantenmechanik,
+Kopenhagener Deutung der Quantenmechanik: “Überlagerungszustände kalibrieren durch Beobachtung”</p>
+
+<p>Popper kritischer Rationalismus: Korrektheit nicht beweisen, sondern nur falsifizieren.
+Mathematische Induktion ist Deduktion. Erkenntnistheoretische Induktion gibt es nicht.
+Beispiel Merkurbahn (Newton-Mechanik -&gt; Einstein) -&gt; trotz richtiger Vorhersage
+nicht richtig (Michelson-Morley)</p>
+
+<p>Evolutionäre Erkenntnistheorie: homomorphes Bild. Kausalität -&gt; Realität überleben,
+Farbwahrnehmung ist homomorph von Elektromagnetismus.</p>
+
+<p>Konstruktivismus: keine objektive Wahrheit, nur gesellschaftliche Übereinkünfte,
+Methodik gibt es nicht (-&gt; Fakepaper).
+Einer der Mitbegründer war Paul Feierabend: Quarks seien nur Konstrukte, Jahrzehnte
+später erst bewiesen
+-&gt; Genderkonstruktivismus sinnvoll?</p>
+
+<p>Popper sagt, alles, was nicht falsifizierbar, ist unwissenschaftlich.
+-&gt; Stringtheorie? Das fand er trotzdem okay (nicht sehr dogmatisch)
+-&gt; Problem der Falsifizierbarkeit des LHC (Large Hadron Colliders)</p>
+
+<p>Adorno: Theorie muss keine Voraussage machen (Geisteswissenschaften). Das widerspricht
+sich mit Naturwissenschaften.</p>
+
+<p>Popper greift wieder die drei Welten von Platon auf:</p>
+<ul>
+  <li>Physis: Außenwelt</li>
+  <li>Psyche: Innenwelt</li>
+  <li>objektive Ideen: platonische, mathematische Ideen</li>
+</ul>
+
+<p>Mathematiker sind demnach Erfinder aus der 3. Welt.</p>
+
+<p>Konstrukte: Erklären auch etwas. Da sie Pseudoerklärungen sind, haben sie jedoch
+keine “Vorhersagekraft”. Bei Archäologie ist die Vorhersage nicht in der Zukunft,
+sondern zum Beispiel über fehlende Episoden der Vergangenheit.</p>
+
+<p>Falsifizierbarkeit bei Informatik schwer -&gt; Software-Realität</p>
+
+<p>Korrektheitsbeweise? Dijkstra will Programme verifizieren. notwendig aber hinreichend</p>
+
+<p>Sanders &amp; Wagner: Algorithm engineering -&gt; testen auch wenn NP-vollständig</p>
+
+<h4 id="wissenschaftstheorie">Wissenschaftstheorie</h4>
+
+<p>Früher unter dem Namen Erkenntnistheorie.</p>
+
+<p>Alle Theorien nach drei Dimensionen einteilen:</p>
+
+<ul>
+  <li>Rationalismus &lt;-&gt; Relativismus</li>
+  <li>Erkenntnisorientiert &lt;-&gt; Instrumentalismus (Nutzen)</li>
+  <li>Subjektivismus &lt;-&gt; Objektivismus</li>
+</ul>
+
+<p>Rationalismus: Popper (streng der Methode folgen)
+soziologischer Relativismus: Beispiel Mathe. Die Akzeptanz eines Beweises hat sich geändert.
+Der Satz von Pythagoras wurde initial nur durch Beispiele “bewiesen” -&gt; soziale Akzeptanz war da</p>
+
+<p>Erkenntnisorientierung passiert selten in Ingenieurswissenschaften.
+Theoretische Informatik ist eher erkenntnisorientiert, nutzt aber die Komplexitätstheorie,
+welche beim Instrumentalismus zu verordnen ist.</p>
+
+<p>Objektivismus: “Wahrheit” kann nur approximiert werden.</p>
+
+<p>Was ist Wahrheit?</p>
+
+<p>Axiomensystem: Realtive Gültigkeit zu Axiomensystem und Schließsystem
+Zum Beispiel gibt es in der Mathematik die Konstruktivisten “Gang”, die
+Widerspruchsbeweise ablehnen.
+Das kann man auf die doppelte Verneinung in der Logik herunterbrechen.</p>
+
+<p>Für Informatiker gilt auch: Aus Widersprüchen kann kein Programm gebaut werden.</p>
+
+<p>Manche Widerspruchsbeweise wurden auch auf konstruktive Weise durchgeführt und
+kamen zum selben Ergebnis.</p>
+
+<p>Nach Popper “empirischer Wahrheitsbegriff”:</p>
+
+<ul>
+  <li>Jeden Morgen geht die Sonne aufbau</li>
+  <li>-&gt; Induktionsproblem in der empirischen Welt nicht lösbar</li>
+  <li>-&gt; in Mathematik schon</li>
+  <li>In der realen Welt: “Alle Autos sind grün?”: Mit steigender Beobachtungszahl n steigt nicht die W’keit
+ für grüne Autos (relative Häufigkeit $n \over \infty$) bei unendlich vielen Autos.</li>
+  <li>Aber eine endliche Menge reicht für eine allquantifizierte Theorie</li>
+  <li>-&gt; Poppers Falsifizierbarkeit ist durch Gegenbeispiel gegeben</li>
+</ul>
+
+<p>In der Physik kann das oft gefunden werden, zum Beispiel Nickelson-Morley-Experiment
+zur Konstanz der Lichtgeschwindigkeit. Messung mit oder gegen Erddrehung.
+Nach Newton dürfte sie nicht konstant sein. Bis heute keine Falsifikation der
+Relativitätstheorie.</p>
+
+<p>Auch Quantenmechanik kam aus der Falsifikation von Newton bei kleinen Entitäten.</p>
+
+<p>Popperianer akzeptieren popperschen Prozess. Man weiß nie, wann die objektive
+Wahrheit gefunden wurde.</p>
+
+<p>Verblüffend: Bei Problemen außerhalb der Erfahrungswelt in der Physik ist die
+Mathematik sehr hilfreich. -&gt; Wie passt das zusammen?</p>
+
+<p>Formalisten: Der Brückenschlag zwischen Mathe und Physik hilft nicht.</p>
+
+<p>Platonisten: Von der realen Welt immer nur ein Abbild. Was ist ein Kreis? Im Mittelalter
+war Pi mit 22/7 ausreichend bestimmt. In der realen Welt Pi=3.14…, aber Abbild
+war nicht so genau.</p>
+
+<p>Was ist Informatik?</p>
+
+<p>Doppelnatur zwischen Mathe und Ingenieur. Dinge beweisen: Sortieren hat untere
+Schranke von O(n log n)</p>
+
+<p>Aussagen über die reale Welt kann ich nicht beweisen, sondern nur Experimente.
+So wie Ärzte und Psychologen.
+Die Methoden der Softwaretechnik hat man, um der Beschränktheit der menschlichen
+Natur entgegen zu gehen.</p>
+
+<p>Was heißt das für die Praxis? Nach Popper gute Wissenschaft ist falsifizierbar,
+gut verständlich und Experimente zum Nachvollziehen.</p>
+
+<p>Popper hat im Gegensatz zu anderen deutschen Philosophen sehr verständlich geschrieben.
+Beispiel: Kant war Dekan, hatte also keine Zeit und deswegen entstanden seine schwer
+verständlichen Sätze.
+Dazu kam dann  die Nachfrage nach komplexer Literatur aus Gründen der Eitelkeit der Leser.
+Bei Hegel war das dann am schlimmsten.
+-&gt; “Nehmt euch ein Vorbild an den Engländern”, sagte Popper dazu</p>
+
+<p>Durch ihre Schreibart haben sich Kant und Hegel der Nachvollziehbarkeit entzogen.
+-&gt; Parodie von Popper durch leichte Version ihrer Texte</p>
+
+<p>Sind Informatiker vor soetwas gefeit? Nein. Zum Beispiel durch das Hinzufügen
+von Formeln, die man noch nicht mal erklärt, Messkurven oder Pseudocode.</p>
+
+<p>Dann gibt es das Problem des “least publishable unit”. Dem wird durch den h-Index
+entgegengewirkt. Die Abhängigkeit von der Größe der Community verbleibt.</p>
+
+<p>Weitere Gefahr: Plagiate -&gt; Originalität ist die Währung der Wissenschaft</p>
+
+<p>Wann zitiert man Sekundärliteratur?
+Bei Informatik nicht so schlimm, da der eigene Beitrag selten in Form von Text
+vorliegt.</p>
+
+<p>Selbstplagiat: Kann man bei Related Work und Foundations nicht so gut verhindern und
+ergibt ja auch Sinn.</p>
+
+<p>Betrug durch Datenfälschung ist nicht wirklich entdeckbar, daher muss man annehmen,
+dass das System per se nicht unterwandert wurde (Vertrauen?)</p>
+
+<p>Double blind review: Autoren und Reviewer anonym. Ist das so sinnvoll?</p>
+
+<p>Forum of negative results.</p>
+
+<p>Darf man als Mitglied eines Programmkomitees selbst Paper einreichen?</p>
+
+<h4 id="anträge-schreiben">Anträge Schreiben</h4>
+
+<h4 id="workshop-forschungsfrage">Workshop Forschungsfrage</h4>
+
+<h4 id="experiment-1">Experiment 1</h4>
+
+<h3 id="zweites-semester">Zweites Semester</h3>
+
+<p><strong>Veranstaltungen</strong></p>
+
+<ul>
+  <li>KickOff des 2. Semesters</li>
+  <li>Fortschrittsberichte</li>
+  <li>Paper schreiben (Theorie)</li>
+  <li>Paper schreiben (Praxis I)</li>
+  <li>Paper schreiben (Praxis II)</li>
+  <li>Wissenschaftstheorie I+II</li>
+</ul>
+
+<p>Hier war ich nicht mehr dabei.</p>
+:ET

@@ -7,13 +7,13 @@
 
 # Site settings
 title:
-  en: Computer science 
-  de: Informatik 
-  cz: Informatika 
+  en: Hucko s.r.o.
+  de: Hucko s.r.o.  
+  cz: Hucko s.r.o.  
 email: dansmrcka@live.com 
 index:
-  en: index.html
-  de: index-de.html
+  en: index-en.html
+  de: index.html
   cz: index-cz.html
 feed:
   en: /feed-en.xml
@@ -49,21 +49,21 @@ collections:
 
 # Translations
 description:
-  en: An information source about studying computer science at Karlsruher Institute of Technology
-  de: Eine Informationsquelle über das Informatikstudium am Karlsruher Institut für Technologie
-  cz: CZ Eine Informationsquelle über das Informatikstudium am Karlsruher Institut für Technologie
+  en: Mediation of business, services and targeted search in the Czech and Slovak Republics 
+  de: Geschäfte- und Dienstleistungenvermittlung sowie gezieltes Aussuchen in der Tschechischen und Slowakischen Republik  
+  cz: Zprostředkování obchodu, služeb a cílené vyhledávání v České a Slovenské republice
 more:
   en: Read more
   de: Mehr lesen
-  cz: Ctete dale
+  cz: Čtěte dále
 overview:
   en: All posts
   de: Alle Artikel
-  cz: Vsechny prispevky
+  cz: Všechny příspěvky
 contact:
   en: Contact us!
   de: Schreib uns!
-  cz: Napiste nam!
+  cz: Napište nám!
 
 t:
   en:
@@ -123,30 +123,30 @@ t:
       privacy_url: "/datenschutz"
 
   cz:
-      latest-posts:  "Neuste Artikel"
-      read-more:  "Weiterlesen →"
-      show-more:  "Mehr →"
-      loading:  "Lädt..."
+      latest-posts:  "Poslední přispěvek"
+      read-more:  "Read More →"
+      show-more:  "Show More →"
+      loading:  "Načítaní..."
       on-word: "on"
       contact: "Kontakt"
-      contact-page: "contact.md"
+      contact-page: "kontakt.md"
       read-time: "min"
-      comments: "comments"
-      go-to-home-page: "Zurück zur Startseite"
+      comments: "komentáře"
+      go-to-home-page: "Zpět na hlavní stranu"
       months:
-        january: "Jan"
-        february: "Feb"
-        march: "Mär"
-        april: "Apr"
-        may: "Mai"
-        june: "Jun"
-        july: "Jul"
-        august: "Aug"
-        september: "Sep"
-        october: "Okt"
-        november: "Nov"
-        december : "Dez"
-      all-posts-category: "Alle Artikel der Kategorie"
-      privacy: "Datenschutz"
-      privacy_url: "/datenschutz"
+        january: "Led"
+        february: "Únor"
+        march: "Břez"
+        april: "Dub"
+        may: "Květ"
+        june: "Červen"
+        july: "Červenec"
+        august: "Spr"
+        september: "Září"
+        october: "Říj"
+        november: "List"
+        december : "Pros"
+      all-posts-category: "Všechny články v kategorii"
+      privacy: "Práva"
+      privacy_url: "/prava"
 

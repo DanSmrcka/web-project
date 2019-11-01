@@ -1,12 +1,12 @@
-<section class="page-header" style="padding-top: {{ header-padding }}; padding-bottom: {{ header-padding-bottom }}; background: linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.0)), url('/assets/banner.jpg') center center repeat;">
+<section class="page-header" style="padding-top: {{ header-padding }}; padding-bottom: {{ header-padding-bottom }}; background: linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.0)), url('/assets/background1.jpg') center center repeat;">
     <h1 class="project-name">{{ site.title[page.lang] }}</h1>
     <h2 class="project-tagline">{{ site.description[page.lang] }}</h2>
 
-    {% assign this_page_lang = page.lang %}
-    {% assign pages=site.pages | where:"lang", page.lang | where:"show_in_nav", true | sort:"nav_order" %}
-    {% for my_page in pages %}
-    {% if my_page.title %}
-    <a href="{{ my_page.url | prepend: site.baseurl }}" class="btn">{{ my_page.title }}</a>
-    {% endif %}
-    {% endfor %}
+    <!-- {% assign this_page_lang = page.lang %} -->
+    <!-- {% assign pages=site.pages | where:"lang", page.lang | where:"show_in_nav", true | sort:"nav_order" %} -->
+    <!-- {% for my_page in pages %} -->
+    <!-- {% if my_page.title %} -->
+    <!-- <a href="{{ my_page.url | prepend: site.baseurl }}" class="btn">{{ my_page.title }}</a> -->
+    <!-- {% endif %} -->
+    <!-- {% endfor %} -->
 </section>

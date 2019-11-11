@@ -3,6 +3,53 @@
 ---
 @charset "utf-8";
 
+// Setting up unordered list
+ul { 
+  list-style: disc inside none;
+  display:table; 
+  margin:0 auto;
+}
+ul	li {
+     padding: 1em 0px;				
+}
+
+// Columns 
+.container {
+    width: 90%;
+    height: 500px;
+    // background: aqua;
+    margin: auto;
+    padding: 20px;
+}
+.one {
+    width: 45%;
+    height: 460px;
+    // background: red;
+    float: left;
+}
+.two {
+    margin-left: 55%;
+    height: 460px;
+    // background: yellow;
+}
+
+.content {
+  // background: #06c;
+  position: relative;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+// Center image 
+.center {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 // Our variables
 $base-font-family: "Open Sans", sans-serif;

@@ -10,7 +10,7 @@ title:
   en: Hucko s.r.o.
   de: Hucko s.r.o.  
   cz: Hucko s.r.o.  
-email: dansmrcka@live.com 
+email: jan.hucko@seznam.cz
 index:
   en: index-en.html
   de: index.html
@@ -27,6 +27,10 @@ github_username: DanSmrcka
 
 # slow reading speed for article reading time
 words_per_minute: 100
+
+ICO: 08407401
+address: 35801, Kraslice, Pod nemocnicí 107
+phone: 420721269706
 
 # github on site
 github:

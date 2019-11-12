@@ -16,7 +16,7 @@ index:
   de: index.html
   cz: index-cz.html
 feed:
-  en: /feed-en.xml
+  en: /feed.xml
   de: /feed-de.xml
   cz: /feed-cz.xml
 

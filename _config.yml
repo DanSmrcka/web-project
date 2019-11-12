@@ -12,8 +12,8 @@ title:
   cz: Hucko s.r.o.  
 email: jan.hucko@seznam.cz
 index:
-  en: index-en.html
-  de: index.html
+  en: 
+  de: index-de.html
   cz: index-cz.html
 feed:
   en: /feed.xml

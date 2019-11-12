@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    {% include head.html %}
-  </head>
-<body>
-{% include analytics.html %}
 
-{% include top_nav.html %}
-{% if page.header == true %}
-  {% include header.html %}
-{% endif %}
+  {% include head.html %}
+
+  <body>
 
 
-<div class="main-content">
-  {{ content }}
-</div>
-
-{% include separator.html %}
-
-{% include footer.html %}
-
-
-</body>
+  {% include top_nav.html %}
+  {% if page.header == true %}
+    {% include header.html %}
+  {% endif %}
+  
+  
+  <div class="main-content">
+    {{ content }}
+  </div>
+  
+  {% include separator.html %}
+  
+  {% include footer.html %}
+  
+  
+  </body>
 
 </html>

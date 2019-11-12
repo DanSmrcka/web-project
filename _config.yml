@@ -7,7 +7,7 @@
 
 # Site settings
 title:
-  en: Hucko s.r.o.
+  en: Hucko s.r.o
   de: Hucko s.r.o.  
   cz: Hucko s.r.o.  
 email: jan.hucko@seznam.cz
@@ -28,7 +28,7 @@ github_username: DanSmrcka
 # slow reading speed for article reading time
 words_per_minute: 100
 
-ICO: 08407401
+ICO: CZ08407401
 address: Kraslice, Pod nemocnicí 107, 35801
 phone: 00420721269706
 
@@ -74,7 +74,8 @@ t:
     info: "Information"
     address: "Address"
     phone: "Phone"
-    ICO: "ICO"
+    ICO: "DIČ"
+    ICO_id: "(Identification number)"
 
     latest-posts:  "Latest Posts"
     read-more:  "Read More →"
@@ -107,7 +108,8 @@ t:
       info: "Informationen"
       address: "Adresse"
       phone: "Tel."
-      ICO: "ICO"
+      ICO: "DIČ"
+      ICO_id: "(Wirtschafts-Identifikationsnummer)"
 
       latest-posts:  "Neuste Artikel"
       read-more:  "Weiterlesen →"
@@ -140,7 +142,8 @@ t:
       info: "Informace"
       address: "Adresa"
       phone: "Tel."
-      ICO: "IČO"
+      ICO: "DIČ"
+      ICO_id: ""
 
       latest-posts:  "Poslední přispěvek"
       read-more:  "Read More →"

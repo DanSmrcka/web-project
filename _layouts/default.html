@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-{% include head.html %}
-
+  <head>
+    {% include head.html %}
+  </head>
 <body>
+{% include analytics.html %}
 
 {% include top_nav.html %}
 {% if page.header == true %}
@@ -19,7 +20,6 @@
 
 {% include footer.html %}
 
-{% include analytics.html %}
 
 </body>
 

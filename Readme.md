@@ -1,4 +1,4 @@
-# Website used to promote small buisness 
+# Website used to promote small business 
 
 
 

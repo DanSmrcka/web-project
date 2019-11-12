@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Privacy
-permalink: /privacy/
+title: Práva
+permalink: /prava/
 ref: privacy
-excerpt: What data is stored when visiting this page
+excerpt: Jaké data jsou použity při navštívení stránek
 lang: cz
 nav_order: 0
 ---

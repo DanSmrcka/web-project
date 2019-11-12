@@ -5,7 +5,7 @@ header: true
 lang: de
 ---
 
-<h1>Über uns </h1>
+<h1>Über mich </h1>
 
 <h3> Ich heisse Jan Hucko und kann für Sie vermitteln:</h3>
 
@@ -23,18 +23,4 @@ lang: de
 
 <hr>
 
-<h1>Informationen</h1>
-<div class="container">
-    <div class="one">
-      <img src="/assets/home-header.jpg" alt="HTML5 Icon" class="center" style="width:256px;height:256px;">
-    </div>
-    <div class="two">
-      <div class="content">
-        <p> {{site.title.de}} </p>
-        <p> ICO: {{site.ICO}} </p>
-        <p> Adresse: <br> {{site.address}} </p>
-        <p> Tel. : {{site.phone}} </p>
-        <p> Email : {{site.email}} </p>
-      </div>
-    </div>
-</div>
+{% include info.html %}

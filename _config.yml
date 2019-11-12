@@ -29,8 +29,8 @@ github_username: DanSmrcka
 words_per_minute: 100
 
 ICO: 08407401
-address: 35801, Kraslice, Pod nemocnicí 107
-phone: 420721269706
+address: Kraslice, Pod nemocnicí 107, 35801
+phone: 00420721269706
 
 # github on site
 github:
@@ -71,6 +71,11 @@ contact:
 
 t:
   en:
+    info: "Information"
+    address: "Address"
+    phone: "Phone"
+    ICO: "ICO"
+
     latest-posts:  "Latest Posts"
     read-more:  "Read More →"
     show-more:  "Show More →"
@@ -99,6 +104,11 @@ t:
     privacy_url: "/privacy"
 
   de:
+      info: "Informationen"
+      address: "Adresse"
+      phone: "Tel."
+      ICO: "ICO"
+
       latest-posts:  "Neuste Artikel"
       read-more:  "Weiterlesen →"
       show-more:  "Mehr →"
@@ -127,6 +137,11 @@ t:
       privacy_url: "/datenschutz"
 
   cz:
+      info: "Informace"
+      address: "Adresa"
+      phone: "Tel."
+      ICO: "IČO"
+
       latest-posts:  "Poslední přispěvek"
       read-more:  "Read More →"
       show-more:  "Show More →"
